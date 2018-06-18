@@ -159,7 +159,7 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, 'UMEP_Tutorial.tex', u'UMEP Tutoria',
+    (master_doc, 'UMEP_Tutorial.tex', u'UMEP Tutorial',
      u'Fredrik Lindberg, Ting Sun, Sue Grimmond, Yihao Tang', 'manual'),
 ]
 

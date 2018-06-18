@@ -106,7 +106,7 @@ All the geodata used in this tutorial are from open access sources, primarily fr
 
 - Start by loading all the raster datasets into an empty QGIS project.
 
-The order in the *Layers Panel* determines what layer is visible. You can choose to show a layer (or not) with the tick box. You can modify layers by right-clicking on a layer in the Layers Panel and choose *Properties*. Note for example that that CDSM (vegetation) is given as height above ground (metre) and that all non-vegetated pixels are set to zero. This makes it hard to get an overview of all 3D objects (buildings and trees). QGIS default styling for a raster is using the 98 percentile of the values. Therefore, not all the range of the data is shown in the layer window to the left.  
+The order in the *Layers Panel* determines what layer is visible. You can choose to show a layer (or not) with the tick box. You can modify layers by right-clicking on a layer in the Layers Panel and choose *Properties*. Note for example that that CDSM (vegetation) is given as height above ground (metre) and that all non-vegetated pixels are set to zero. This makes it hard to get an overview of all 3D objects (buildings and trees). QGIS default styling for a raster is using the 98 percentile of the values. Therefore, not all the range of the data is shown in the layer window to the left.
 
 - Right-click on your **CDSM** layer and go to *Properties > Style* and choose **Singleband pseudocolor** with a min value of 0 and max of 35. Choose a colour scheme of your liking.
 - Go to *Transparency* and  add and additional no data value of 0. Click ok.
@@ -397,7 +397,7 @@ To perform modelling energy fluxes for multiple grids, `SUEWSAdvanced` can be us
 - Open *UMEP > Processor > Urban Energy Balance > SUEWS/BLUEWS, Advanced*. Here you can change some of the run control settings in SUEWS. SUEWS can also be executed outside of UMEP and QGIS (see `SUEWS Manual <http://suews-docs.readthedocs.io>`__. This is recommended when modelling long time series (multiple years) of large model domains (many grid points).
 - Change the OHM option to [1]. This allows the anthropogenic energy to be partitioned also into the storage energy term.
 - Leave the rest of the combobox settings at the top as default and tick both the *Use snow module* and the *Obtain temporal resolution...* box.
-- Set the *Temporal resolution of output (minutes) to 60.
+- Set the *Temporal resolution of output (minutes) to 60.*
 - Locate the directory where you saved your output from *SUEWSPrepare* earlier and choose an output folder of your choice.
 - Also, Tick the box *Apply spin-up using...*. This will force the model to run twice using the conditions from the first run as initial conditions for the second run.
 - Click *Run*. This computation will take a while so be patient.
