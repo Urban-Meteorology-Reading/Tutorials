@@ -1,7 +1,7 @@
 .. _tutorials_intro:
 
 
-Introduction
+Tutorials
 ============
 
 To help users getting started with UMEP, the community is working on
@@ -56,8 +56,7 @@ tool. The tutorials are available are found in the table below.
      - Anthropogenic heat modelling in London using LQF (uses the LUCY methodology)
 
 
-**this is a test line.**
-another test.
+
 
 .. toctree::
    :caption: UMEP Tutorials
