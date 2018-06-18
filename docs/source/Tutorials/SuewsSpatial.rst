@@ -71,7 +71,7 @@ All the geodata used in this tutorial are from open access sources, primarily fr
 
 .. note:: You can download the all the data from `here <https://github.com/Urban-Meteorology-Reading/Urban-Meteorology-Reading.github.io/blob/master/other%20files/SUEWSSpatial_Tutorialdata.zip>`__. Unzip and place in a folder that you have read and write access to.
 
-.. list-table:: Spatial data used for this tuorial
+.. list-table:: Spatial data used in this tutorial
    :widths: 10 10 40 40
 
    * - **Geodata**
