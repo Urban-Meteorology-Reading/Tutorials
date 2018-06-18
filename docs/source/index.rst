@@ -2,7 +2,7 @@
 
 
 Introduction
-========================
+============
 
 To help users getting started with UMEP, the community is working on
 setting up tutorials and instructions for different parts of the UMEP
