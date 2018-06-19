@@ -23,7 +23,7 @@ This tutorial makes use of local high resolution detailed spatial data. If this 
 
 Model output may be needed in many formats depending on a users’ needs.
 Thus, the format must be useful, while ensuring the science included
-within the model is appropriate. The :ref:`ref_F1` figure shows the overall structure of
+within the model is appropriate. :numref:`ref_F1` shows the overall structure of
 `UMEP <http://umep-docs.readthedocs.io>`__, a city based climate service tool (CBCST) used in this tutorial. Within UMEP there are a number
 of models which can predict and diagnose a range of meteorological processes.
 
@@ -136,7 +136,7 @@ As you can see the grid does not cover the whole extent of the raster grids. Thi
 Meteorological forcing data
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Meteorological forcing data are mandatory for most of the models within UMEP. The UMEP specific format is given in the table :ref:`ref_T_Met`. Some of the variables are optional and if not available or needed should be set to -999. The columns can not be empty.  The needed data for this tutorial are discussed below.
+Meteorological forcing data are mandatory for most of the models within UMEP. The UMEP specific format is given in :numref:`ref_T_Met`. Some of the variables are optional and if not available or needed should be set to -999. The columns can not be empty.  The needed data for this tutorial are discussed below.
 
 .. _ref_T_Met:
 .. list-table:: Variables included in UMEP meteorological input file.
