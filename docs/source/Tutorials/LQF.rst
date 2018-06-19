@@ -13,12 +13,12 @@ Initial Practical steps
 UMEP is a python plugin used in conjunction with
 `QGIS <http://www.qgis.org>`__. To install the software and the UMEP
 plugin see the `getting
-started <Getting_Started>`
+started <http://umep-docs.readthedocs.io/Getting_Started.html>`__
 section in the UMEP manual.
 
 For this tutorial you will need certain python libraries: **Pandas** and
 **NetCDF**. Instructions how to install python libraries are located
-`here <Python_Libraries>`.
+`here <http://umep-docs.readthedocs.io/en/latest/Getting_Started.html#adding-missing-python-libraries-and-other-osgeo-functionalities>`__.
 
 As UMEP is under constant development, some documentation may be missing
 and/or there may be instability. Please report any issues or suggestions

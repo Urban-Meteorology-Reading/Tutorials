@@ -30,7 +30,6 @@ of models which can predict and diagnose a range of meteorological processes.
 .. _ref_F1:
 .. figure:: /images/SUEWSIntro_UMEP_overview.png
    :alt:  none
-   :width: 80%
 
    Overview of the climate service tool UMEP (from Lindberg et al. 2018)
 
@@ -71,6 +70,7 @@ All the geodata used in this tutorial are from open access sources, primarily fr
 
 .. note:: You can download the all the data from `here <https://github.com/Urban-Meteorology-Reading/Urban-Meteorology-Reading.github.io/blob/master/other%20files/SUEWSSpatial_Tutorialdata.zip>`__. Unzip and place in a folder that you have read and write access to.
 
+.. _ref_T_Data:
 .. list-table:: Spatial data used in this tutorial
    :widths: 10 10 40 40
 
@@ -272,7 +272,7 @@ Meteorological forcing data are mandatory for most of the models within UMEP. Th
 
 The meteorological dataset used in this tutorial (**MeteorologicalData_NYC_2010.txt**) is from NOAA (most of the meteorological variables) and NREL (solar radiation data). It consists of *tab-separated* hourly air temperature, relative humidity, incoming shortwave radiation, pressure, precipitation and wind speed for 2010. There are other possibilities within UMEP to acquire meteorological forcing data. The pre-processor plugin `WATCH <http://umep-docs.readthedocs.io/en/latest/pre-processor/Meteorological%20Data%20Download%20data%20(WATCH).html>`__ can be used to download the variables needed from the global `WATCH <http://www.eu-watch.org/>`__ forcing datasets (Weedon et al. 2011, 2014).
 
-- Open the meterological dataset (**MeteorologicalData_NYC_2010.txt**) in a text editor of your choice. As you can see it does not include all the variables shown in the table **can we cross reference table**. However, these variables are the mandatory ones that are required to run SUEWS. In order to format (and make a quality check) the data provided into UMEP standard, you will use the `MetPreProcessor <http://umep-docs.readthedocs.io/en/latest/pre-processor/Meteorological%20Data%20MetPreprocessor.html>`__.
+- Open the meterological dataset (**MeteorologicalData_NYC_2010.txt**) in a text editor of your choice. As you can see it does not include all the variables shown in :numref:`ref_T_Met`. However, these variables are the mandatory ones that are required to run SUEWS. In order to format (and make a quality check) the data provided into UMEP standard, you will use the `MetPreProcessor <http://umep-docs.readthedocs.io/en/latest/pre-processor/Meteorological%20Data%20MetPreprocessor.html>`__.
 
 - Open MetDataPreprocessor (*UMEP> Pre-Prpcessor -> Meteorological Data > MetPreprocessor*).
 - Load **MeteorologicalData_NYC_2010.txt** and make the settings as shown below. Name your new dataset **NYC_metdata_UMEPformatted.txt**.
@@ -314,7 +314,7 @@ There are 10 frames included in the *Main Settings* tab where 8 need to be fille
 #. **Daylight savings and UTC**
 #. **Initial conditions**
 
-The two optional frames (*Land use fractions* and *Wall area*) should be used if the ESTM model is used to estimate the storage energy term ( :greek: DELTA :sub:`S`). In this tutorial we use the *OHM* modelling scheme so these two tabs can be ignored for now.
+The two optional frames (*Land use fractions* and *Wall area*) should be used if the ESTM model is used to estimate the storage energy term (Delta Q\ :sub:`S`). In this tutorial we use the *OHM* modelling scheme so these two tabs can be ignored for now.
 
 - Close *SUEWS Prepare*
 
@@ -337,7 +337,7 @@ This operation should have produced 17 different text files; 16 (*anisotrophic*)
 
 Tree morphology
 ~~~~~~~~~~~~~~~
-Now you will calculate roughness parameters based on the vegetation (trees and bushes) within your grids. As you noticed there is only one surface dataset for vegetation present (**CDSM_nyc**) and if you examine your land cover grid (**landcover_2010_nyc**) you can see that there is only one class of high vegetation (*Deciduous trees*) present with our model domain. Therefore, you will not separate between evergreen and deciduous vegetation in this tutorial. As shown in **table 1- to fix**, the tree surface model represents height above ground.
+Now you will calculate roughness parameters based on the vegetation (trees and bushes) within your grids. As you noticed there is only one surface dataset for vegetation present (**CDSM_nyc**) and if you examine your land cover grid (**landcover_2010_nyc**) you can see that there is only one class of high vegetation (*Deciduous trees*) present with our model domain. Therefore, you will not separate between evergreen and deciduous vegetation in this tutorial. As shown in  :numref:`ref_T_Data`, the tree surface model represents height above ground.
 
 - Again, Open *UMEP > Pre-Processor > Urban Morphology > Morphometric Calculator (Grid)*.
 - Use the settings as in the figure below and press *Run*.
@@ -385,7 +385,7 @@ Now you are ready to organise all the input data into the SUEWS input format.
 - In the *Population density* frame, choose the appropriate attributes created in the previous section for daytime and night-time population density.
 - In the *Daylight savings and UTC* frame, leave start and end of the daylight saving as they are **???** and choose *-5* (i.e. the time zone).
 - In the *Initial conditions* frame, choose **Winter (0%)** in the *Leaf Cycle*, 100% *Soil moisture state* and **nyc** as a *File code*.
-- In the *Anthropogenic* tab, change the code to 771 **link to explanation/why**.
+- In the *Anthropogenic* tab, change the code to 771. This will make use of settings adjusted for NYC according to `Sailor et al. 2015 <https://www.sciencedirect.com/science/article/pii/S1352231015302156>`__.
 - Choose an empty directory as your *Output folder* in the main tab.
 - Press *Generate*
 - When processing is finished, close *SUEWS Prepare*.

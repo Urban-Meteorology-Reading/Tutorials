@@ -30,8 +30,8 @@ Initial Practical steps
 -----------------------
 
 -  If **QGIS** is not on your computer you will `need to install
-   it <Getting_Started>`
--  Then install the `UMEP <Getting_Started>`.plugin 
+   it <http://umep-docs.readthedocs.io/Getting_Started.html>`__.
+-  Then install the `UMEP <http://umep-docs.readthedocs.io/Getting_Started.html>`__ plugin.
 
 -  Start the QGIS software
 -  If not visible on the desktop use the **Start** button to find the
@@ -68,7 +68,7 @@ Prior to Starting
 #. Download the **Data needed for the Tutorial**. You can use either Reading of the London dataset. 
 
 #. Load the Raster data (`DEM, DSM,
-   CDSM <Abbreviations>`) 
+   CDSM <http://umep-docs.readthedocs.io/Abbreviations.html>`__) 
    *files – DOES A CDSM EXIST? Yes for London, No for Reading*
 
    -  Go to: *Layer > Add layer > Add Raster Layer*. Locate downloaded files add add them to your QGIS project.
@@ -137,7 +137,7 @@ Iterative process
 
 To work with a site with no value known *a priori*.
 
-#. Use the `MorphometricCalculator(Point)` tool in the UMEP plugin to select a
+#. Use the `MorphometricCalculator(Point) <http://umep-docs.readthedocs.io/en/latest/pre-processor/Urban%20Morphology%20Morphometric%20Calculator%20(Point).html>`__ tool in the UMEP plugin to select a
    point to get the initial parameter values:
 
    #. UMEP-> Pre-Processor -> Urban Morphology -> Image Morphometric
