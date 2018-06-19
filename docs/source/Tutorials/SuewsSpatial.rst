@@ -78,15 +78,15 @@ All the geodata used in this tutorial are from open access sources, primarily fr
      - **Year**
      - **Source**
      - **Description**
-   * - Digital surface model (DSM)
+   * - Digital surface model (`DSM <http://umep-docs.readthedocs.io/en/latest/Abbreviations.html>`__)
      - 2013 (Lidar), 2016 (building polygons)
      - United States Geological Survey (USGS). New York CMGP Sandy 0.7m NPS Lidar and NYC Open Data Portal. `link <https://data.cityofnewyork.us>`__
-     - A raster grid including both buildings and ground given in meter above sea level.
-   * - Digital elevation model (DEM)
+     - A `raster <http://desktop.arcgis.com/en/arcmap/10.3/manage-data/raster-and-images/what-is-raster-data.htm>`__ grid including both buildings and ground given in meter above sea level.
+   * - Digital elevation model (`DEM <http://umep-docs.readthedocs.io/en/latest/Abbreviations.html>`__)
      - 2013
      - United States Geological Survey (USGS). New York CMGP Sandy 0.7m NPS Lidar. `link <https://data.cityofnewyork.us>`__
      - A raster grid including only ground heights given in meter above sea level.
-   * - Digital canopy model (CDSM)
+   * - Digital canopy model (`CDSM <http://umep-docs.readthedocs.io/en/latest/Abbreviations.html>`__)
      - 2013 (August)
      - United States Geological Survey (USGS). New York CMGP Sandy 0.7m NPS Lidar. `link <https://coast.noaa.gov/htdata/lidar1_z/geoid12b/data/4920/>`__
      - A vegetation raster grid where vegetation heights is given in meter above ground level. Vegetation lower than 2.5 meter Pixels with no vegetation should be zero.
