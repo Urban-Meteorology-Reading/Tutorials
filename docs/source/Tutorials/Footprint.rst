@@ -22,7 +22,7 @@ et al. (2015) requires the boundary layer height.
 
 .. figure:: /images/Footprint_ReadingSourceArea.png
    :alt:  Example result 
-   :width: 1100px
+   :width: 100%
 
    Example result (click on image for larger image)
 
@@ -42,7 +42,7 @@ When you open it on the top toolbar you will see **UMEP**.
 
 .. figure:: /images/Footprint_UMEP_location.png
    :alt:  none
-   :width: 960px
+   :width: 100%
    
    Location of footprint plugin (click on image for larger image)
 
@@ -75,7 +75,7 @@ Prior to Starting
 
 .. figure:: /images/Footprint_Add_Raster_Layer.png
    :alt:  none
-   :width: 960px
+   :width: 100%
    
    Loading a raster layer to QGIS (click on image for larger image)
 
@@ -85,7 +85,7 @@ Prior to Starting
 
 .. figure:: /images/Footprint_ReadingMap.png
    :alt:  none
-   :width: 1070px
+   :width: 100%
 
    The Reading data loaded into QGIS (click on image for larger image)
    
@@ -119,7 +119,7 @@ To access the Source area model or Footprint model, go to *UMEP -> Pre-processor
 	
 .. figure:: /images/Footprint_SourceAreaModel.png
    :alt:  none
-   :width: 960px
+   :width: 100%
    
    Snapshot of the Footprint plugin using Reading data (click on image for larger image)
 
