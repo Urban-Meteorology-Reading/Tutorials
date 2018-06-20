@@ -30,8 +30,8 @@ Initial Practical steps
 -----------------------
 
 -  If **QGIS** is not on your computer you will `need to install
-   it <http://umep-docs.readthedocs.io/Getting_Started.html>`__.
--  Then install the `UMEP <http://umep-docs.readthedocs.io/Getting_Started.html>`__ plugin.
+   it <http://umep-docs.readthedocs.io/en/latest/Getting_Started.html>`__.
+-  Then install the `UMEP <http://umep-docs.readthedocs.io/en/latest/Getting_Started.html>`__ plugin.
 
 -  Start the QGIS software
 -  If not visible on the desktop use the **Start** button to find the
@@ -68,7 +68,7 @@ Prior to Starting
 #. Download the **Data needed for the Tutorial**. You can use either Reading of the London dataset. 
 
 #. Load the Raster data (`DEM, DSM,
-   CDSM <http://umep-docs.readthedocs.io/Abbreviations.html>`__) 
+   CDSM <http://umep-docs.readthedocs.io/en/latest/Abbreviations.html>`__) 
    *files – DOES A CDSM EXIST? Yes for London, No for Reading*
 
    -  Go to: *Layer > Add layer > Add Raster Layer*. Locate downloaded files add add them to your QGIS project.
