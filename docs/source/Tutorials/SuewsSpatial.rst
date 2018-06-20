@@ -56,7 +56,7 @@ Initial Steps
 
 UMEP is a python plugin used in conjunction with
 `QGIS <http://www.qgis.org>`__. To install the software and the UMEP
-plugin see the `getting started <http://umep-docs.readthedocs.io/Getting_Started.html>`__ section in the UMEP manual.
+plugin see the `getting started <http://umep-docs.readthedocs.io/en/latest/Getting_Started.html>`__ section in the UMEP manual.
 
 As UMEP is under development, some documentation may be missing and/or
 there may be instability. Please report any issues or suggestions to our
