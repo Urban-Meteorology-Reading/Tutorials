@@ -29,8 +29,7 @@ of models which can predict and diagnose a range of meteorological processes.
 
 .. _ref_F1:
 .. figure:: /images/SUEWSIntro_UMEP_overview.png
-   :alt:  none
-
+   
    Overview of the climate service tool UMEP (from Lindberg et al. 2018)
 
 
@@ -114,7 +113,7 @@ The order in the *Layers Panel* determines what layer is visible. You can choose
 
 .. figure:: /images/SUEWSSpatial_dataview.png
    :alt:  none
-   :width: 80%
+   :width: 100%
 
    DSM and CDSM visible at the same time (click for larger image)
 
@@ -280,7 +279,7 @@ The meteorological dataset used in this tutorial (**MeteorologicalData_NYC_2010.
 
 .. figure:: /images/SUEWSSpatial_MetPreprocessor.png
    :alt:  none
-   :width: 80%
+   :width: 100%
 
    The settings for formatting met data into UMEP format (click for a larger image)
 
@@ -297,7 +296,7 @@ A key capability of UMEP is to facilitate preparation of input data for the vari
 
 .. figure:: /images/SUEWSSpatial_Prepare1.png
    :alt:  none
-   :width: 80%
+   :width: 100%
 
    The dialog for the SUEWS Prepare plugin (click for a larger image).
 
@@ -328,8 +327,6 @@ First you will calculate roughness parameters based on the building geometry wit
 
 .. figure:: /images/SUEWSSpatial_IMCGBuilding.png
    :alt:  none
-   :width: 80%
-
 
    The settings for calculating building morphology.
 
@@ -344,8 +341,6 @@ Now you will calculate roughness parameters based on the vegetation (trees and b
 - When calculation is done, close the plugin.
 
 .. figure:: /images/SUEWSSpatial_IMCGVeg.png
-   :alt:  none
-   :width: 80%
 
    The settings for calculating vegetation morphology.
 
@@ -358,8 +353,6 @@ Moving on to land cover fraction calculations for each grid.
 - When calculation is done, close the plugin.
 
 .. figure:: /images/SUEWSSpatial_LCF.png
-   :alt:  none
-   :width: 80%
 
    The settings for calculating land cover fractions
 
@@ -412,7 +405,7 @@ UMEP has a tool for basic analysis of any modelling performed with the SUEWS mod
 
 .. figure:: /images/SUEWSAnalyzer.png
    :alt:  none
-   :width: 80%
+   :width: 100%
 
    The dialog for the SUEWS Analyzer tool.
 
@@ -426,7 +419,7 @@ You will start by plotting basic data for grid 3242 which is one of the most den
 
 .. figure:: /images/SUEWSSpatial_basicplot_grid3242.png
    :alt:  none
-   :width: 80%
+   :width: 100%
 
    Basic plot for grid 3242. Click on image for enlargement.
 
@@ -442,7 +435,7 @@ The right panel in SUEWS Analyzer can be used to perform basic spatial analysis 
 
 .. figure:: /images/SUEWSSpatial_Analyzer.png
    :alt:  none
-   :width: 80%
+   :width: 100%
 
    The dialog for the SUEWS Analyzer tool to produce a mean Q\ :sub:`H` for each grid. Click on image for enlargement.
 
