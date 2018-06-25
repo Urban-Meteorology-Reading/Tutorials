@@ -39,6 +39,10 @@ tool. The tutorials are available are found in the table below.
      - Pre-Processor, Processor and Post-processor
      - `SUEWSWUDAPT`
      - Making use of `WUDAPT <http://www.wudapt.org/>`__ local climate zones in `SUEWS  <http://suews-docs.readthedocs.io>`__
+   * - Urban energy balance
+     - Pre-Processor, Processor and Post-processor
+     - `SUEWSWUDAPT_Beijing`
+     - Making use of `WUDAPT <http://www.wudapt.org/>`__ local climate zones as well as `WATCH <http://www.eu-watch.org/>`__ meteorological forcing data in `SUEWS  <http://suews-docs.readthedocs.io>`__
    * - Solar Energy
      - Processor and Post-Processor
      - `SEBE`
@@ -70,6 +74,7 @@ tool. The tutorials are available are found in the table below.
    Tutorials/SuewsAdvanced
    Tutorials/SuewsSpatial
    Tutorials/SuewsWUDAPT
+   Tutorials/SUEWSWUDAPT_Beijing
    Tutorials/IntroductionToSolweig
    Tutorials/SEBE
    Tutorials/LQF
