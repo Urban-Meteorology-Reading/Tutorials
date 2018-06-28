@@ -12,54 +12,64 @@ tool. The tutorials are available are found in the table below.
 
 
 .. list-table::
-   :widths: 20 20 30 30
+   :widths: 13 18 22 35 12
    :header-rows: 1
 
    * - Topic
      - Parts of UMEP
      - Name
      - Application
+     - Location
    * - Source Area Footprint
      - Pre-Processor
      - `Footprint`
      - Interpretation of eddy covariance flux source areas
+     - London, UK
    * - Urban energy balance
      - Processor
      - `IntroductionToSuews`
      - Energy, water and radiation fluxes for one location
+     - London, UK
    * - Urban energy balance
      - Pre-Processor and Processor
      - `SUEWSAdvanced`
      - Energy, water and radiation fluxes for one location
+     - London, UK
    * - Urban energy balance
      - Pre-Processor, Processor and Post-processor
      - `SUEWSSpatial`
      - Energy, water and radiation fluxes for a spatial grid
+     - New York City, US
    * - Urban energy balance
      - Pre-Processor, Processor and Post-processor
      - `SUEWSWUDAPT`
      - Making use of `WUDAPT <http://www.wudapt.org/>`__ local climate zones in `SUEWS  <http://suews-docs.readthedocs.io>`__
+     - New York City, US
    * - Urban energy balance
      - Pre-Processor, Processor and Post-processor
      - `SUEWSWUDAPT_Beijing`
      - Making use of `WUDAPT <http://www.wudapt.org/>`__ local climate zones as well as `WATCH <http://www.eu-watch.org/>`__ meteorological forcing data in `SUEWS  <http://suews-docs.readthedocs.io>`__
+     - Beijing, China
    * - Solar Energy
-     - Processor and Post-Processor
+     - Pre-Processor, Processor and Post-processor
      - `SEBE`
      - Amount of solar energy received on building facets
+     - Gothenburg, Sweden; London, UK
    * - Outdoor thermal comfort
-     - Pre-Processor and Processor
+     - Pre-Processor, Processor and Post-processor
      - `IntroductionToSOLWEIG`
      - Mean radiation temperature modelling in complex urban settings
+     - Gothenburg, Sweden; New York City, US
    * - Anthropogenic heat
      - Processor
      - `GQF`
      - Anthropogenic heat modelling in London using GQF (uses the GreaterQF methodology)
-
+     - London, UK
    * - Anthropogenic heat
      - Processor
      - `LQF`
      - Anthropogenic heat modelling in London using LQF (uses the LUCY methodology)
+     - London, UK
 
 
 
