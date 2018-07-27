@@ -257,7 +257,7 @@ How to Run SOLWEIG from the UMEP-plugin
 
 #. Another preprocessing plugin needed is to create the building wall
    heights and aspect. Open *UMEP -> Pre-Processor -> Urban geometry ->
-   Wall height and aspect* and use the settings as shown below.
+   Wall height and aspect* and use the settings as shown below. QGIS scales loaded rasters by a *cumulative count out* approach (98%). As the height and aspect layers are filled with zeros where no wall are present it might appear as there is no walls identified. Rescale your results to see the wall identified (*Layer Properties > Style*).
    
     .. figure:: /images/SOLWEIG_wallgeight_solweig.png
        :alt:  None

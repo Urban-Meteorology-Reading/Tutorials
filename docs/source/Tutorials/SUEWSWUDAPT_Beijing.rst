@@ -12,7 +12,6 @@ will go through each of the steps necessary to prepare, run and analyse
 the model output.
 
 Research question:
-
 **What is the difference in sensible heat flux between a summer with a
 large number of heat wave days and a low number of heat wave days in
 Beijing, China?**
@@ -23,8 +22,8 @@ Getting started
 Before getting started with this tutorial, make sure you have followed
 these steps:
 
-#. Install `QGIS <http:/www.qgis.org>`__,
-#. `Install <http://umep-docs.readthedocs.io/en/latest/Getting_Started.html>`__
+#. Install `QGIS <http://umep-docs.readthedocs.io/en/latest/Getting_Started.html>`__,
+#. Install `UMEP <http://umep-docs.readthedocs.io/en/latest/Getting_Started.html>`__
 #. Make sure the following python packages are installed: numpy,
    matplotlib and pandas. Start the WATCH-plugin (*UMEP > Pee-Processor > Meteorological Data > Download data (WATCH)*). If a message pops up that libaraies are missing, follow this `link <http://umep-docs.readthedocs.io/en/latest/Getting_Started.html#adding-missing-python-libraries-and-other-osgeo-functionalities>`__,.
 #. Download and load the LCZ map from Beijing, available from the `WUDAPT portal <http://www.wudapt.org/>`__.
@@ -57,9 +56,9 @@ Step 1: Extreme finder
 
 .. figure::  /images/600px-Extremefinder.png
    :alt: Screenshot of extreme finder
-   :width: 400px
+   :width: 100%
 
-   Screenshot of extreme finder
+   Screenshot of the *Extreme Finder* tool
 
 #. Open extreme finder at *UMEP > Processer > Outdoor Themal Comfort >
    ExtremeFinder*.
@@ -83,7 +82,6 @@ Step 2: Download WATCH data
 
 .. figure::  /images/600px-Watch.png
    :alt: Screenshot of Download Data (WATCH)
-   :width: 400px
 
    Screenshot of Download Data (WATCH)
 
@@ -112,7 +110,6 @@ Step 3: Vector grid
 
 .. figure::  /images/450px-Vector.png
    :alt: vector.png
-   :width: 300px
 
    vector.png
 
@@ -131,7 +128,6 @@ Step 4: LCZ converter
 
 .. figure::  /images/600px-LCZdialog1.png
    :alt: Screenshot of LCZ converter
-   :width: 400px
 
    Screenshot of LCZ converter
 
@@ -166,7 +162,6 @@ Step 5: Spatial downloader
 
 .. figure:: /images/600px-Spatialdownloader.png
    :alt: Spatialdownloader
-   :width: 400px
 
    Spatialdownloader
 
@@ -183,7 +178,7 @@ population counts for each of the grid cells you are modelling.
 
 You should get a raster of population density. These raster values will
 need to be added to your vector grid by following `these
-instructions <http:/www.urban-climate.net/umep/LQF_Manual#Appendix_A:_Converting_a_population_raster_to_a_vector_shapefile_using_QGIS>`__.
+instructions <http://umep-docs.readthedocs.io/en/latest/OtherManuals/LQF_Manual.html#appendix-a-converting-a-population-raster-to-a-vector-shapefile-using-qgis>`__.
 Finally the population densities need to be converted into population
 counts:
 
@@ -205,7 +200,6 @@ Step 6: LQF
 
 .. figure::  /images/LQf.png
    :alt: Screenshot of LQf
-   :width: 400px
 
    Screenshot of LQf
 
@@ -218,20 +212,17 @@ the data required to run it.
 #. Save the daily mean temperatures as a csv file with the first column
    the day of the year and the second column the temperature. The header
    and the data should look like:
-::
-
-    Data,T_Celsius
-    StartDate,2006-1-1
-    EndDate,2006-12-31
-    Timezone,Asia/Shanghai
-    1,-0.255517391
-    2,-0.303882609
-    3,-2.570373913
-    4,-7.982847826
-    5,-7.119765217
-    6,-0.255517391
-
-
+   ::
+     Data,T_Celsius
+     StartDate,2006-1-1
+     EndDate,2006-12-31
+     Timezone,Asia/Shanghai
+     1,-0.255517391
+     2,-0.303882609
+     3,-2.570373913
+     4,-7.982847826
+     5,-7.119765217
+     6,-0.255517391
 
 Prepare the
 `database.nml <http:/www.urban-climate.net/umep/LQF_Manual#Data_sources_file>`__
@@ -264,7 +255,6 @@ Step 2b: Download WATCH data
 
 .. figure::  /images/600px-Watch.png
    :alt: Screenshot of LQf
-   :width: 400px
 
    Screenshot of Download Data (WATCH）
 
@@ -298,7 +288,6 @@ Step 7: SUEWS
 
 .. figure::  /images/600px-Suews_sc.png
    :alt: Screenshot of SUEWS advance
-   :width: 400px
 
    Screenshot of SUEWS advance
 
@@ -346,7 +335,6 @@ Step 8: Benchmarking
 
 .. figure::  /images/600px-Benchmark.png
    :alt: Screenshot of LCZ converter
-   :width: 400px
 
    Screenshot of LCZ converter
 
@@ -377,10 +365,10 @@ Step 9: SUEWS analyser
 
 
 .. figure::  /images/1200px-Suewsana.png
-   :alt: Screenshot of SUEWS analyse
-   :width: 400px
+   :alt: Screenshot of SUEWS analyser
+   :width: 100%
 
-   Screenshot of SUEWS analyse
+   Screenshot of *SUEWS Analyser* tool
 
 This system allows for plotting of SUEWS
 output.
