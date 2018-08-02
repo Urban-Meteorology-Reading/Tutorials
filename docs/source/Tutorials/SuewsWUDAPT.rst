@@ -6,7 +6,7 @@ Urban Energy Balance - SUEWS and WUDAPT
 Introduction
 ------------
 
-.. note:: This tutorial is not ready for use. Work in progress.
+.. caution:: This tutorial is not ready for use. Work in progress.
 
 In this tutorial you will generate input data for the 
 `SUEWS <http://suews-docs.readthedocs.io>`__ model and simulate spatial 
