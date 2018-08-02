@@ -444,7 +444,7 @@ The right panel in SUEWS Analyzer can be used to perform basic spatial analysis 
 
 Note that the warmest areas are located in the most dense urban environments and the coolest are found where either vegetation and/or water bodies are present. During 2010 there was a 3-day heat-wave event in the region around NYC that lasted from 5 to 8 July 2010 (Day of Year: 186-189).
 
-- Make a similar average map but this time of Air temperature (name of variable) and choose only the heat wave period. Save it as a separate geoTiff.
+- Make a similar average map but this time of 2m air temperature and choose only the heat wave period. Save it as a separate geoTiff.
 
 
 The influence of mitigation measures on the urban energy balance (optional)
