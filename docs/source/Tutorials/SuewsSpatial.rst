@@ -127,7 +127,7 @@ The land cover grid has already been classified into the seven different classes
 Furthermore, a polygon grid (500 m x 500 m) to define the study area and individual grids is included (Grid_500m.shp). Such a grid can be produced directly in QGIS (e.g. *Vector > Research Tools > Vector Grid*) or an external grid can be used.
 
 - Load the vector layer **Grid_500m.shp** into your QGIS project.
-- In the *Style* tab in layer *Properties*, choose a *No Brush* fill style to be able to see the spatial data within each grid.
+- In the *Style* tab in layer *Properties*, choose a *Simple fill* with a *No Brush* fill style to be able to see the spatial data within each grid.
 - Also, add the label IDs for the grid to the map canvas in *Properties > Labels* to make it easier to identify the different grid squares later on in this tutorial.
 
 As you can see the grid does not cover the whole extent of the raster grids. This is to reduce computation time during the tutorial. One grid cell takes ~20 s to model with SUEWS with meteorological forcing data for a full year.
@@ -271,7 +271,7 @@ Meteorological forcing data are mandatory for most of the models within UMEP. Th
 
 The meteorological dataset used in this tutorial (**MeteorologicalData_NYC_2010.txt**) is from NOAA (most of the meteorological variables) and NREL (solar radiation data). It consists of *tab-separated* hourly air temperature, relative humidity, incoming shortwave radiation, pressure, precipitation and wind speed for 2010. There are other possibilities within UMEP to acquire meteorological forcing data. The pre-processor plugin `WATCH <http://umep-docs.readthedocs.io/en/latest/pre-processor/Meteorological%20Data%20Download%20data%20(WATCH).html>`__ can be used to download the variables needed from the global `WATCH <http://www.eu-watch.org/>`__ forcing datasets (Weedon et al. 2011, 2014).
 
-- Open the meterological dataset (**MeteorologicalData_NYC_2010.txt**) in a text editor of your choice. As you can see it does not include all the variables shown in :numref:`ref_T_Met`. However, these variables are the mandatory ones that are required to run SUEWS. In order to format (and make a quality check) the data provided into UMEP standard, you will use the `MetPreProcessor <http://umep-docs.readthedocs.io/en/latest/pre-processor/Meteorological%20Data%20MetPreprocessor.html>`__.
+- Open the meteorological dataset (**MeteorologicalData_NYC_2010.txt**) in a text editor of your choice. As you can see it does not include all the variables shown in :numref:`ref_T_Met`. However, these variables are the mandatory ones that are required to run SUEWS. In order to format (and make a quality check) the data provided into UMEP standard, you will use the `MetPreProcessor <http://umep-docs.readthedocs.io/en/latest/pre-processor/Meteorological%20Data%20MetPreprocessor.html>`__.
 
 - Open MetDataPreprocessor (*UMEP> Pre-Processor -> Meteorological Data > Prepare existing data*).
 - Load **MeteorologicalData_NYC_2010.txt** and make the settings as shown below. Name your new dataset **NYC_metdata_UMEPformatted.txt**.
@@ -325,6 +325,9 @@ First you will calculate roughness parameters based on the building geometry wit
 - Use the settings as in the figure below and press *Run*.
 - When calculation ids done, close the plugin.
 
+.. note:: For mac users, use this workaround: manually create a directory, go into the folder above and type the folder name. It will give a warning *“—folder name--” already exists. Do you want to replace it?* Click *replace*.
+
+
 .. figure:: /images/SUEWSSpatial_IMCGBuilding.png
    :alt:  none
 
@@ -361,7 +364,7 @@ Population density
 Population density will be used to estimate the anthropogenic heat release (Q\ :sub:`F`) in SUEWS. There is a possibility to use both night-time and daytime population densities to make the model more dynamic. You have two different raster grids for night-time (**pop_nighttime_perha**) and daytime (**pop_daytime_perha**), respectively. This time you will make use of QGIS built-in function to to acquire the population density for each grid.
 
 - Go to *Plugins > Manage and Install Plugins* and make sure that the *Zonal statistics plugin* is ticked. This is a build-in plugin which comes with the QGIS installation.
-- Close the *Plugin maanager* and open *Raster > Zonal Statistics > Zonal Statistics*.
+- Close the *Plugin manager* and open *Raster > Zonal Statistics > Zonal Statistics*.
 - Choose your **pop_daytime_perha** layer as **Raster layer** and your **Grid_500m** and polygon layer. Use a *Output column prefix* of **PPday** and chose only to calculate *Mean*. Click OK.
 - Run the tool again but this time use the night-time dataset.
 
@@ -376,7 +379,7 @@ Now you are ready to organise all the input data into the SUEWS input format.
 - In the *Tree morphology* frame, fetch the file called **veg_IMPGrid_isotropic.txt**.
 - In the *Meteorological data* frame, fetch your UMEP formatted met forcing data text file.
 - In the *Population density* frame, choose the appropriate attributes created in the previous section for daytime and night-time population density.
-- In the *Daylight savings and UTC* frame, leave start and end of the daylight saving as they are **???** and choose *-5* (i.e. the time zone).
+- In the *Daylight savings and UTC* frame, set start and end of the daylight saving to 87 and 304, respectively and choose *-5* (i.e. the time zone).
 - In the *Initial conditions* frame, choose **Winter (0%)** in the *Leaf Cycle*, 100% *Soil moisture state* and **nyc** as a *File code*.
 - In the *Anthropogenic* tab, change the code to 771. This will make use of settings adjusted for NYC according to `Sailor et al. 2015 <https://www.sciencedirect.com/science/article/pii/S1352231015302156>`__.
 - Choose an empty directory as your *Output folder* in the main tab.
@@ -441,7 +444,7 @@ The right panel in SUEWS Analyzer can be used to perform basic spatial analysis 
 
 Note that the warmest areas are located in the most dense urban environments and the coolest are found where either vegetation and/or water bodies are present. During 2010 there was a 3-day heat-wave event in the region around NYC that lasted from 5 to 8 July 2010 (Day of Year: 186-189).
 
-- Make a similar average map of Q\ :sub:`H` as above but choose only the heat wave period. Save it as a separate geoTiff.
+- Make a similar average map but this time of Air temperature (name of variable) and choose only the heat wave period. Save it as a separate geoTiff.
 
 
 The influence of mitigation measures on the urban energy balance (optional)
@@ -457,6 +460,6 @@ There are different ways of manipulating the data using UMEP as well directly ch
 - Create an empty folder called *Output_mitigation*
 - Open `SuewsAdvanced <http://umep-docs.readthedocs.io/en/latest/processor/Urban%20Energy%20Balance%20Urban%20Energy%20Balance%20(SUEWS.BLUEWS,%20advanced).html>`__ and make the same settings as before but change the input and output folders.
 - Run the model.
-- When finished, create a similar average Q\ :sub:`H` map for the heat event and compare the two maps. You can do a difference map by using the Raster Calculator in QGIS (*Raster>Raster Calculator...*).
+- When finished, create a similar average air temperature map for the heat event and compare the two maps. You can do a difference map by using the Raster Calculator in QGIS (*Raster>Raster Calculator...*).
 
 Tutorial finished.

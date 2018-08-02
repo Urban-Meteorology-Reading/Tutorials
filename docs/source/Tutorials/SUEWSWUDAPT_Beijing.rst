@@ -139,7 +139,7 @@ Step 4: LCZ converter
 #. By clicking *Adjust default parameters* you can edit the table. This
    table specifies the pervious, trees, grass, etc. fractions for each
    of the LCZ classes. For more information about each of the classes
-   see `LCZConverter <http://umep-docs.readthedocs.io/en/latest/Tutorials/SUEWSWUDAPT_Beijing.html>`__.
+   see `LCZConverter <http://umep-docs.readthedocs.io/en/latest/pre-processor/Spatial%20Data%20LCZ%20Converter.html>`__.
    If you choose to edit the table, make sure all fractions add up to
    1.0.
 #. If you are unsure about the exact fractions for each of the LCZ click
