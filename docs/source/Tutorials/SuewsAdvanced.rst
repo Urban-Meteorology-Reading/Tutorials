@@ -41,9 +41,8 @@ How to Run from the UMEP-plugin
 
 #. Create or enter an **Output directory** of your choice.
 #. From the **Input folder** - confirm the data are in there.
-#. Fill in the following. File Code: should be Kc, UTC: should be 0
-   (London).
-#. Run
+#. Tick in **Obtain temporal...** and set **Temporal resolution of output (minutes)** to 60.
+#. Click Run
 #. Make sure that output files are created.
 #. You can now close the **SUEWS/BLUEWS (Advanced)**-plugin again.
 
@@ -153,7 +152,7 @@ Generating data from the geodatasets
 #. Close this plugin
 #. Click on Fetch file from... in the building morphology panel
 #. Choose the isotropic file (just generated).
-#. Do the same for vegetation (upper left panel, right).
+#. Do the same for vegetation (upper left panel, right). See figure below.
 #. Instead of locating the point again you can use the existing point.
 #. You still need to generate a separate study area for the vegetation
    calculation.
