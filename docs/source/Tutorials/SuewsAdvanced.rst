@@ -169,7 +169,7 @@ Generating data from the geodatasets
 #. A warning appears that your vegetation fractions between the
    morphology dataset and land cover dataset are large. You can ignore
    this for now since the land cover dataset also will change.
-#. Repeat the same procedure for land cover using the Land Cover
+#. Repeat the same procedure for land cover as you did for buildings and vegetation but instead using the Land Cover
    Fraction (Point) plugin.
 #. Enter the meteorological file, Year etc. This should be the same as
    for the first run you made.
