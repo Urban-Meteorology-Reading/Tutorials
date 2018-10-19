@@ -218,7 +218,7 @@ How to Run SOLWEIG from the UMEP-plugin
       same time. Use the settings as shown below. Use an appropriate
       output folder for your computer. 
 	  
-    .. figure:: /images/SOLWEIG_SVF_solweig.png
+    .. figure:: /images/SOLWEIG_Svf_solweig.png
        :alt:  None
        :width: 487px
        
