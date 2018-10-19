@@ -309,7 +309,7 @@ Gothenburg, Sweden. The GUI is also able to derive full model output
 #. Now you should add two points within the study area. To add points to
    the layer it has to be editable and Add Feature should be activated.
 
-    .. figure:: /images/SOLWEIG_AddPoint.png
+    .. figure:: /images/SOLWEIG_Addpoint.png
        :alt:  None
        :width: 411px
        
