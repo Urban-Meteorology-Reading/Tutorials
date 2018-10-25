@@ -4,6 +4,11 @@
 Welcome to the UMEP tutorial website
 ====================================
 
+.. image:: https://readthedocs.org/projects/tutorial-docs/badge/?version=latest
+   :target: https://umep-docs.readthedocs.io/projects/tutorial/en/latest/?badge=latest
+   :alt: Documentation Status
+
+
 To help users getting started with UMEP, the community is working on
 setting up tutorials and instructions for different parts of the UMEP
 tool. The tutorials available are found in the table below.
