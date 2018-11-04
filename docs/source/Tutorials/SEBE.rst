@@ -98,10 +98,10 @@ S: Spatial, M: Meteorological,
      - Meteorological data, hourly time resolution for 1977 Gothenburg, Sweden. 
 
 
-`Download link for datasets in Gothenburg,
+:download:`Datasets in Gothenburg,
 Sweden <https://github.com/Urban-Meteorology-Reading/Urban-Meteorology-Reading.github.io/tree/master/other%20files/Goteborg_SWEREF99_1200.zip>`__
 
-`Download link for datasets in London Covent
+:download:`Datasets in London Covent
 Garden <https://github.com/Urban-Meteorology-Reading/Urban-Meteorology-Reading.github.io/tree/master/other%20files/DataCoventGarden.zip>`__
 
 `Google map link to Convent Garden <https://www.google.co.uk/maps/@51.5117012,-0.1231273,356m/data=!3m1!1e3>`__
