@@ -99,12 +99,12 @@ S: Spatial, M: Meteorological,
 
 
 :download:`Datasets in Gothenburg,
-Sweden <https://github.com/Urban-Meteorology-Reading/Urban-Meteorology-Reading.github.io/tree/master/other%20files/Goteborg_SWEREF99_1200.zip>`__
+Sweden <https://github.com/Urban-Meteorology-Reading/Urban-Meteorology-Reading.github.io/raw/master/other%20files/Goteborg_SWEREF99_1200.zip>`
 
 :download:`Datasets in London Covent
-Garden <https://github.com/Urban-Meteorology-Reading/Urban-Meteorology-Reading.github.io/tree/master/other%20files/DataCoventGarden.zip>`__
+Garden <https://github.com/Urban-Meteorology-Reading/Urban-Meteorology-Reading.github.io/raw/master/other%20files/DataCoventGarden.zip>`
 
-`Google map link to Convent Garden <https://www.google.co.uk/maps/@51.5117012,-0.1231273,356m/data=!3m1!1e3>`__
+`Google map link to Covent Garden <https://www.google.co.uk/maps/@51.5117012,-0.1231273,356m/data=!3m1!1e3>`__
 
 
 Steps
