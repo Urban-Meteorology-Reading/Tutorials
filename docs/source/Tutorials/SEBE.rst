@@ -61,8 +61,8 @@ Data for Tutorial
    :alt:  None
    :width: 356px
 
-   Central Gothenburg study area (red square). 
-   The Open layers plugin in QGIS was used to generate 
+   Central Gothenburg study area (red square).
+   The Open layers plugin in QGIS was used to generate
    this snapshot.
 
 Geodata and meteorological data for **Gothenburg, Sweden**.
@@ -71,7 +71,7 @@ Geodata and meteorological data for **Gothenburg, Sweden**.
    coordinate system of Sweden.
 
 Data requreiments:
-S: Spatial, M: Meteorological, 
+S: Spatial, M: Meteorological,
 
 .. list-table:: Input data and parameters
    :widths: 20 20 10 50
@@ -83,7 +83,7 @@ S: Spatial, M: Meteorological,
    * - krbig_dsm.asc
      - Ground and building DSM
      - S
-     - Raster dataset: derived from a 3D vector roof structure dataset and a digital elevation model (DEM)   
+     - Raster dataset: derived from a 3D vector roof structure dataset and a digital elevation model (DEM)
    * - krbig_cdsm.asc
      - Vegetation canopy DSM
      - S
@@ -95,14 +95,12 @@ S: Spatial, M: Meteorological,
    * - GBG_typicalweatheryear_1977.txt
      - Meteorological forcing data
      - M
-     - Meteorological data, hourly time resolution for 1977 Gothenburg, Sweden. 
+     - Meteorological data, hourly time resolution for 1977 Gothenburg, Sweden.
 
 
-:download:`Datasets in Gothenburg,
-Sweden <https://github.com/Urban-Meteorology-Reading/Urban-Meteorology-Reading.github.io/raw/master/other%20files/Goteborg_SWEREF99_1200.zip>`
+:download:`Datasets in Gothenburg, Sweden </data/Goteborg_SWEREF99_1200.zip>`
 
-:download:`Datasets in London Covent
-Garden <https://github.com/Urban-Meteorology-Reading/Urban-Meteorology-Reading.github.io/raw/master/other%20files/DataCoventGarden.zip>`
+:download:`Datasets in London Covent Garden </data/DataCoventGarden.zip>`
 
 `Google map link to Covent Garden <https://www.google.co.uk/maps/@51.5117012,-0.1231273,356m/data=!3m1!1e3>`__
 
@@ -121,7 +119,7 @@ Steps
 #. You will need to indicate the co-ordinate system
    (`CRS <https://docs.qgis.org/2.18/en/docs/gentle_gis_introduction/coordinate_reference_systems.html>`__)
    that is associated with these data. If you look at the lower right
-   hand side you can see the CRS used in the current QGIS project. 
+   hand side you can see the CRS used in the current QGIS project.
 
    -  You can use the filter to find this then.
    -  Select SWEREF99 1200 as CRS and the files will load into the map
@@ -371,7 +369,7 @@ In order to obtain the solar energy potential for a specific building:
    actual area (*A*\ :sub:`A`) can be computed from:
 
       *A*\ :sub:`A` = *A*\ :sub:`P` / *cos(S*\ :sub:`i`)
- 
+
       where the slope (*S*\ :sub:`i`) of the raster pixel should be in radians (1 deg = pi/180 rad).
 
 **To make a slope raster:**
@@ -430,7 +428,7 @@ statistics tool:
 
    .. figure:: /images/SEBE_GOT_Irradiance.png
       :alt: None
-   
+
       Irradiance map on building roofs in Gothenburg
 
 Covent Garden data set
@@ -542,8 +540,4 @@ You can change the *shading etc*. on different layers.
 -  Classify
 -  Numerous things can be modified from this point.
 
-`UMEP repository <https://bitbucket.org/fredrik_ucg/umep/>`__. 
-
-
-
-
+`UMEP repository <https://bitbucket.org/fredrik_ucg/umep/>`__.
