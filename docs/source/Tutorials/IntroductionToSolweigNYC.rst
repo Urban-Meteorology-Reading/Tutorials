@@ -71,7 +71,7 @@ Data for this exercise
 ~~~~~~~~~~~~~~~~~~~~~~
 
 The UMEP tutorial datasets around CCNY campus can be downloaded from our here repository
-`here <https://github.com/Urban-Meteorology-Reading/Urban-Meteorology-Reading.github.io/blob/master/other%20files/CCNY_ESPG26918.zip>`__
+`here <https://github.com/Urban-Meteorology-Reading/Urban-Meteorology-Reading.github.io/raw/master/other%20files/CCNY_ESPG26918.zip>`__
 
 -  Download, extract and add the raster layers (DSM, CDSM, DEM and land
    cover) into a new QGIS session (see below).
