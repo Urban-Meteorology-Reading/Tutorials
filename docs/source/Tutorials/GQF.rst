@@ -3,9 +3,8 @@
 Anthropogenic heat - GQF
 ========================
 
-
 This tutorial demonstrates how the GQF software is used to simulate
-anthropogenic heat fluxes for London, UK, in the year 2015, using a
+anthropogenic heat fluxes (Q\ :sub:`F`) for London, UK, in the year 2015, using a
 mixture of administrative and meteorological data.
 
 Initial Practical steps
@@ -33,13 +32,12 @@ You may also wish to consult the `GQF user guide <http://umep-docs.readthedocs.i
 The GQF\_Inputs\_1.zip file contains several datasets to cover the
 comprehensive requirements of GQF:
       .. list-table::
-         :widths: 33 33 33
+         :widths: 30 45 25
          :header-rows: 1
 
          * - Filename
            - Description
            - Notes
-
          * - 500m\_Residential\_from\_100m.shp
            - Residential population
            - Attribute: “Pop”, Feature ID: “ID”
@@ -85,9 +83,10 @@ comprehensive requirements of GQF:
          * - DataSources.nml
            - Configuration file specifying different input data sources for model
            -
+
            
-GQF Tutorial 1: Comprehensive QF modelling for Greater London
--------------------------------------------------------------
+GQF Tutorial 1: Comprehensive Q\ :sub:`F` modelling for Greater London
+----------------------------------------------------------------------
 
 Preparing data
 ~~~~~~~~~~~~~~
@@ -95,9 +94,9 @@ Preparing data
 Manage input data files
 +++++++++++++++++++++++
 
--  Extract the contents of GQF\_Inputs\_1.zip into a folder on your
+Extract the contents of GQF\_Inputs\_1.zip into a folder on your
    local machine and note the path to each file (e.g.
-   C:\\GQFData\\BuildingLoadings\_Industrial.csv)
+   *C:\\GQFData\\BuildingLoadings\_Industrial.csv*).
 
 Gather information about shapefile inputs
 +++++++++++++++++++++++++++++++++++++++++
@@ -107,7 +106,7 @@ energy use, population and road transport across the city. Five pieces
 of information are needed for each of these:
 
 #. Filename: The full path to the .shp file (e.g.
-   c:\\path\\to\\file.shp)
+   *c:\\path\\to\\file.shp*)
 #. Start date: The modelled date from which this data should be used
 #. EPSG code: A numeric code that determines which co-ordinate reference
    system (CRS) to use for the shapefile
@@ -117,13 +116,12 @@ of information are needed for each of these:
 #. Feature IDs: The name of an attribute that contains a unique
    identifier for each spatial unit
 
-`Click
-here <LQF_Manual#Appendix_B:_Gathering_information_about_shapefiles_for_QF_modelling>`__
+`Click here <https://umep-docs.readthedocs.io/en/latest/OtherManuals/LQF_Manual.html#appendix-b-gathering-information-about-shapefiles-for-qf-modelling>`__
 for a guide explaining how to identify the feature ID, attribute to use
 and EPSG code of a shapefile using QGIS.
 
 A shapefile also defines the so-called output areas, which are the
-spatial units (sometimes pixels) of model output (one QF estimate per
+spatial units (sometimes pixels) of model output (one Q\ :sub:`F` estimate per
 area). These are needed because the spatial units of the various input
 files may not all match up. The output areas can either be one of the
 input files, or a totally different set of areas. In this tutorial, one
@@ -135,7 +133,7 @@ Set up the DataSources.nml file
 The data sources file needs to be updated so that it can find the
 various data files, and understands what to do with them. A full
 description of the Data sources file contents is available
-`here <LQF_Manual#Data_sources_file>`__, but this section shows how to
+`here <https://umep-docs.readthedocs.io/en/latest/OtherManuals/GQF_Manual.html#data-sources-file>`__, but this section shows how to
 build up the entries.
 
 There are several sections in the data sources file. Each is bounded by
@@ -168,7 +166,6 @@ start date:
         epsgCode = 32631
         featureIds = 'ID'
    /  
-
 
 
 Specifying the residential population data.
@@ -213,7 +210,7 @@ Day-to-day energy demand changes
 GQF uses annual total energy consumption shapefiles, and needs to know
 how to vary energy consumption on different dates (e.g. winter is likely
 to have more fuel use than summer). This is captured using real data
-from the energy grid. The 2015GasElecDD.csv file contains each day's
+from the energy grid. The **2015GasElecDD.csv** file contains each day's
 total gas and electricity consumption. GQF then scales the annual
 consumption based on this each day.
 ::
@@ -226,16 +223,16 @@ Only the year(s) represented by the data should be modelled, but if only
 past years are available GQF will recycle it for later years, offering
 the closest sensible match to time of week and time of year.
 
+
 Metabolism file
 ^^^^^^^^^^^^^^^
-
 The metabolism file controls:
 
 -  How much energy each the average person emits at each time of day
 -  The fraction of an area's workday population actually at work (and by
    extension the fraction of the residential population at home)
 
-The 'metabolism.csv' file contains a weekday, saturday and sunday
+The **metabolism.csv** file contains a weekday, saturday and sunday
 variant of this information, and copies for each daylight savings regime
 in the UK to account for changes in the summer.
 ::
@@ -244,6 +241,7 @@ in the UK to account for changes in the summer.
        profileFiles = 'N:\QF_London\GreaterQF_input\London\Profiles\\Metabolism.csv'
    /
 
+   
 Building diurnal profiles
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -280,7 +278,7 @@ Add information about transport
 
 The transport input data files are very detailed and therefore needs a
 lot of descriptive information in the &transportData section of
-DataSouces.nml
+**DataSources.nml**
 
 Shapefile
 ^^^^^^^^^
@@ -304,17 +302,18 @@ are provided by the shapefile
    provided for each road link
 -  vehicle\_AADT available: AADT is broken down by vehicle type for each
    road link
-
-   &transportData
-    ! Vector data containing all road segments for study area
-    shapefiles = 'C:\path\to\data\LAEI2013_AADTVKm_2013_link.shp'
-    startDates = '2008-01-01'
-    epsgCodes = 27700
-    featureIds = 'OBJECTID' 
-    ! What data is available for each road segment in this shapefile? 1 = Yes; 0 = No
-    speed_available = 1                 ! Speed data. If not available then default values from parameters file are used
-    total_AADT_available = 1            ! Total annual average daily total (AADT: total vehicles passing over each segment each day)
-    vehicle_AADT_available = 1          ! AADT available for specific vehicle types
+   ::
+      &transportData
+        ! Vector data containing all road segments for study area
+        shapefiles = 'C:\path\to\data\LAEI2013_AADTVKm_2013_link.shp'
+        startDates = '2008-01-01'
+        epsgCodes = 27700
+        featureIds = 'OBJECTID' 
+        ! What data is available for each road segment in this shapefile? 1 = Yes; 0 = No
+        speed_available = 1                 ! Speed data. If not available then default values from parameters file are used
+        total_AADT_available = 1            ! Total annual average daily total (AADT: total vehicles passing over each segment each day)
+        vehicle_AADT_available = 1          ! AADT available for specific vehicle types
+      /
 
 The rest of the section tells GQF which attributes to use for various
 aspects of the traffic data, and what different kinds of roads are
@@ -383,29 +382,31 @@ total volume of traffic each day.
 Run GQF
 ~~~~~~~
 
-Under UMEP > Processor > Urban Energy Balance, choose GQf (GreateRQF)
+Under *UMEP > Processor > Urban Energy Balance*, choose *Anthropogenic heat - GQf (GreaterQF)*
 
 This loads the model interface dialog box:
-          .. figure:: /images/Gqf_dialog.png
 
-              ```to do```
+.. figure:: /images/Gqf_dialog.png
+    :align: center
+    
+    The GQF dialog
 
 Choose configuration files and output folder
 ++++++++++++++++++++++++++++++++++++++++++++
 
 Working from the top of the dialog box to the bottom...
 
-#. Click the … buttons in the “Configuration and raw input data” panel
-   to browse to the parameters.nml and DataSources.nml files. A pop-up
+#. Click the … buttons in the *Configuration and raw input data* panel
+   to browse to the **parameters.nml** and **DataSources.nml** files. A pop-up
    error message will warn of any problems inside the files.
-#. **Output path:** A folder in which the model outputs will be stored.
-   It is **strongly recommended** that a new folder is used each time.
-#. Click **Prepare input data using Data Sources** button. This may be a
+#. *Output path:* A folder in which the model outputs will be stored.
+   It is *strongly recommended* that a new folder is used each time.
+#. Click *Prepare input data using Data Sources* button. This may be a
    time-consuming step: It matches the various inputs to each output
    area. Where output areas and input shapes are not identical, it also
    splits population or energy use across output areas based on their
    overlapping fractions.
-#. Once this step is complete, the **“available at**:” box will become
+#. Once this step is complete, the *available at:* box will become
    populated. This folder contains the disaggregated data needed to run
    the model.
 
@@ -422,74 +423,73 @@ Choose a start date of 11 May 2015, using the start and end date boxes,
 then select “Run”.
 
     .. figure:: /images/Gqf_timerange.png
+        :align: center
 
-        ```to do```
-
-
-
+        Date range section of the GQF interface
 
 Visualise results
 ~~~~~~~~~~~~~~~~~
 
-Once the model run this is finished, press “visualise outputs” to view
+Once the model run this is finished, press *visualise outputs* to view
 some of the model results to open the visualisation tool.
 
 Create emissions maps at noon
 +++++++++++++++++++++++++++++
 
-Use the visualisation tool to create a map of all the QF components at
+Use the visualisation tool to create a map of all the Q\ :sub:`F` components at
 noon (11:00-12:00 UTC) on May 11 by selecting that time and pressing
-“Add to canvas”. This may take a moment to process. Close the
+*Add to canvas*. This may take a moment to process. Close the
 visualisation took and return to the main canvas to inspect the four new
 layers that have appeared.
 
-Each layer corresponds to a different QF component:
+Each layer corresponds to a different Q\ :sub:`F` component:
 
 -  **Metab**: Metabolism
 -  **TransTot**: Total from all road transport sources
--  **AllTot**: Total QF from all emissions
+-  **AllTot**: Total Q\ :sub:`F` from all emissions
 -  **BldTot**: Total building emissions
 
 De-selecting a layer in the Layers panel removes it from view.
 
-Leaving just AllTot(total QF) visible, there isn’t much structure in the
+Leaving just *AllTot* (total Q\ :sub:`F` ) visible, there isn’t much structure in the
 colours.
 
     .. figure:: /images/525px-Gqf_totalqf_map.png
+          :align: center
 
-          Total QF at Noon on May 11
-
-
-
+          Total Q\ :sub:`F` at Noon on May 11
 
 Add some contrast to it by choosing a different colour scale:
 
-Right-click the Qf layer, go to Properties > Style, change the colour
+Right-click the Q\ :sub:`F` layer, go to *Properties > Style*, change the colour
 ramp to “Reds” and choose Mode: Natural Breaks (Jenks). This shows much
 more structure, although the grid borders are distracting. These can be
 removed by double-clicking the colour levels and choosing a border
 colour the same as the fill colour.
 
     .. figure:: /images/525px-Gqf_totalqf_map_recoloured.png
+          :align: center
 
-          Total QF at Noon on May 11
+          Total Q\ :sub:`F` at Noon on May 11
 
 The roads have a very different spatial pattern to buildings, so these
 can also be visualised by selecting the TransTot layer and re-colouring
 accordingly:
 
     .. figure:: /images/525px-Gqf_transportqf_map_recoloured.png
+            :align: center
 
-            GQF Transport QF at 1200 UTC
+            GQF Transport Q\ :sub:`F` at 1200 UTC
 
-Plot a time series of QF in the centre of the city
-++++++++++++++++++++++++++++++++++++++++++++++++++
+Plot a time series of Q\ :sub:`F` in the centre of the city
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 A time series can be shown for any of the output areas. To identify one
 of interest, zoom into the city centre, choose the selection tool
       .. figure:: /images/LQF_Tutorial_SelectFeatureIcon.png
+          :align: center
 
-          ```to do```
+          Select tool in QGIS
 
 
 and click an output area of
@@ -497,27 +497,29 @@ interest.
 
 This turns yellow. Right-click it and select the option that comes up.
       .. figure:: /images/LQF_Tutorial_SelectFeature.png
+          :align: center
 
-          ```to do```
+          Information for selected grid
 
 
 Information about the output area
 then appears on the left, with the ID shown. Make a note of this.
     .. figure:: /images/LQF_Tutorial_FeatureInfo.png
+        :align: center
 
-        ```to do```
+        Identify Results panel in QGIS
 
 
 Return to the visualisation tool, choose output area 5448 and click
-“show plot”. Time series of each QF component then appear for the week.
+*show plot*. Time series of each Q\ :sub:`F` component then appear for the week.
 Note the lower traffic activity and different behaviours on Saturday and
 Sunday, when people are expected to not be at work.
     .. figure:: /images/600px-Gqf_timeseries_default.png
+        :align: center
 
-        ```to do```
+        Time series of Q\ :sub:`F` emissions
 
-      Time series of QF emissions
-      
+
 Tutorials 2: Refining GQF results
 ---------------------------------
 
@@ -527,7 +529,7 @@ show how they are used:
 Tutorial 2a: Add a public holiday
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The parameters.nml file contains three entries related to public
+The **parameters.nml** file contains three entries related to public
 holidays, which are treated as the second day of the weekend by GQF:
 
 -  Use\_UK\_holidays: Religious and recurrent public holidays from the
@@ -543,11 +545,9 @@ into the parameters.nml file. The model is then run as in Tutorial 1,
 and the resulting time series in output area 5448 is shown below:
 
     .. figure:: /images/600px-Gqf_timeseries_default.png
+          :align: center
 
           Time series with extra public holiday on May 13
-
-
-
 
 Compared against the results from Tutorial 1, the curve on May 13 in
 each sub-plot now resembles May 17 (a Sunday) rather than the weekdays
@@ -567,13 +567,13 @@ or more of them can be removed at model run-time using the checkboxes:
 
 In this example, the week of 11 to 18 May 2015 is again modelled but the
 “Sensible” and “Wastewater” checkboxes are un-ticked. This means the
-modelled QF will contain only latent heat. The resulting time series in
+modelled Q\ :sub:`F` will contain only latent heat. The resulting time series in
 area 5448 is shown below:
 
       .. figure:: /images/525px-Gqf_timeseries_holiday_nosensible.png
+            :align: center
 
             Time series with only latent and wastewater contributions included, and extra public holiday on May 13
-
 
 
 The emissions are far lower than those in Tutorial 2a, showing how
