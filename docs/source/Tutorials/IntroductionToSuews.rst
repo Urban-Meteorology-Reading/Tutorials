@@ -57,7 +57,7 @@ SUEWS can be run in a number of different ways:
 SUEWS Simple Objectives
 -----------------------
 
-This tutorial introduces SUEWS and demonstartes how to run the model within `UMEP (Urban
+This tutorial introduces SUEWS and demonstrates how to run the model within `UMEP (Urban
 Multi-scale Environmental Predictor) <http://umep-docs.readthedocs.io/Getting_Started.html>`__. `Help with
 Abbreviations <http://umep-docs.readthedocs.io/en/latest/Abbreviations.html>`__.
 
@@ -140,7 +140,7 @@ Simple application of SUEWS.
 +-----------------------+-----------------------+-----------------------+
 | Bare soil             | Bare soil – non       |                       |
 |                       | vegetated but water   |                       |
-|                       | can infilitrate       |                       |
+|                       | can infiltrate        |                       |
 +-----------------------+-----------------------+-----------------------+
 | Water                 | River, ponds,         |                       |
 |                       | swimming pools,       |                       |
@@ -156,7 +156,7 @@ Simple application of SUEWS.
 |                       | there has been rain   | permitted/occurring   |
 |                       | recently then it will | then this is not      |
 |                       | be longer before      | critical as the model |
-|                       | irrigiation occurs.   | will calculate from   |
+|                       | irrigation occurs.    | will calculate from   |
 |                       |                       | this point going      |
 |                       |                       | forward.              |
 +-----------------------+-----------------------+-----------------------+
@@ -164,7 +164,7 @@ Simple application of SUEWS.
 | temperature (°C)      | and anthropogenic     |                       |
 |                       | heat flux             |                       |
 +-----------------------+-----------------------+-----------------------+
-| Soil mositure status  | This will influence   | If close to 100%      |
+| Soil moisture status  | This will influence   | If close to 100%      |
 | (%)                   | both evaporation and  | then there is plenty  |
 |                       | runoff processes      | of water for          |
 |                       |                       | evaporation but also  |
@@ -288,25 +288,20 @@ three files:
    units.
 
 If you open these files in a text editor. To understand the header
-variables read the `SUEWS
-manual <http://suews-docs.readthedocs.io>`__.
+variables read the `SUEWS manual <http://suews-docs.readthedocs.io>`__.
 
 Sensitivity to land surface fractions
 -------------------------------------
-
-.. figure:: /images/SUEWSIntro_LCFs.png
-   :alt:  none 
-   :align: right
-    
-   Land cover fractions (click on image to make it larger). 
 
 The previous results are for a densely build-up area in
 London, UK. In order to test the sensitivity of SUEWS to some surface
 properties you can think about changing some of the surface properties
 in the SUEWS Simple. For example, change the land cover fraction by:
 
-#. Change the land cover fractions as seen in the figure. Feel free to
-   select other values as long as all the fractions *add up to 1.0*.
+#. Change the land cover fractions by reducing paved by 20% (0.230) and increase
+   grass surface by 20% (0.229). You can also change other values as long as all 
+   the fractions *add up to 1.0*. If you change the building of tree fractions you also
+   need to change the PAI fraction in the two top panels as they are connected to land cover fractions.
 #. Save the output to a different folder by selecting *output folder*.
 #. Click *Run*.
 
@@ -353,7 +348,7 @@ References
    suburban and woodland areas of southern England. `Env Pollution 198,
    186-200 <http://dx.doi.org/10.1016/j.envpol.2014.12.031>`__
 
-Authors this document: Lindberg and Grimmond (2016)
+Authors of this document: Lindberg and Grimmond (2016)
 
 Definitions and Notation
 ------------------------

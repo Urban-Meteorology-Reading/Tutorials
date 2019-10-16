@@ -6,8 +6,7 @@ Urban Energy Balance - SUEWS Advanced
 Introduction
 ------------
 
-The tutorial :ref:`IntroductionToSuews` should be completed first. This tutorial is designed to work with QGIS 2.18.
-
+The tutorial :ref:`IntroductionToSuews` should be completed first. This tutorial is designed to work with QGIS 3.x.
 
 Objectives
 ~~~~~~~~~~
@@ -21,7 +20,7 @@ Overview of steps
 
 #. Initially become familiar with SUEWS advanced which is a
    plugin that makes it possible for you to set all parameters that can
-   be manipulated in SUEWS as well as execute the model on mutiple grids (:ref:`SuewsSpatial`).
+   be manipulated in SUEWS as well as execute the model on multiple grids (:ref:`SuewsSpatial`).
 #. Derive new surface information
 #. Run the model
 
@@ -37,7 +36,8 @@ How to Run from the UMEP-plugin
    `RunControl.nml <http://suews-docs.readthedocs.io/en/latest/input_files/RunControl/RunControl.html>`__.
 #. Use the Input folder:
 
-   -  *C:/Users/your_user_name/.qgis2/python/plugins/UMEP/suewsmodel/Input*
+   *C:/Users/your_user_name/AppData/Roaming/QGIS/QGIS3/*
+   *profiles/default/python/plugins/UMEP/suewsmodel/Input/*
 
 #. Create or enter an **Output directory** of your choice.
 #. From the **Input folder** - confirm the data are in there.
@@ -91,9 +91,9 @@ Ordnance Survey and the LiDAR data.
 
 #. Open the geodatasets. Go to *Layer > Add layer > Add Raster Layer*.
    Locate the files you downloaded before (see above).
-#. A QGIS style file (.qml) is available for the land cover grid. It can
-   found in *C:\Users\your_user_name\.qgis2\python\plugins\UMEP\\
-   LandCoverReclassifier\\*. Load it in the *Layer > Properties > Style
+#. A QGIS style file (landcoverstyle.qml) is available for the land cover grid. It can
+   found in *C:/Users/your_user_name/AppData/Roaming/QGIS/QGIS3/profiles/*
+   *default/python/plugins/UMEP/LandCoverReclassifier*. Load it in the *Layer > Properties > Style
    > Style* (lower left) **Load file**.
 #. Click Apply before you close so that the names of the classes also
    load. You can also get the properties of a layer by right-click on a
@@ -103,7 +103,7 @@ Ordnance Survey and the LiDAR data.
    in the UMEP pre-processor to populate with the correct values
    suitable for the UMEP plugin environment.
 #. Now take a moment and investigate the different geodatasets. What is
-   the sparial (pixel) resolution? How is ground represented in the
+   the spatial (pixel) resolution? How is ground represented (what values) in the
    CDSM?
 
 Generating data from the geodatasets
