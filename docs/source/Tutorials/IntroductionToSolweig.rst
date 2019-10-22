@@ -381,7 +381,7 @@ balance modelling with SUEWS.
    
     .. figure:: /images/SOLWEIG_File_TreesKR.png
        :alt:  None
-       :width: 100%
+	   :width: 100%
        
        Location of the three new vegetation units.
 
@@ -392,7 +392,7 @@ balance modelling with SUEWS.
 
     .. figure:: /images/SOLWEIG_Treegeneratorsolweig.png
        :alt:  None
-       :width: 574px
+       :width: 411px
        
        The settings for the Tree Generator
 
