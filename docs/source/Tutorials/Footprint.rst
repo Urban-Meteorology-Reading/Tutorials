@@ -36,7 +36,7 @@ Initial Practical steps
 -  Start the QGIS software
 -  If not visible on the desktop use the **Start** button to find the
    software (i.e. Find QGIS under your applications)
--  Select **QGIS 2.18.x Desktop** (or the latest version installed). Do not use QGIS3 at this point.
+-  use QGIS3 
 
 When you open it on the top toolbar you will see **UMEP**.
 
