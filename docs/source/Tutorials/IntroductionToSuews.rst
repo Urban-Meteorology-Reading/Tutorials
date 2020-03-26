@@ -78,7 +78,7 @@ plugin see the `getting started <http://umep-docs.readthedocs.io/en/latest/Getti
 
 As UMEP is under development, some documentation may be missing and/or
 there may be instability. Please report any issues or suggestions to our
-`repository <https://bitbucket.org/fredrik_ucg/umep/>`__.
+`repository <https://github.com/UMEP-dev/UMEP>`__.
 
 SUEWS Model Inputs
 ------------------

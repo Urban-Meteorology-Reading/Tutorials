@@ -18,7 +18,7 @@ section in the UMEP manual.
 
 As UMEP is under constant development, some documentation may be missing
 and/or there may be instability. Please report any issues or suggestions
-to our `repository <https://bitbucket.org/fredrik_ucg/umep/>`__.
+to our `repository <https://github.com/UMEP-dev/UMEP>`__.
 
 Data for this exercise
 ~~~~~~~~~~~~~~~~~~~~~~

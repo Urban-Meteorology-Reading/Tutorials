@@ -229,6 +229,6 @@ Bottema (1995)
 
 Authors of this document: Kent, Grimmond (2016). Lindberg
 
-`UMEP Repository <https://bitbucket.org/fredrik_ucg/umep/>`__
+`UMEP Repository <https://github.com/UMEP-dev/UMEP>`__
 
 

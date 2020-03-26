@@ -40,7 +40,7 @@ Initial Practical steps
 -  Start the QGIS software
 -  *Windows:* If not visible on the desktop use the **Start** button to
    find the software (i.e. Find QGIS under your applications)
--  Select **QGIS 2.18 Desktop** (or the latest version installed). Do not use QGIS3 at this point.
+-  Select **QGIS 2.18 Desktop** (or the latest version installed). If you use QGIS3, the visualisation section will not be possible. HOwever, you can still do SEBE calcualtions.
 
 When you open it on the top toolbar you will see **UMEP**.
 
@@ -493,7 +493,7 @@ References
 -  Background work also comes from: UK (Ratti & Richens 1999), Sweden
    (Lindberg et al. 2015), Canada (Goodwin et al. 2009)
 
-In the `repository <https://bitbucket.org/fredrik_ucg/umep/>`__ of UMEP you can find the code and report bugs and other suggestions on future improvments.
+In the `repository <https://github.com/UMEP-dev/UMEP>`__ of UMEP you can find the code and report bugs and other suggestions on future improvments.
 
 Tips
 ----
@@ -521,11 +521,10 @@ Side there is a list of layers.
 
 -  The layer that is checked at the top of the list is the layer that is
    seen, If you want to see another layer you can either:
-
-#*Un-tick the layers above the one you are interested in and/or
-
-#*Move the layer you are interested in to the top of the list by
-dragging it.
+   
+	#. Un-tick the layers above the one you are interested in and/or
+	
+	#. Move the layer you are interested in to the top of the list by dragging it.
 
 You can save all of you work for different areas as a project – so you
 can return to it as whole.
@@ -540,4 +539,4 @@ You can change the *shading etc*. on different layers.
 -  Classify
 -  Numerous things can be modified from this point.
 
-`UMEP repository <https://bitbucket.org/fredrik_ucg/umep/>`__.
+`UMEP repository <https://github.com/UMEP-dev/UMEP>`__.

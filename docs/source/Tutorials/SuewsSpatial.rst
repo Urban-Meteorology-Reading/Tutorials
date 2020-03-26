@@ -33,7 +33,7 @@ of models which can predict and diagnose a range of meteorological processes.
    Overview of the climate service tool UMEP (from Lindberg et al. 2018)
 
 
-.. note:: This tutorial is currently designed to work with QGIS 2.18. It is recommended that you have a look at the tutorials :ref:`IntroductionToSuews` and :ref:`SuewsAdvanced` before you go through this tutorial.
+.. note:: This tutorial is currently designed to work with QGIS 2.18 but can be followed using QGIS version 3.x (some QGIS built-in tools have been moved). It is recommended that you have a look at the tutorials :ref:`IntroductionToSuews` and :ref:`SuewsAdvanced` before you go through this tutorial.
 
 
 Objectives
@@ -59,7 +59,7 @@ plugin see the `getting started <http://umep-docs.readthedocs.io/en/latest/Getti
 
 As UMEP is under development, some documentation may be missing and/or
 there may be instability. Please report any issues or suggestions to our
-`repository <https://bitbucket.org/fredrik_ucg/umep/>`__.
+`repository <https://github.com/UMEP-dev/UMEP>`__.
 
 
 Loading and analyzing the spatial data

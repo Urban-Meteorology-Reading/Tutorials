@@ -6,13 +6,11 @@ Urban Energy Balance - SUEWS and WUDAPT
 Introduction
 ------------
 
-.. note:: This tutorial is not ready for use. Work in progress.
-
 In this tutorial you will generate input data for the 
 `SUEWS <http://suews-docs.readthedocs.io>`__ model and simulate spatial 
 (and temporal) variations of energy exchanges within an area in New York City using local climate zones derived within the `WUDAPT <http://www.wudapt.org/>`__ project. The World Urban Database and Access Portal Tools project is a community-based project to gather a census of cities around the world.
 
-.. note:: This tutorial is currently designed to work with QGIS 2.18. It is strongly recommended that you goo through the :ref:`SuewsSpatial` tutorial before you go through this tutrial. 
+.. note:: This tutorial is currently designed to work with QGIS 2.18 but can be followed using QGIS version 3.x (some QGIS built-in tools have been moved). It is strongly recommended that you goo through the :ref:`SuewsSpatial` tutorial before you go through this tutrial. This tutorial is work in progress.
 
 
 Objectives
@@ -30,7 +28,7 @@ plugin see the `getting started <http://umep-docs.readthedocs.io/en/latest/Getti
 
 As UMEP is under development, some documentation may be missing and/or
 there may be instability. Please report any issues or suggestions to our
-`repository <https://bitbucket.org/fredrik_ucg/umep/>`__.
+`repository <https://github.com/UMEP-dev/UMEP>`__.
 
 
 Loading and analyzing the spatial data
