@@ -29,7 +29,7 @@ Data for this Tutorial
 
    Central Gothenburg study area (red square).
    
-Geodata covers a small area in central **Gothenburg, Sweden**. Data are projected in SWEREF99 1200 (EPSG:3007) which is a swedish national coordinate system.
+Geodata covers a small area in central **Gothenburg, Sweden**. Data are projected in SWEREF99 1200 (EPSG:3007) which is in the Swedish national coordinate system.
 
 :download:`Datasets for Gothenburg, Sweden </data/Goteborg_SWEREF99_1200.zip>`
 
@@ -94,7 +94,7 @@ This tool can do what it says, namely calculate gound shadow patterns based on a
 
      Settings for calculating ground shadows from buildings with 30 minute interval on June 21, 2020.
 
-When calulations are finished, a new layer has appeared in your QGIS project (**shadow_fraction_on_20200621**). This layer shows the fraction (0 to 1) of sunshine for all pixels in the raster. This layer is presented with a transparancy (*Global Opacity*) of 50%. You can change that under the *Transparency*-tab for the layer.
+When calculations are finished, a new layer has appeared in your QGIS project (**shadow_fraction_on_20200621**). This layer shows the fraction (0 to 1) of sunshine for all pixels in the raster. This layer is presented with a transparancy (*Global Opacity*) of 50%. You can change that under the *Transparency*-tab for the layer.
 
 - Change the *Global Opacity* to 100% for easier comparison later on.
 - Rename **shadow_fraction_on_20200621** to **shadow_fraction_on_20200621_buildings** by right-click on the layer in the *Layers*-panel and choose *Rename Layer*.
