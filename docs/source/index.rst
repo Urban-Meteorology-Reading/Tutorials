@@ -13,11 +13,11 @@ To help users getting started with UMEP, the community is working on
 setting up tutorials and instructions for different parts of the UMEP
 tool. The tutorials available are found in the table below.
 
-.. note:: One essential part when working with geodata in a GIS is to make sure that a common coordinate reference system (CRS) is used, both for the data itself and the current QGIS-project you are working in. For more info, see `here <https://docs.qgis.org/2.18/en/docs/gentle_gis_introduction/coordinate_reference_systems.html>`__. It is strongly recommended to reproject/transform all geodatasets into the same projected coordinate system before any processing starts as well using a CRS that is based on meters.
+.. note:: One essential part when working with geodata in a GIS is to make sure that a common coordinate reference system (CRS) is used, both for the data itself and the current QGIS-project you are working in. For more info, see `here <https://docs.qgis.org/3.10/en/docs/user_manual/working_with_projections/working_with_projections.html>`__. It is strongly recommended to reproject/transform all geodatasets into the same projected coordinate system before any processing starts as well using a CRS that is based on meters.
 
 
 .. list-table::
-   :widths: 13 18 22 35 12
+   :widths: 13 17 23 35 12
    :header-rows: 1
 
    * - Topic
@@ -25,6 +25,16 @@ tool. The tutorials available are found in the table below.
      - Name
      - Application
      - Location
+   * - Introducing UMEP - Daily shading
+     - Processor and Post-processor
+     - `DailyShading`
+     - Shadow patterns for pedestrians
+     - Gothenburg, Sweden
+   * - Solar Energy
+     - Pre-Processor, Processor and Post-processor
+     - `SEBE`
+     - Amount of solar energy received on building facets
+     - Gothenburg, Sweden; London, UK
    * - Source Area Footprint
      - Pre-Processor
      - `Footprint`
@@ -55,11 +65,6 @@ tool. The tutorials available are found in the table below.
      - `SUEWSWUDAPT_Beijing`
      - Making use of `WUDAPT <http://www.wudapt.org/>`__ local climate zones as well as `WATCH <http://www.eu-watch.org/>`__ meteorological forcing data in `SUEWS  <http://suews-docs.readthedocs.io>`__
      - Beijing, China
-   * - Solar Energy
-     - Pre-Processor, Processor and Post-processor
-     - `SEBE`
-     - Amount of solar energy received on building facets
-     - Gothenburg, Sweden; London, UK
    * - Outdoor thermal comfort
      - Pre-Processor, Processor and Post-processor
      - `IntroductionToSOLWEIG`
@@ -84,6 +89,8 @@ tool. The tutorials available are found in the table below.
    :maxdepth: 2
    :hidden:
 
+   Tutorials/DailyShading
+   Tutorials/SEBE
    Tutorials/Footprint
    Tutorials/IntroductionToSuews
    Tutorials/SuewsAdvanced
@@ -91,6 +98,6 @@ tool. The tutorials available are found in the table below.
    Tutorials/SuewsWUDAPT
    Tutorials/SUEWSWUDAPT_Beijing
    Tutorials/IntroductionToSolweig
-   Tutorials/SEBE
+
    Tutorials/LQF
    Tutorials/GQF

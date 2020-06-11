@@ -40,7 +40,7 @@ Initial Practical steps
 -  Start the QGIS software
 -  *Windows:* If not visible on the desktop use the **Start** button to
    find the software (i.e. Find QGIS under your applications)
--  Select **QGIS 2.18 Desktop** (or the latest version installed). If you use QGIS3, the visualisation section will not be possible. HOwever, you can still do SEBE calcualtions.
+-  Select **QGIS 3.10 Desktop** (or the latest version installed).
 
 When you open it on the top toolbar you will see **UMEP**.
 
