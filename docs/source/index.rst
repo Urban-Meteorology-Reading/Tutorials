@@ -35,11 +35,6 @@ tool. The tutorials available are found in the table below.
      - `SEBE`
      - Amount of solar energy received on building facets
      - Gothenburg, Sweden; London, UK
-   * - Source Area Footprint
-     - Pre-Processor
-     - `Footprint`
-     - Interpretation of eddy covariance flux source areas
-     - London, UK
    * - Urban energy balance
      - Processor
      - `IntroductionToSuews`
@@ -49,6 +44,11 @@ tool. The tutorials available are found in the table below.
      - Pre-Processor and Processor
      - `SUEWSAdvanced`
      - Energy, water and radiation fluxes for one location
+     - London, UK
+   * - Source Area Footprint
+     - Pre-Processor
+     - `Footprint`
+     - Interpretation of eddy covariance flux source areas
      - London, UK
    * - Urban energy balance
      - Pre-Processor, Processor and Post-processor
@@ -91,13 +91,12 @@ tool. The tutorials available are found in the table below.
 
    Tutorials/DailyShading
    Tutorials/SEBE
-   Tutorials/Footprint
    Tutorials/IntroductionToSuews
    Tutorials/SuewsAdvanced
+   Tutorials/Footprint
    Tutorials/SuewsSpatial
    Tutorials/SuewsWUDAPT
    Tutorials/SUEWSWUDAPT_Beijing
    Tutorials/IntroductionToSolweig
-
    Tutorials/LQF
    Tutorials/GQF

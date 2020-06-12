@@ -16,7 +16,7 @@ incorporate walls (Lindberg et al. 2015). This is of interest for a
 broad range of applications, for example solar energy potential and
 thermal comfort.
 
-SEBE is incorporated in `UMEP(Urban Multi-scale Environmental
+SEBE is incorporated in `UMEP (Urban Multi-scale Environmental
 Predictor) <http://umep-docs.readthedocs.io>`__, a plugin for
 `QGIS <http://www.qgis.org>`__. As SEBE was initially developed to
 estimate solar energy potential on building roofs, the Digital Surface
@@ -34,13 +34,11 @@ with seasons, with the effects of vegetation etc.
 Initial Practical steps
 -----------------------
 
--  If **QGIS** is not on your computer you will `need to install it <http://umep-docs.readthedocs.io/en/latest/Getting_Started.html>`__
--  Then install the `**UMEP** plugin <http://umep-docs.readthedocs.io/en/latest/Getting_Started.html>`__
-
+-  If **QGIS** and **UMEP** is not on your computer you will `need to install it <http://umep-docs.readthedocs.io/en/latest/Getting_Started.html>`__
 -  Start the QGIS software
 -  *Windows:* If not visible on the desktop use the **Start** button to
    find the software (i.e. Find QGIS under your applications)
--  Select **QGIS 3.10 Desktop** (or the latest version installed).
+-  Select **QGIS 3.12 Desktop** (or the latest version installed).
 
 When you open it on the top toolbar you will see **UMEP**.
 
@@ -50,20 +48,19 @@ When you open it on the top toolbar you will see **UMEP**.
 
    Location of SEBE in UMEP
 
--  Read through the section in the online
-   manual BEFORE using the model, so you are familiar with it’s operation and
-   terminology used.
+-  You are recommended to read through the section in the `online
+   manual <https://umep-docs.readthedocs.io/en/latest/processor/Solar%20Radiation%20Solar%20Energy%20on%20Building%20Envelopes%20(SEBE).html>`__ BEFORE using the model, so you are familiar with it’s operation and terminology used.
 
 Data for Tutorial
 ~~~~~~~~~~~~~~~~~
 
 .. figure:: /images/SEBE_Gothenburg.png
    :alt:  None
+   :align: center
    :width: 356px
 
    Central Gothenburg study area (red square).
-   The Open layers plugin in QGIS was used to generate
-   this snapshot.
+   The `QuickMapServices <http://plugins.qgis.org/plugins/quick_map_services/-plugin>`__ in QGIS was used to generate this snapshot.
 
 Geodata and meteorological data for **Gothenburg, Sweden**.
 
@@ -73,26 +70,26 @@ Geodata and meteorological data for **Gothenburg, Sweden**.
 Data requreiments:
 S: Spatial, M: Meteorological,
 
-.. list-table:: Input data and parameters
+.. list-table:: Input data and parameters found in the Gothenburg dataset
    :widths: 20 20 10 50
 
    * - **Name**
      - **Definition**
      - **Type**
      - **Description**
-   * - krbig_dsm.asc
+   * - DSM_KRbig.tif
      - Ground and building DSM
      - S
      - Raster dataset: derived from a 3D vector roof structure dataset and a digital elevation model (DEM)
-   * - krbig_cdsm.asc
+   * - CDSM_KRbig.asc
      - Vegetation canopy DSM
      - S
      - Raster dataset: drived from a LiDAR dataset
-   * - kr_buildings.shp
+   * - buildings.shp
      - Building footprint polygon layer
      - S
      - Vector dataset
-   * - GBG_typicalweatheryear_1977.txt
+   * - GBG_TMY_1977.txt
      - Meteorological forcing data
      - M
      - Meteorological data, hourly time resolution for 1977 Gothenburg, Sweden.
@@ -108,26 +105,14 @@ S: Spatial, M: Meteorological,
 Steps
 -----
 
-#. Start with the Gothenbrug data. If the data are zipped - unzip the data first.
+#. Start with the Gothenbrug data. The data are zipped - unzip the data first.
 #. Examine the geodata by adding the layers to your project.
-#. Use *Layer > Add Layer > Add Raster
-   Layer* to open the .asc raster files
-   and *Layer > Add Layer > Add Vector Layer*. The Vector layer is a
-   shape file which consists of multiple files. It is the
-   **kr_building.shp** that should be used to load the vector layer into
-   QGIS.
-#. You will need to indicate the co-ordinate system
-   (`CRS <https://docs.qgis.org/2.18/en/docs/gentle_gis_introduction/coordinate_reference_systems.html>`__)
-   that is associated with these data. If you look at the lower right
-   hand side you can see the CRS used in the current QGIS project.
+#. Use *Layer > Add Layer > Add Raster Layer* to open the .tif and .asc raster files and *Layer > Add Layer > Add Vector Layer*. The Vector layer is a shape file which consists of multiple files. It is the **building.shp** that should be used to load the vector layer into QGIS.
+#. You will need to indicate the coordinate reference system (`CRS <https://docs.qgis.org/3.10/en/docs/user_manual/working_with_projections/working_with_projections.html>`__) for the **CDSM_KRbig.asc** dataset.
 
-   -  You can use the filter to find this then.
-   -  Select SWEREF99 1200 as CRS and the files will load into the map
-      canvas.
-   -  Do this for all of the geodata files.
+    - Right-click on **CDSM_KRbig** and go to *Set CRS -> Set Layer CRS...*. Choose EPSG:3007. You can use the filter to search for the correct CRS. 
 
-#. Open the **meteorological file** in a text editor or in a spreadsheet
-   such as MS excel or LibreOffice (Open office).
+#. Open the meteorological (**GBG_TMY_1977.txt**) file in a text editor or in a spreadsheet such as MS excel or LibreOffice (Open office).
 
    -  Data file is formatted for the UMEP plugin (in general) and the
       SEBE plugin (in particular).
@@ -135,8 +120,7 @@ Steps
    -  Columns of interest are **kdown, kdiff and kdir**. These are
       related to shortwave radiation and give global, diffuse and direct
       radiation, respectively.
-   -  The meteorological file should be at least a year long, but
-      preferably multi-year.
+   -  The meteorological file should preferably be at least a year long. Multi-year data improves the solar energy estimation.
    -  One option is to use a `**typical meteorological
       year** <https://en.wikipedia.org/wiki/Typical_meteorological_year>`__
       as you will do in this tutorial
@@ -240,11 +224,11 @@ numbers to indicate they are not in use (e.g. -999).
 Preparing data for SEBE
 -----------------------
 
-SEBE plugin: located at *UMEP -> Processor -> Solar Energy -> Solar
-Energy on Building Envelopes (SEBE)* in the menu bar.
+SEBE plugin: located at *UMEP -> Processor -> Solar Energy -> Solar Energy on Building Envelopes (SEBE)* in the menu bar.
 
 .. figure:: /images/SEBE_SEBE1.png
    :alt: SEBE1.png
+   :align: center
    :width: 514px
 
    The interface for SEBE in UMEP
@@ -255,8 +239,8 @@ Energy on Building Envelopes (SEBE)* in the menu bar.
       `DSM <http://umep-docs.readthedocs.io/en/latest/Abbreviations.html>`__
       for the calculations in SEBE.
    -  Optionally **vegetation** (trees and bushes) can be included as
-      they can shadow buildings, walls and roofs reducing the potential
-      solar energy production
+      they can shadow ground, walls and roofs reducing the potential
+      solar energy production.
    -  Two vegetation DSMs are required when the Use vegetation DSMs is
       ticked:
 
@@ -265,8 +249,7 @@ Energy on Building Envelopes (SEBE)* in the menu bar.
       + One to describe the bottom, underneath the canopies (Vegetation Trunk Zone DSM).
 
       As Trunk Zone DSMs are very rare, an option to create this from the
-      canopy DSM is available. You can set the amount of light (shortwave radiation) that is
-      transmitted through the vegetation.
+      canopy DSM is available. You can set the amount of light (shortwave radiation) that is transmitted through the vegetation.
 
 #. Two raster datasets, height and wall aspect, are needed to calculate
    irradiance on building walls.
@@ -283,39 +266,30 @@ Energy on Building Envelopes (SEBE)* in the menu bar.
 #. Wall data are created with the `UMEP plugin - **Wall Height and
    Aspect** <http://umep-docs.readthedocs.io/en/latest/pre-processor/Urban%20Geometry%20Wall%20Height%20and%20Aspect.html>`__:
 
-   -  This uses a 3 by 3 pixels kernel minimum filter where the four
-      cardinal points (N, W, S,E) are investigated. The pixels just
-      ‘inside’ the buildings are identified and give values to indicate
-      they are a building edge. The aspect algorithm originates from a
-      linear filtering technique (Goodwin et al. 2009). It identifies
-      the linear features plus (a new addition) the aspect of the
-      identified line. Other more accurate techniques include using a
-      vector building layer and spatially relating this to the wall
-      pixels.
+   - The wall height algorithm uses a 3 by 3 pixels kernel minimum filter where the four cardinal points (N, W, S,E) are investigated. The pixels just ‘inside’ the buildings are identified and give values to indicate they are a building edge. The aspect algorithm originates from a linear filtering technique (Goodwin et al. 2009). It identifies the linear features plus (a new addition) the aspect of the identified line. Other more accurate techniques include using a vector building layer and spatially relating this to the wall pixels.
 
-#. UMEP -> Pre-Processor -> Urban Geometry -> Wall Height and Aspect.
-#. Close the SEBE plugin and open the Wall and Height and Aspect plugin
-#. Use your ground and building DSM as input
+#. Close the SEBE plugin and open the Wall and Height and Aspect plugin (*UMEP -> Pre-Processor -> Urban Geometry -> Wall Height and Aspect*).
+#. Use your ground and building DSM as input.
 #. Tick the option to Calculate wall aspect.
-#. Create a folder in your Documents folder called e.g. SEBETutorial
+#. Create a folder in your Documents folder called e.g. SEBETutorial.
 #. Use this to save the result.
-#. Name your new raster datasets aspect and height, respectively.
-#. Tick: Add result to project and click OK.
+#. Name your new raster datasets wallaspect and wallheight, respectively.
+#. Tick: **Add roof and ground irradiance...** and click **OK**.
 
 Running the model
 -----------------
 
 Now you have all data ready to run the model.
 
-.. figure:: /images/SEBE_SEBEnoVeg.png
+.. figure:: /images/SEBE_SEBEnoVeg.jpg
    :alt:  Settings for running SEBE without vegetation.
 
    Example of settings for running SEBE without vegetation.
 
 #. First run the model *without* including vegetation.
 
-   -  Open the SEBE-plugin again
-   -  Make the setting according to the figure to the LHS
+   -  Open the SEBE-plugin again.
+   -  Make the setting according to the figure above.
    -  Save your results in a subfolder (**NoVeg**) of **SEBETutorial**.
    -  The model takes some time to calculate irradiance on all the
       surfaces.
@@ -326,8 +300,10 @@ Now you have all data ready to run the model.
 
    -  Save your result in a subfolder called **Veg**.
 
-Irradiance on building envelopes (alternatively see the tips below – currrently better)
----------------------------------------------------------------------------------------
+Irradiance on building envelopes
+--------------------------------
+
+.. note:: Currently, this section works only on a windows computer. **3D Visualisation for Mac and Linux currently not working properly**
 
 To determine the irradiance on building walls:
 
@@ -345,8 +321,6 @@ To determine the irradiance on building walls:
 #. Click again to finish.
 #. Click Visualise. Now you should be able to see the results in 3D.
 
-**3D Visualisation for Mac currently not working properly**
-
 Use the **Profile tool**, which is a plugin for QGIS, to see the range of values along a transect.
 
 #. Plugins > Profile tool > Terrain profile.
@@ -357,7 +331,7 @@ Use the **Profile tool**, which is a plugin for QGIS, to see the range of values
 
 #. If this is not installed you will need to install it from official
    QGIS-plugin reporistory (Plugins > Manage and Install Plugins).
-
+   
 Solar Energy Potential
 ----------------------
 
@@ -372,29 +346,37 @@ In order to obtain the solar energy potential for a specific building:
 
       where the slope (*S*\ :sub:`i`) of the raster pixel should be in radians (1 deg = pi/180 rad).
 
-**To make a slope raster:**
+**To create a slope raster:**
 
-#. *Raster > Terrain analysis > Slope*. If the tool is missing, Go to
-   *Manage and Install Plugins* and activate (*Raster Terrain Analysis
-   Plugin*)
-#. Use the DSM for elevation layer
+#. *Raster > Analysis > Slope*.
+#. Use the DSM for elevation layer.
 #. Create the slope z factor =1 - area
 
-.. figure:: /images/SEBE_Slope.png
+.. figure:: /images/SEBE_SlopeQGIS3.jpg
    :alt: None
+   :width: 75%
+   :align: center
 
-   The Slope tool in QGIS
+   The Slope tool in QGIS3
 
 Use the raster menu: *Raster> Raster Calculator*.
 
 #. To determine the area after you have removed the wall area from the
    buildings.
-#. Enter the equation indicated.
+#. Enter the equation indicated in the figure below.
+
+    .. figure:: /images/SEBE_RasterCalculator.jpg
+        :alt: None
+        :width: 100%
+        :align: center
+
+        The RasterCalculator in QGIS3. Click on image for enlargement.
+
 #. To visualize where to place solar panels the amount of energy
    received needs to be cost effective. As irradiance below 900 kWh is
    considered to be too low for solar energy production (*Per Jonsson
    personal communication Tyréns Consultancy*), pixel cells lower than
-   900 can be filtered out (Figure LHS). Transparency – allows you to
+   900 can be filtered out (Figure below). Transparency – allows you to
    make visible above a threshold of interest.
 
    -  Right-click on the Energyyearroof-layer and go to **Properties**
@@ -402,10 +384,7 @@ Use the raster menu: *Raster> Raster Calculator*.
    -  Add a custom transparency (green cross) where values between 0 and
       900 are set to 100% transparency.
 
-.. figure:: /images/SEBE_RasterCalculator.png
-   :alt: None
 
-   The RasterCalculator in QGIS
 
 Irradiance map with values less than 900 kWh filtered out
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -415,12 +394,11 @@ statistics tool:
 
 #. Raster > Zonal statistics.
 
-   -  Use the roof area raster layer (**energyPerm2_slope65_RoofArea**)
-      created before and use **kr_building.shp** as the polygon layer to
+   -  Use the roof area raster layer (**energy_per_m2_slope65_roofarea**)
+      created before and use **building.shp** as the polygon layer to
       calculate as your zone layer. Make sure that you calculate sum
       statistics.
-
-#. On your building layer – Right click Open Attribute Table
+#. On your building layer – Right click *Open Attribute Table*
 #. Or use the identifier to click a building (polygon) of interest to
    see the statistics you have just calculated
 
@@ -438,12 +416,10 @@ A second GIS data set is available for the Covent Garden area in London
 
 #. Close the Gothenburg data (it may be easiest to completely close QGIS
    and re-open).
-#. Download from
-   `1 <https://drive.google.com/open?id=0B7D8dqiua0uzWWhwWmU4c1lnTG8>`__
-#. Add the Covent Garden data
-#. Extract the data to a directory
-#. Load the Raster data (DEM, DSM) files (as you did before)
-#. Shadows
+#. Download from the link given in the beginning of this tutorial.
+#. Extract the data to a directory.
+#. Load the Raster data files (as you did before).
+#. Additional analysis: Shadows
 
    -  `UMEP -> Processor -> Solar Radiation -> Daily Shadow
       pattern <http://umep-docs.readthedocs.io/en/latest/processor/Solar%20Radiation%20Daily%20Shadow%20Pattern.html>`__
@@ -505,7 +481,7 @@ format <http://umep-docs.readthedocs.io/en/latest/pre-processor/Meteorological%2
 
 -  Plugin is found at *UMEP > Pre-Processor > Meteorological data >Prepare Existing data*.
 
-Plugin to **visualize data** in 3D: called
+Plugin to **visualize horisontal distributed data** in 3D: called
 `Qgis2Threejs <https://media.readthedocs.org/pdf/qgis2threejs/docs-release/qgis2threejs.pdf>`__.
 
 -  Available for download from the official repository Plugins -> Manage
@@ -516,7 +492,7 @@ Plugin to **visualize data** in 3D: called
 
    3D visualisation with Qgis2Threejs over Convent Garden
 
-TIFF (TIF) and ASC are **raster data file formats** In the left Hand
+TIFF (TIF) and ASC are *raster data file formats*. In the left Hand
 Side there is a list of layers.
 
 -  The layer that is checked at the top of the list is the layer that is
@@ -529,12 +505,12 @@ Side there is a list of layers.
 You can save all of you work for different areas as a project – so you
 can return to it as whole.
 
--  Project > Save as
+-  *Project > Save as...*
 
 You can change the *shading etc*. on different layers.
 
--  Right Click on the Layer name Properties > Style > Singlebandpseudo
-   color
+-  Right Click on the Layer name *Properties > Style > Singlebandpseudo
+   color*
 -  Choose the color band you would like.
 -  Classify
 -  Numerous things can be modified from this point.
