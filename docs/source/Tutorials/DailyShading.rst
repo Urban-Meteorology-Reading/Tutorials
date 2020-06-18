@@ -1,7 +1,7 @@
 .. _DailyShading:
 
-Introducing UMEP - Daily shading
-================================
+A First QGIS and UMEP activity
+==============================
 
 Introduction
 ------------
