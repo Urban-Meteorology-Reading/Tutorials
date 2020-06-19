@@ -110,7 +110,7 @@ Steps
 #. Use *Layer > Add Layer > Add Raster Layer* to open the .tif and .asc raster files and *Layer > Add Layer > Add Vector Layer*. The Vector layer is a shape file which consists of multiple files. It is the **building.shp** that should be used to load the vector layer into QGIS.
 #. You will need to indicate the coordinate reference system (`CRS <https://docs.qgis.org/3.10/en/docs/user_manual/working_with_projections/working_with_projections.html>`__) for the **CDSM_KRbig.asc** dataset.
 
-    - Right-click on **CDSM_KRbig** and go to *Set CRS -> Set Layer CRS...*. Choose EPSG:3007. You can use the filter to search for the correct CRS. 
+    - Right-click on **CDSM_KRbig** and go to *Set CRS > Set Layer CRS...*. Choose EPSG:3007. You can use the filter to search for the correct CRS. 
 
 #. Open the meteorological (**GBG_TMY_1977.txt**) file in a text editor or in a spreadsheet such as MS excel or LibreOffice (Open office).
 
@@ -121,13 +121,13 @@ Steps
       related to shortwave radiation and give global, diffuse and direct
       radiation, respectively.
    -  The meteorological file should preferably be at least a year long. Multi-year data improves the solar energy estimation.
-   -  One option is to use a `**typical meteorological
-      year** <https://en.wikipedia.org/wiki/Typical_meteorological_year>`__
+   -  One option is to use a `typical meteorological
+      year <https://en.wikipedia.org/wiki/Typical_meteorological_year>`__
       as you will do in this tutorial
 
 **Variables included in the meteorological data file:**
 
-**No.** indicates the column the file is in. **Use** indicates if it is *R – required* or
+**No.** indicates the column of the variable in the file. **Use** indicates if it is *R – required* or
 *O- optional* (in this application) or *N- Not used in this
 application*. All columns must be present but can be filled with
 numbers to indicate they are not in use (e.g. -999).
@@ -222,10 +222,10 @@ numbers to indicate they are not in use (e.g. -999).
 
 Preparing data for SEBE
 -----------------------
-Required inuputs
+Required inputs
 ~~~~~~~~~~~~~~~~
 
-SEBE plugin: located at *UMEP -> Processor -> Solar Energy -> Solar Energy on Building Envelopes (SEBE)* in the menu bar.
+SEBE plugin: located at *UMEP > Processor > Solar Energy > Solar Energy on Building Envelopes (SEBE)* in the menu bar.
 
 .. figure:: /images/SEBE_SEBE1.png
    :alt: SEBE1.png
@@ -234,9 +234,9 @@ SEBE plugin: located at *UMEP -> Processor -> Solar Energy -> Solar Energy on Bu
 
    The interface for SEBE in UMEP
 
-#. *Top frame*: for input data for the SEBE calculations.
+#. Building and ground DSM's.
 
-   -  Critical for the calcullations in SEBE is the **building and ground**
+   -  Critical for the calculations in SEBE is the **building and ground**
       `DSM <http://umep-docs.readthedocs.io/en/latest/Abbreviations.html>`__.
    -  Optionally **vegetation** (trees and bushes) can be included as
       they can shadow ground, walls and roofs reducing the potential
@@ -253,10 +253,7 @@ SEBE plugin: located at *UMEP -> Processor -> Solar Energy -> Solar Energy on Bu
 
 #. Two raster datasets, height and wall aspect, are needed to calculate
    irradiance on building walls.
-
-   -  The average albedo (one value is used for all surfaces) can be
-      changed.
-
+#. The average albedo (one value is used for all surfaces) can be changed.
 #. The
    `UTC <https://en.wikipedia.org/wiki/Coordinated_Universal_Time>`__
    offset is needed to accurately estimate the sun position; positive
@@ -266,11 +263,11 @@ SEBE plugin: located at *UMEP -> Processor -> Solar Energy -> Solar Energy on Bu
 
 Pre-processing: wall height and aspect
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-#. Wall data is created with the `UMEP plugin - **Wall Height and
-   Aspect** <http://umep-docs.readthedocs.io/en/latest/pre-processor/Urban%20Geometry%20Wall%20Height%20and%20Aspect.html>`__:
+#. Wall data is created with the `UMEP plugin - Wall Height and
+   Aspect <http://umep-docs.readthedocs.io/en/latest/pre-processor/Urban%20Geometry%20Wall%20Height%20and%20Aspect.html>`__:
 
    - The wall height algorithm uses a 3 by 3 pixels kernel minimum filter where the four cardinal points (N, W, S,E) are investigated. The pixels just ‘inside’ the buildings are identified and give values to indicate they are a building edge. The aspect algorithm originates from a linear filtering technique (Goodwin et al. 2009). It identifies the linear features plus (a new addition) the aspect of the identified line. Other more accurate techniques include using a vector building layer and spatially relating this to the wall pixels.
-#. Close the SEBE plugin and open the Wall and Height and Aspect plugin (*UMEP -> Pre-Processor -> Urban Geometry -> Wall Height and Aspect*).
+#. Close the SEBE plugin (if open) and open the Wall and Height and Aspect plugin (*UMEP > Pre-Processor > Urban Geometry > Wall Height and Aspect*).
 #. Use your ground and building DSM (in this case *DSM_KRbig*) as input.
 #. Tick the option to Calculate wall aspect.
 #. Create a folder in your *Documents* folder called e.g. **SEBETutorial**.
@@ -291,7 +288,7 @@ Now you have all data ready to run the model.
 
 #. First run the model *without* including vegetation.
 
-   -  Open the SEBE-plugin again.
+   -  Open the SEBE-plugin.
    -  Configure the settings according to the figure above.
    -  Save your results in a subfolder (**NoVeg**) of **SEBETutorial**.
    -  The model takes some time to calculate irradiance on all the
@@ -419,7 +416,7 @@ A second GIS data set is available for the Covent Garden area in London
 #. Load the Raster data files (as you did before).
 #. Additional analysis: Shadows
 
-   -  `UMEP -> Processor -> Solar Radiation -> Daily Shadow
+   -  `UMEP > Processor > Solar Radiation > Daily Shadow
       pattern <http://umep-docs.readthedocs.io/en/latest/processor/Solar%20Radiation%20Daily%20Shadow%20Pattern.html>`__
    -  Allows you to calculate the shadows for a particular time of day
       and `Day of
@@ -482,7 +479,7 @@ format <http://umep-docs.readthedocs.io/en/latest/pre-processor/Meteorological%2
 Plugin to **visualize horisontal distributed data** in 3D: called
 `Qgis2Threejs <https://media.readthedocs.org/pdf/qgis2threejs/docs-release/qgis2threejs.pdf>`__.
 
--  Available for download from the official repository Plugins -> Manage
+-  Available for download from the official repository Plugins > Manage
    and Install Plugins.
 
 .. figure:: /images/SEBE_CoventGarden.png
