@@ -24,20 +24,15 @@ Overview of steps
 #. Derive new surface information
 #. Run the model
 
-How to Run from the UMEP-plugin
--------------------------------
-
-**How to run SUEWS Advanced:**
+How to run SUEWS Advanced from the UMEP-plugin
+----------------------------------------------
 
 #. Open the plugin which is located at *UMEP -> Processor -> Urban Energy
    Balance -> Urban Energy Balance, SUEWS/BLUEWS (Advanced)*. This has
    most of the general settings (e.g. activate the snow module etc.)
    which are related to
    `RunControl.nml <http://suews-docs.readthedocs.io/en/latest/input_files/RunControl/RunControl.html>`__.
-#. Use the Input folder:
-
-   *C:/Users/your_user_name/AppData/Roaming/QGIS/QGIS3/*
-   *profiles/default/python/plugins/UMEP/suewsmodel/Input/*
+#. Use the Input folder: *C:/Users/your_user_name/AppData/Roaming/QGIS/QGIS3/ profiles/default/python/plugins/UMEP/suewsmodel/Input/*
 
 #. Create or enter an **Output directory** of your choice.
 #. From the **Input folder** - confirm the data are in there.
@@ -53,7 +48,7 @@ How to Run from the UMEP-plugin
 
    
 Sensitivity Test
-~~~~~~~~~~~~~~~~
+----------------
 
 The default dataset included in **Suews Simple** has parameters
 calculated from a `source area
@@ -69,7 +64,7 @@ and extract the files to a suitable location where you both have reading
 and writing capabilities.
 
 Data for the tutorial can be downloaded
-`here <https://github.com/Urban-Meteorology-Reading/Urban-Meteorology-Reading.github.io/tree/master/other%20files/DataSmallAreaLondon.zip>`__
+`here <https://github.com/Urban-Meteorology-Reading/Urban-Meteorology-Reading.github.io/tree/master/other%20files/DataSmallAreaLondon.zip>`__.
 
 .. list-table::
 
@@ -80,7 +75,7 @@ Data for the tutorial can be downloaded
    * - Vegetation DSM 
      - CDSM_LondonCity_1m.tif (m agl)
    * - DEM (digital elevation model) 
-     - DEM_LondonCity_1m.tif (masl)
+     - DEM_LondonCity_1m.tif (m asl)
    * - Land cover 
      - LC_londoncity_UMEP_32631
  
@@ -90,12 +85,12 @@ originate from a LiDAR dataset. The land cover data is a mixture of
 Ordnance Survey and the LiDAR data.
 
 #. Open the geodatasets. Go to *Layer > Add layer > Add Raster Layer*.
-   Locate the files you downloaded before (see above).
-#. A QGIS style file (landcoverstyle.qml) is available for the land cover grid. It can
+   Locate the files you downloaded before (see above). You can also *drag and drop* the data from the *Browser*-panel to the *Layer*-panel in QGIS.
+#. A QGIS style file (**landcoverstyle.qml**) is available for the land cover grid. It can
    found in *C:/Users/your_user_name/AppData/Roaming/QGIS/QGIS3/profiles/*
-   *default/python/plugins/UMEP/LandCoverReclassifier*. Load it in the *Layer > Properties > Style
-   > Style* (lower left) **Load file**.
-#. Click Apply before you close so that the names of the classes also
+   *default/python/plugins/UMEP/LandCoverReclassifier*. Load it in the *Layer > Properties > Symbology
+   > Style* (lower left) **Load Style**.
+#. Click **Apply** before you close so that the names of the classes also
    load. You can also get the properties of a layer by right-click on a
    layer in the Layers-window.
 #. If you have another land cover dataset you can use the
@@ -107,16 +102,15 @@ Ordnance Survey and the LiDAR data.
    CDSM?
 
 Generating data from the geodatasets
-------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-#. Make certain that you have the geodatafiles open. The file at the top
+#. Make certain that you have the four geodatafiles open. The file at the top
    (left hand side (LHS)) of the list is the one that is shown in the
    centre (figure below). You can swap their order using the LHS box.
 #. Open SUEWS Simple.
 #. Begin by adding the test dataset again.
-#. Update the building morphology parameters (top left panel in Suews
-   Simple).
-#. To generate new values, click on Open tool.
+#. You will now update the building morphology parameters (top left panel in Suews
+   Simple) by generate new values from the geodata. Click **Open tool...**
 #. This is another plugin within UMEP that can be used to generate
    morphometric parameters
 
@@ -138,13 +132,16 @@ Generating data from the geodatasets
 #. Generate a study area. Use 500 m search distance, 5 degree interval
    and click Generate study area.
 #. A circular area will be considered. Enter the DSM and DEM files (i.e.
-   the files you currently have in the viewer)
+   the files you currently have in the viewer).
+#. Use **Kanda et al. (2013)** as *Roughness calculation method* and **build** as *File prefix*.
 #. Click Run.
 
-   .. figure:: /images/SUEWSAdvanced_SUEWS_MorphometricParametersBuild.png
+   .. figure:: /images/SUEWSAdvanced_SUEWS_MorphometricParametersBuild.jpg
+      :width: 75%
+      :align: center
       :alt:  None
 
-      Figure 3. Settings for Image Morphometric Parameters for buildings.
+      Settings for Image Morphometric Parameters for buildings.
 	  
 #. In the folder you specified two additional files will be present (i)
    isotropic - averages of the morphometric parameters (ii) anisotropic
@@ -161,7 +158,9 @@ Generating data from the geodatasets
    time Tick in the box Raster DSM (only buildings) exist.
 #. Enter the CDSM as your Raster DSM (only buildings).
 
-   .. figure:: /images/SUEWSAdvanced_SUEWS_MorphometricParametersVeg.png
+   .. figure:: /images/SUEWSAdvanced_SUEWS_MorphometricParametersVeg.jpg
+      :width: 75%
+      :align: center
       :alt:  None
 
       Settings for Image Morphometric Parameters for vegetation
@@ -175,31 +174,12 @@ Generating data from the geodatasets
    for the first run you made.
 #. Now you are ready to run the model. Click Run.
 
-If you get an error window (figure below). This error is generate by SUEWS as the sum
-of the land cover fractions is not 1. If you calculate carefully, one
-part of a thousand is missing (this is probably a rounding error during
-data extraction). To fix this issue: add 0.001 to e.g. bare soil. Now
-run again.
 
-.. figure:: /images/SUEWSAdvanced_Modelrununsuccessful.png
-   :alt:  None
-
-   Possible error window from running SUEWS with new settings.
-
-
-.. figure:: /images/SUEWSAdvanced_SuewsSimpleGeodata.png
-   :alt:  None
-   :width: 100%
-
-   The settings for running with geodata derived parameters (old version of GUI).
-   
-
-You are now familiar with the Suews Simple plugin. Your next task is to
+You are now familiar with the full capabilities of the Suews Simple plugin. Your next task is to
 choose another location within the geodataset domain, generate data and
-run the model. If you choose an area where the fraction of buildings and
-paved surfaces are low, consider lowering the population density to get
-more realistic model outputs. Compare the results for the different
-area.
+run the model. Try to choose an area where the fraction of buildings and
+paved surfaces are low and consider lowering the population density to get
+more realistic model outputs. Compare the results for the different area.
 
 References
 ----------
@@ -243,86 +223,4 @@ References
    suburban and woodland areas of southern England. `Env Pollution 198,
    186-200 <http://dx.doi.org/10.1016/j.envpol.2014.12.031>`__
 
-Authors of this document: Lindberg and Grimmond (2016)
-
-Definitions and Notation
-------------------------
-
-To help you find further information about the acronyms they are
-classified by **T**: Type of term: **C**: computer term, **S**: science
-term, **G**: GIS term.
-
-+------------------+-----------------+-----------------+-----------------+
-|                  | Definition      | T               | Reference/Comme |
-|                  |                 |                 | nt              |
-+==================+=================+=================+=================+
-| DEM              | Digital         | G               |                 |
-|                  | elevation model |                 |                 |
-+------------------+-----------------+-----------------+-----------------+
-| DSM              | Digital surface | G               |                 |
-|                  | model           |                 |                 |
-+------------------+-----------------+-----------------+-----------------+
-| FAI (λ\ :sub:`F`)| Frontal area    | S               | Grimmond and    |
-|                  | index           |                 | Oke (1999),     |
-|                  |                 |                 | their figure 2  |
-+------------------+-----------------+-----------------+-----------------+
-| GUI              | Graphical User  | C               |                 |
-|                  | Interface       |                 |                 |
-+------------------+-----------------+-----------------+-----------------+
-| LAI              | Leaf Area Index | S               |                 |
-+------------------+-----------------+-----------------+-----------------+
-| PAI (λ\ :sub:`P`)| Plan area index | S               |                 |
-+------------------+-----------------+-----------------+-----------------+
-| png              | Portable        | C               | format for      |
-|                  | Network         |                 | saving          |
-|                  | Graphics        |                 | plots/figures   |
-+------------------+-----------------+-----------------+-----------------+
-| QGIS             |                 | G               | www.qgis.org    |
-+------------------+-----------------+-----------------+-----------------+
-| SUEWS            | Surface Urban   | S               |                 |
-|                  | Energy and      |                 |                 |
-|                  | Water Balance   |                 |                 |
-|                  | Scheme          |                 |                 |
-+------------------+-----------------+-----------------+-----------------+
-| Tif              | Tagged Image    | C               | format for      |
-|                  | File Format     |                 | saving          |
-|                  |                 |                 | plots/figures   |
-+------------------+-----------------+-----------------+-----------------+
-| UI               | user interface  | C               |                 |
-+------------------+-----------------+-----------------+-----------------+
-| UMEP             | Urban           | C               |                 |
-|                  | Multi-scale     |                 |                 |
-|                  | Environmental   |                 |                 |
-|                  | predictor       |                 |                 |
-+------------------+-----------------+-----------------+-----------------+
-| z\ :sub:`0`      | Roughness       | S               | Grimmond and    |
-|                  | length for      |                 | Oke (1999)      |
-|                  | momentum        |                 |                 |
-+------------------+-----------------+-----------------+-----------------+
-| z\ :sub:`d`      | Zero plane      | S               | Grimmond and    |
-|                  | displacement    |                 | Oke (1999)      |
-|                  | length for      |                 |                 |
-|                  | momentum        |                 |                 |
-+------------------+-----------------+-----------------+-----------------+
-
-Further explanation
--------------------
-
-Morphometric Methods to determine Roughness parameters:
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-For more and overview and details see `Grimmond and Oke
-(1999) <http://journals.ametsoc.org/doi/abs/10.1175/1520-0450(1999)038%3C1262%3AAPOUAD%3E2.0.CO%3B2>`__.
-This uses the height and spacing of roughness elements (e.g. buildings,
-trees) to model the roughness parameters. UMEP has tools for doing this:
-*Pre-processor -> Urban Morphology*
-
-Source Area Model
-~~~~~~~~~~~~~~~~~
-
-For more details see Kotthaus and Grimmond (2014b). The Kormann and
-Meixner (2001) model is used to determine the probable area that a
-turbulent flux measurement was impacted by. This is a function of wind
-direction, stability, turbulence characteristics (friction velocity,
-variance of the lateral wind velocity) and roughness parameters.
 
