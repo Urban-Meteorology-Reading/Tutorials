@@ -420,7 +420,7 @@ A second GIS data set is available for the Covent Garden area in London
       pattern <http://umep-docs.readthedocs.io/en/latest/processor/Solar%20Radiation%20Daily%20Shadow%20Pattern.html>`__
    -  Allows you to calculate the shadows for a particular time of day
       and `Day of
-      Year <http://disc.sci.gsfc.nasa.gov/julian_calendar.html>`__.
+      Year <https://landweb.modaps.eosdis.nasa.gov/browse/calendar.html>`__.
 
 Questions for you to explore with UMEP:SEBE
 -------------------------------------------
