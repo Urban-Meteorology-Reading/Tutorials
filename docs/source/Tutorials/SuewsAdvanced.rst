@@ -42,7 +42,9 @@ How to run SUEWS Advanced from the UMEP-plugin
 #. You can now close the **SUEWS/BLUEWS (Advanced)**-plugin again.
 
 .. figure:: /images/SUEWSAdvanced_SuewsAdvanced.png
-   :alt: Interface for SUEWS Advanced version.
+   :width: 75%
+   :align: center
+   :alt:  None
 
    Interface for SUEWS Advanced version.
 
@@ -115,8 +117,9 @@ Generating data from the geodatasets
    morphometric parameters
 
    .. figure:: /images/SUEWSAdvanced_QGIS_SuewsSimple.png
+      :width: 100%
+      :align: center
       :alt:  None
-      :width: 605px
 
       QGIS where Suews Simple and Image Morphometric Parameters (Point) is opened.
 

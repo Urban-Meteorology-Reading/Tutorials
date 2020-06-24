@@ -80,7 +80,11 @@ tool. The tutorials available are found in the table below.
      - `LQF`
      - Anthropogenic heat modelling in London using LQF (uses the LUCY methodology)
      - London, UK
-
+   * - Spatial data
+     - Pre-Processor/FUSION
+     - `LidarProcessing`
+     - Generating UMEP input data from a LiDAR point cloud
+     - Gothenburg, Sweden
 
 
 
@@ -100,3 +104,4 @@ tool. The tutorials available are found in the table below.
    Tutorials/IntroductionToSolweig
    Tutorials/LQF
    Tutorials/GQF
+   Tutorials/LidarProcessing
