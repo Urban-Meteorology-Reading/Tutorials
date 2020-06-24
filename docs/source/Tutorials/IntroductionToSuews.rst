@@ -25,8 +25,7 @@ for a broad range of applications. For example, for climate services
 
 SUEWS can be run in a number of different ways:
 
-#. Within UMEP via the `Simple <https://umep-docs.readthedocs.io/en/latest/processor/Urban%20Energy%20Balance%20Urban%20Energy%20Balance%20(SUEWS,%20simple).html>`__ selection. This is useful for becoming
-   familiar with the model.
+#. Within UMEP via the `Simple <https://umep-docs.readthedocs.io/en/latest/processor/Urban%20Energy%20Balance%20Urban%20Energy%20Balance%20(SUEWS,%20simple).html>`__ selection. This is useful for familiarising yourself with the model.
 #. Within UMEP via the `Advanced <https://umep-docs.readthedocs.io/en/latest/processor/Urban%20Energy%20Balance%20Urban%20Energy%20Balance%20(SUEWS.BLUEWS,%20advanced).html>`__ selection. This can be used to exploit
    the full capabilities of the model.
 #. Via the `UMEP for Processing <https://umep-docs.readthedocs.io/en/latest/UMEPforProcessing.html>`__-plugin.
@@ -40,10 +39,10 @@ Tutorial Objectives
 
 This tutorial introduces SUEWS and demonstrates how to run the model within UMEP. 
 
-Steps
-~~~~~
+Overview
+~~~~~~~~
 
-#. An introduction to the model and how it is designed (above).
+#. An introduction to the model and how it is designed (above)
 #. Different kinds of input data that are needed to run the model
 #. How to run the model
 #. How to examine the model output
@@ -64,7 +63,7 @@ SUEWS Model Inputs
 
 Details of the model inputs and outputs are provided in the `SUEWS
 manual <http://suews-docs.readthedocs.io>`__. As this tutorial is
-concerned with a **simple application** only the most critical
+concerned with a **simple application**, only the most critical
 parameters are shown. Other versions allow many other parameters to be
 modified to more appropriate values if applicable. The table below
 provides an overview of the parameters that can be modified in the
@@ -161,7 +160,7 @@ How to Run SuewsSimple from the UMEP-plugin
 -------------------------------------------
 
 #. Open SuewsSimple from *UMEP -> Processor -> Urban Energy Balance ->
-   Urban Energy Balance, SUEWS (Simple)*. The `GUI <https://umep-docs.readthedocs.io/en/latest/Abbreviations.html>`__ that opens looks quite
+   Urban Energy Balance (SUEWS, Simple)*. The `GUI <https://umep-docs.readthedocs.io/en/latest/Abbreviations.html>`__ that opens looks quite
    extensive but it is actually not that complicated to start a basic
    model run (figure below). Some additional information about the plugin is
    found in the left window. As you can read, a **test dataset** from
@@ -187,7 +186,7 @@ How to Run SuewsSimple from the UMEP-plugin
    any location of your choice. Also, make notes on the settings such as
    *Soil moisture state* etc.
 #. Do a model run and explore the results by clicking **Run**. Once the calculations are done, some of
-   the results are shown in two summary plots (if **Show basic plots of model reults** is ticked in).
+   the results are shown in two summary plots (if **Show basic plots of model reults** is ticked).
 
 .. figure:: /images/SUEWSIntro_SuewsSimplefig1.jpg
     :alt:  none
@@ -203,8 +202,8 @@ How to Run SuewsSimple from the UMEP-plugin
     Model output from SUEWS (simple) using the default settings and data (click on image to make it larger). 
 
     
-The graphs in the upper figure are the monthly mean energy (left) and water
-balance (right). The lower graphs show the radiation fluxes,
+The graphs in the upper figure are the monthly mean energy (left) and water (right)
+balance. The lower graphs show the radiation fluxes,
 energy fluxes, and water related outputs throughout the year. This plot
 includes a lot of data and it might be difficult to examine it in
 detail.
@@ -245,7 +244,7 @@ London, UK. In order to test the sensitivity of SUEWS to some surface
 properties you can think about changing some of the surface properties
 in the SUEWS Simple. For example, change the land cover fraction by:
 
-#. Change the land cover fractions by reducing paved by 20% (0.230) and increase
+#. Reducing paved by 20% (0.230) and increase
    grass surface by 20% (0.230). You can also change other values as long as all 
    the fractions *add up to 1.0*. If you change the building or tree fractions you also
    need to change the `PAI <https://umep-docs.readthedocs.io/en/latest/Abbreviations.html>`__ fraction in the two top panels as they are connected to land cover fractions.
@@ -256,7 +255,7 @@ in the SUEWS Simple. For example, change the land cover fraction by:
     - Open SUEWS Analyzer.
     - Load the **RunControl.nml** found in your output folder for a specific run.
     - In the left panel (**Plot data**), Specify grid no. 1 and Year to investigate 2011.
-    - Tick in *Plot basic data* and click **Plot**.
+    - Tick *Plot basic data* and click **Plot**.
 
 
 References
