@@ -1,4 +1,4 @@
-.. _LidarProcessing
+.. _LidarProcessing:
 
 Generating UMEP input data from a LiDAR point cloud
 ===================================================
@@ -375,7 +375,7 @@ This creates a 3 band raster image. You need to add it to your project (**Intens
 
 Bare soil and water
 ~~~~~~~~~~~~~~~~~~~
-This is about as far as you can come with a point cloud like this. Bare soil is actially not present within this domain and water has usually no returns back and can therefore be hard to classify. There are techniques but not within the scope of this tutorial. One possibility is to use a vector dataset (e.g. Figure 1) and extract e.g. water from that dataset and incorporate into the land cover data. 
+This is about as far as you can come with a point cloud like this. Bare soil is actially not present within this domain and water has usually no returns back and can therefore be hard to classify. There are techniques but not within the scope of this tutorial. One possibility is to use a vector dataset (e.g. Figure 1) and extract e.g. water from that dataset and incorporate into the land cover data. Another would be to exploit the fact that lider returns are almost absent from water bodies (lakes, ponds etc.). You can examine **gvc.las** in the FUSION viewer and spot a small pond in the center of the study area. However, you will also see other areas with no returns from e.g. metal roofs etc. This make deriving water bodies abit of a challange, but not impossible. You cna use e.g. *FillNoData* in the processing toolbox and try to derive water.
 
 Merging into on land cover grid
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

@@ -81,7 +81,7 @@ tool. The tutorials available are found in the table below.
      - Anthropogenic heat modelling in London using LQF (uses the LUCY methodology)
      - London, UK
    * - Spatial data
-     - Pre-Processor/FUSION
+     - Pre-Processor and `FUSION/LDV <http://forsys.cfr.washington.edu/fusion.html.>`__
      - `LidarProcessing`
      - Generating UMEP input data from a LiDAR point cloud
      - Gothenburg, Sweden
