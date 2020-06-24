@@ -29,11 +29,12 @@ of models which can predict and diagnose a range of meteorological processes.
 
 .. _ref_F1:
 .. figure:: /images/SUEWSIntro_UMEP_overview.png
+   :align: center
    
    Overview of the climate service tool UMEP (from Lindberg et al. 2018)
 
 
-.. note:: This tutorial is currently designed to work with QGIS 2.18 but can be followed using QGIS version 3.x (some QGIS built-in tools have been moved). It is recommended that you have a look at the tutorials :ref:`IntroductionToSuews` and :ref:`SuewsAdvanced` before you go through this tutorial.
+.. note:: It is recommended that you have a look at the tutorials :ref:`IntroductionToSuews` and :ref:`SuewsAdvanced` before you go through this tutorial.
 
 
 Objectives
@@ -41,13 +42,13 @@ Objectives
 
 To perform and analyse energy exchanges within a small area on Manhattan, NYC.
 
-Steps to be preformed
-~~~~~~~~~~~~~~~~~~~~~
+Steps
+~~~~~
 
 #. Pre-process the data and create input datasets for the SUEWS model
 #. Run the model
 #. Analyse the results
-#. Perform simple mitigation measures to see how it affects the model results (optional)
+#. Perform simple mitigation measures to see how it affects the model results
 
 
 Initial Steps
@@ -56,10 +57,6 @@ Initial Steps
 UMEP is a Python plugin used in conjunction with
 `QGIS <http://www.qgis.org>`__. To install the software and the UMEP
 plugin see the `getting started <http://umep-docs.readthedocs.io/en/latest/Getting_Started.html>`__ section in the UMEP manual.
-
-As UMEP is under development, some documentation may be missing and/or
-there may be instability. Please report any issues or suggestions to our
-`repository <https://github.com/UMEP-dev/UMEP>`__.
 
 
 Loading and analyzing the spatial data
@@ -122,9 +119,9 @@ The land cover grid comes with a specific QGIS style file.
 - Right-click on the land cover layer (**landcover_2010_nyc**) and choose *Properties*. Down to the left you see a *Style*-button. Choose *Load Style* and open **landcoverstyle.qml** and click OK.
 - Make only your land cover class layer visible to examine the spatial variability of the different land cover classes.
 
-The land cover grid has already been classified into the seven different classes used in most UMEP applications (see `Land Cover Reclassifier <http://umep-docs.readthedocs.io/en/latest/pre-processor/Urban%20Land%20Cover%20Land%20Cover%20Reclassifier.html>`__). If you have a land cover dataset that is not UMEP formatted you can use the *Land Cover Reclassifier* found at *UMEP > Pre-processor > Urban Land Cover > Land Cover Reclassifier* in the menubar to reclassify your data.
+The land cover grid has already been classified into the seven different classes used in most UMEP applications (see `Land Cover Reclassifier <http://umep-docs.readthedocs.io/en/latest/pre-processor/Urban%20Land%20Cover%20Land%20Cover%20Reclassifier.html>`__). If you have a land cover dataset that is not UMEP formatted you can use the *Land Cover Reclassifier* found at *UMEP > Pre-processor > Urban Land Cover > Land Cover Reclassifier* in the menu-bar to reclassify your data.
 
-Furthermore, a polygon grid (500 m x 500 m) to define the study area and individual grids is included (Grid_500m.shp). Such a grid can be produced directly in QGIS (e.g. *Vector > Research Tools > Vector Grid*) or an external grid can be used.
+Furthermore, a polygon grid (500 m x 500 m) to define the study area and individual grids is included (Grid_500m.shp). Such a grid can be produced directly from the *Processing Toolbox* in QGIS (*Create Grid*) or an external grid can be used.
 
 - Load the vector layer **Grid_500m.shp** into your QGIS project.
 - In the *Style* tab in layer *Properties*, choose a *Simple fill* with a *No Brush* fill style to be able to see the spatial data within each grid.
@@ -276,7 +273,6 @@ The meteorological dataset used in this tutorial (**MeteorologicalData_NYC_2010.
 - Open MetDataPreprocessor (*UMEP> Pre-Processor -> Meteorological Data > Prepare existing data*).
 - Load **MeteorologicalData_NYC_2010.txt** and make the settings as shown below. Name your new dataset **NYC_metdata_UMEPformatted.txt**.
 
-
 .. figure:: /images/SUEWSSpatial_MetPreprocessor.png
    :alt:  none
    :width: 100%
@@ -285,7 +281,6 @@ The meteorological dataset used in this tutorial (**MeteorologicalData_NYC_2010.
 
 - Close the Metdata preprocessor and open your newly fomatted datset in a text editor of your choice. Now you see that the forcing data is structured into the UMEP pre-defined format.
 - Close your text file and move on to the next section of this tutorial.
-
 
 Preparing input data for the SUEWS model
 ----------------------------------------
@@ -300,7 +295,7 @@ A key capability of UMEP is to facilitate preparation of input data for the vari
 
    The dialog for the SUEWS Prepare plugin (click for a larger image).
 
-Here you can see the various settings that can be modified. You will focus on the *Main Settings* tab where the mandatory settings are chosen. The other tabs include the settings for e.g. different land cover classes, human activities etc.
+Here you can see the various settings that can be modified. You will focus on the *Main Settings*-tab where the mandatory settings are chosen. The other tabs include the settings for e.g. different land cover classes, human activities etc.
 
 There are 10 frames included in the *Main Settings* tab where 8 need to be filled in for this tutorial:
 
@@ -313,7 +308,7 @@ There are 10 frames included in the *Main Settings* tab where 8 need to be fille
 #. **Daylight savings and UTC**
 #. **Initial conditions**
 
-The two optional frames (*Land use fractions* and *Wall area*) should be used if the ESTM model is used to estimate the storage energy term (Delta Q\ :sub:`S`). In this tutorial we use the *OHM* modelling scheme so these two tabs can be ignored for now.
+The two optional frames (*Land use fractions* and *Wall area*) should be considered if the ESTM model is used to estimate the storage energy term (Delta Q\ :sub:`S`). In this tutorial we use the *OHM* modelling scheme so these two tabs can be ignored for now.
 
 - Close *SUEWS Prepare*
 
@@ -363,10 +358,9 @@ Population density
 ~~~~~~~~~~~~~~~~~~
 Population density will be used to estimate the anthropogenic heat release (Q\ :sub:`F`) in SUEWS. There is a possibility to use both night-time and daytime population densities to make the model more dynamic. You have two different raster grids for night-time (**pop_nighttime_perha**) and daytime (**pop_daytime_perha**), respectively. This time you will make use of QGIS built-in function to to acquire the population density for each grid.
 
-- Go to *Plugins > Manage and Install Plugins* and make sure that the *Zonal statistics plugin* is ticked. This is a build-in plugin which comes with the QGIS installation.
-- Close the *Plugin manager* and open *Raster > Zonal Statistics > Zonal Statistics*.
-- Choose your **pop_daytime_perha** layer as **Raster layer** and your **Grid_500m** and polygon layer. Use a *Output column prefix* of **PPday** and chose only to calculate *Mean*. Click OK.
-- Run the tool again but this time use the night-time dataset.
+- In the *Processing Toolbox*, search for *Zonal Statistics*. Open the tool.
+- Choose your **pop_daytime_perha** layer as **Raster band** and your **Grid_500m** and polygon layer. Use a *Output column prefix* of **PPday** and chose only to calculate *Mean*. Click OK.
+- Run the tool again but this time use the night-time dataset (**PPnight**).
 
 SUEWS Prepare
 ~~~~~~~~~~~~~
