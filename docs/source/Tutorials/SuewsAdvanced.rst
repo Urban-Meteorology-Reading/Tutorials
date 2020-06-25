@@ -28,7 +28,7 @@ How to run SUEWS Advanced from the UMEP-plugin
 ----------------------------------------------
 
 #. Open the plugin which is located at *UMEP -> Processor -> Urban Energy
-   Balance -> Urban Energy Balance, SUEWS/BLUEWS (Advanced)*. This has
+   Balance -> Urban Energy Balance (SUEWS/BLUEWS, Advanced)*. This has
    most of the general settings (e.g. activate the snow module etc.)
    which are related to
    `RunControl.nml <http://suews-docs.readthedocs.io/en/latest/input_files/RunControl/RunControl.html>`__.
