@@ -62,7 +62,7 @@ models <http://umep-docs.readthedocs.io/en/latest/pre-processor/Urban%20Morpholo
 Now you will explore the differences in fluxes using the default
 settings or using input parameters from the geodata included in the test
 datasets available for this tutorial. Download the zip-file (see below)
-and extract the files to a suitable location where you both have reading
+and extract the files to a suitable location where you have both reading
 and writing capabilities.
 
 Data for the tutorial can be downloaded
@@ -93,8 +93,8 @@ Ordnance Survey and the LiDAR data.
    *default/python/plugins/UMEP/LandCoverReclassifier*. Load it in the *Layer > Properties > Symbology
    > Style* (lower left) **Load Style**.
 #. Click **Apply** before you close so that the names of the classes also
-   load. You can also get the properties of a layer by right-click on a
-   layer in the Layers-window.
+   load. You can also get the properties of a layer by right-clicking on a
+   layer in the *Layers*-window.
 #. If you have another land cover dataset you can use the
    `LandCoverReclassifier <http://umep-docs.readthedocs.io/en/latest/pre-processor/Urban%20Land%20Cover%20Land%20Cover%20Reclassifier.html>`__
    in the UMEP pre-processor to populate with the correct values
@@ -107,12 +107,12 @@ Generating data from the geodatasets
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 #. Make certain that you have the four geodatafiles open. The file at the top
-   (left hand side (LHS)) of the list is the one that is shown in the
-   centre (figure below). You can swap their order using the LHS box.
-#. Open SUEWS Simple.
+   of the *layers* window is the one that is shown on the
+   canvas (figure below). You can swap their order using the *layers* window.
+#. Open *SUEWS Simple*.
 #. Begin by adding the test dataset again.
 #. You will now update the building morphology parameters (top left panel in Suews
-   Simple) by generate new values from the geodata. Click **Open tool...**
+   Simple) by generating new values from the geodata. Click **Open tool...**
 #. This is another plugin within UMEP that can be used to generate
    morphometric parameters
 
@@ -125,19 +125,19 @@ Generating data from the geodatasets
 
 #. First, clear the map canvas from your two other plugin windows, e.g.
    as figure above.
-#. If you use the default test data in SUEWS Simple - you can overwrite
+#. If you use the default test data in *SUEWS Simple* - you can overwrite
    is as you go.
 #. Locate the eddy covariance tower position on the Strand building,
    King's College London. To find the position, consult Figure 1 (KSS)
    in `Kotthaus and Grimmond
    (2014) <http://www.sciencedirect.com/science/article/pii/S2212095513000503>`__.
-#. Use Select point on canvas and put a point at that location (left).
+#. Use Select point on canvas and put a point at that location.
 #. Generate a study area. Use 500 m search distance, 5 degree interval
-   and click Generate study area.
-#. A circular area will be considered. Enter the DSM and DEM files (i.e.
+   and click *Generate study area*. A circular area will be considered.
+#. Enter the DSM and DEM files (i.e.
    the files you currently have in the viewer).
 #. Use **Kanda et al. (2013)** as *Roughness calculation method* and **build** as *File prefix*.
-#. Click Run.
+#. Click *Run*.
 
    .. figure:: /images/SUEWSAdvanced_SUEWS_MorphometricParametersBuild.jpg
       :width: 75%
@@ -150,16 +150,17 @@ Generating data from the geodatasets
    isotropic - averages of the morphometric parameters (ii) anisotropic
    - values for each wind sector you specified (5 degrees).
 #. Close this plugin
-#. Click on Fetch file from... in the building morphology panel
+#. Click on *Fetch file from...* in the building morphology panel.
 #. Choose the isotropic file (just generated).
 #. Do the same for vegetation (upper left panel, right). See figure below.
 #. Instead of locating the point again you can use the existing point.
 #. You still need to generate a separate study area for the vegetation
    calculation.
-#. Examine the CDSM (vegetation file) in your map canvas. As you can
+#. Examine the **CDSM** (vegetation file) in your map canvas. As you can
    see, this data has no ground heights (ground = 0). Therefore, this
-   time Tick in the box Raster DSM (only buildings) exist.
-#. Enter the CDSM as your Raster DSM (only buildings).
+   time Tick the box *Raster DSM (only buildings) exist*.
+#. Enter the *CDSM* as your *Raster DSM (only 3D objects)*.
+#. Click *Run*.
 
    .. figure:: /images/SUEWSAdvanced_SUEWS_MorphometricParametersVeg.jpg
       :width: 75%
@@ -172,17 +173,16 @@ Generating data from the geodatasets
    morphology dataset and land cover dataset are large. You can ignore
    this for now since the land cover dataset also will change.
 #. Repeat the same procedure for land cover as you did for buildings and vegetation but instead using the Land Cover
-   Fraction (Point) plugin.
-#. Enter the meteorological file, Year etc. This should be the same as
-   for the first run you made.
-#. Now you are ready to run the model. Click Run.
+   Fraction (Point) plugin. Use **lc** as the *File prefix*
+#. Enter the meteorological file, Year etc. This should be the same as the first run you made.
+#. Now you are ready to run the model. Click *Run*.
 
 
 You are now familiar with the full capabilities of the Suews Simple plugin. Your next task is to
 choose another location within the geodataset domain, generate data and
 run the model. Try to choose an area where the fraction of buildings and
-paved surfaces are low and consider lowering the population density to get
-more realistic model outputs. Compare the results for the different area.
+paved surfaces are low. Consider lowering the *Population density* to get
+more realistic model outputs. Compare the results for the different areas.
 
 References
 ----------
