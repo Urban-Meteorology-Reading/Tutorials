@@ -1,7 +1,7 @@
 .. _LidarProcessing:
 
-Generating UMEP input data from a LiDAR point cloud
-===================================================
+Spatial data - Generating UMEP input data from a LiDAR point cloud
+==================================================================
 
 .. note:: This tutorial is making use of `FUSION/LDV <http://forsys.cfr.washington.edu/fusion.html.>`__ which makes it restricted to Windows OS only.
 
@@ -415,8 +415,6 @@ Lindberg, F. and Grimmond, C. (2011) Nature of vegetation and building
 morphology characteristics across a city: Influence on shadow patterns
 and mean radiant temperatures in London. `Urban Ecosystems 14:4, 617-634. <https://link.springer.com/article/10.1007/s11252-011-0184-5>`__
 
-Link to data:
-
-https://drive.google.com/file/d/0B31bjOSjDDdxME5vd1VMS25IZjg/view
+**Link to data**: https://drive.google.com/file/d/0B31bjOSjDDdxME5vd1VMS25IZjg/view
 
 

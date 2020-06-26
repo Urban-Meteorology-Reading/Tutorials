@@ -81,6 +81,11 @@ tool. The tutorials available are found in the table below.
      - Anthropogenic heat modelling in London using LQF (uses the LUCY methodology)
      - London, UK
    * - Spatial data
+     - Pre-Processor
+     - `DSMGenerator`
+     - Generating DSMs using `Open Street Map <https://www.openstreetmap.org/>`__ data
+     - Gothenburg, Sweden (World)
+   * - Spatial data
      - Pre-Processor and `FUSION/LDV <http://forsys.cfr.washington.edu/fusion.html.>`__
      - `LidarProcessing`
      - Generating UMEP input data from a LiDAR point cloud
@@ -104,4 +109,6 @@ tool. The tutorials available are found in the table below.
    Tutorials/IntroductionToSolweig
    Tutorials/LQF
    Tutorials/GQF
+   Tutorials/DSMGenerator
    Tutorials/LidarProcessing
+
