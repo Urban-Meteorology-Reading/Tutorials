@@ -19,7 +19,7 @@ require not only meteorological data but also information about the
 activities that occur in the area of interest (e.g. agriculture,
 population, road and infrastructure, and socio-economic variables).
 
-This tutorial makes use of local high resolution detailed spatial data. If this kind of data are unavailable, other datasets such as local climate zones (LCZ) from the `WUDAPT <http://www.wudapt.org/>`__ database could be used. The tutorial `SUEWSWUDAPT` is available if you want to know more about using LCZs in SUEWS. However, it is strongly recommended to go through this tutorial before moving on to the WUDAPT/SUEWS tutorial.
+This tutorial makes use of local high resolution detailed spatial data. If this kind of data is unavailable, other datasets such as local climate zones (LCZ) from the `WUDAPT <http://www.wudapt.org/>`__ database could be used. The tutorial `SUEWSWUDAPT` is available if you want to know more about using LCZs in SUEWS. However, it is strongly recommended to go through this tutorial before moving on to the WUDAPT/SUEWS tutorial.
 
 Model output may be needed in many formats depending on a users’ needs.
 Thus, the format must be useful, while ensuring the science included
@@ -42,8 +42,8 @@ Objectives
 
 To perform and analyse energy exchanges within a small area on Manhattan, NYC.
 
-Steps
-~~~~~
+Overview of Steps
+~~~~~~~~~~~~~~~~~
 
 #. Pre-process the data and create input datasets for the SUEWS model
 #. Run the model
@@ -62,7 +62,7 @@ plugin see the `getting started <http://umep-docs.readthedocs.io/en/latest/Getti
 Loading and analyzing the spatial data
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-All the geodata used in this tutorial are from open access sources, primarily from the New York City. Information about the data are found in the table below.
+All the geodata used in this tutorial is from open access sources, primarily from New York City. Information about the data is found in the table below.
 
 .. note:: You can download the all the data from `here <https://github.com/Urban-Meteorology-Reading/Urban-Meteorology-Reading.github.io/blob/master/other%20files/SUEWSSpatial_Tutorialdata.zip>`__. Unzip and place in a folder that you have read and write access to.
 
@@ -76,33 +76,33 @@ All the geodata used in this tutorial are from open access sources, primarily fr
      - **Description**
    * - Digital surface model (`DSM <http://umep-docs.readthedocs.io/en/latest/Abbreviations.html>`__)
      - 2013 (Lidar), 2016 (building polygons)
-     - United States Geological Survey (USGS). New York CMGP Sandy 0.7m NPS Lidar and NYC Open Data Portal. `link <https://data.cityofnewyork.us>`__
+     - United States Geological Survey (USGS). New York CMGP Sandy 0.7m NPS Lidar and NYC Open Data Portal: `link <https://data.cityofnewyork.us>`__
      - A `raster <http://desktop.arcgis.com/en/arcmap/10.3/manage-data/raster-and-images/what-is-raster-data.htm>`__ grid including both buildings and ground given in meter above sea level.
    * - Digital elevation model (`DEM <http://umep-docs.readthedocs.io/en/latest/Abbreviations.html>`__)
      - 2013
-     - United States Geological Survey (USGS). New York CMGP Sandy 0.7m NPS Lidar. `link <https://data.cityofnewyork.us>`__
+     - United States Geological Survey (USGS). New York CMGP Sandy 0.7m NPS Lidar: `link <https://data.cityofnewyork.us>`__
      - A raster grid including only ground heights given in meter above sea level.
    * - Digital canopy model (`CDSM <http://umep-docs.readthedocs.io/en/latest/Abbreviations.html>`__)
      - 2013 (August)
-     - United States Geological Survey (USGS). New York CMGP Sandy 0.7m NPS Lidar. `link <https://coast.noaa.gov/htdata/lidar1_z/geoid12b/data/4920/>`__
+     - United States Geological Survey (USGS). New York CMGP Sandy 0.7m NPS Lidar: `link <https://coast.noaa.gov/htdata/lidar1_z/geoid12b/data/4920/>`__
      - A vegetation raster grid where vegetation heights is given in meter above ground level. Vegetation lower than 2.5 meter pixels with no vegetation should be zero.
    * - Land cover (UMEP formatted)
      - 2010
-     - New York City Landcover 2010 (3ft version). University of Vermont Spatial Analysis Laboratory and New York City Urban Field Station. `link <https://opendata.cityofnewyork.us/>`__
+     - New York City Landcover 2010 (3ft version). University of Vermont Spatial Analysis Laboratory and New York City Urban Field Station: `link <https://opendata.cityofnewyork.us/>`__
      - A raster grid including: 1. Paved surfaces, 2. Building surfaces, 3. Evergreen trees and shrubs, 4. Deciduous trees and shrubs, 5. Grass surfaces, 6. Bare soil, 7. Open water
    * - Population density (residential)
      - 2010
-     - 2010 NYC Population by Census Tracts, Department of City Planning (DCP). `link <https://data.cityofnewyork.us>`__)
+     - 2010 NYC Population by Census Tracts, Department of City Planning (DCP): `link <https://data.cityofnewyork.us>`__
      - People per census tract converted to pp/ha. Converted from vector to raster.
    * - Land use
      - 2018
-     - NYC Department of City Planning, Technical Review Division. `link <https://zola.planning.nyc.gov>`__
+     - NYC Department of City Planning, Technical Review Division: `link <https://zola.planning.nyc.gov>`__
      - Used to redistribute population during daytime (see text). Converted from vector to raster
 
 
 - Start by loading all the raster datasets into an empty QGIS project.
 
-The order in the *Layers Panel* determines what layer is visible. You can choose to show a layer (or not) with the tick box. You can modify layers by right-clicking on a layer in the Layers Panel and choose *Properties*. Note for example that that CDSM (vegetation) is given as height above ground (meter) and that all non-vegetated pixels are set to zero. This makes it hard to get an overview of all 3D objects (buildings and trees). QGIS default styling for a raster is using the 98 percentile of the values. Therefore, not all the range of the data is shown in the layer window to the left.
+The order in the *Layers Panel* determines what layer is visible. You can choose to show a layer (or not) with the tick box. You can modify layers by right-clicking on a layer in the *Layers Panel* and choose *Properties*. Note for example that that CDSM (vegetation) is given as height above ground (meter) and that all non-vegetated pixels are set to zero. This makes it hard to get an overview of all 3D objects (buildings and trees). QGIS default styling for a raster is using the 98 percentile of the values. Therefore, not all the range of the data is shown in the layer window to the left.
 
 - Right-click on your **CDSM** layer and go to *Properties > Style* and choose **Singleband pseudocolor** with a min value of 0 and max of 35. Choose a colour scheme of your liking.
 - Go to *Transparency* and add an additional no data value of 0. Click ok.
@@ -116,7 +116,7 @@ The order in the *Layers Panel* determines what layer is visible. You can choose
 
 The land cover grid comes with a specific QGIS style file.
 
-- Right-click on the land cover layer (**landcover_2010_nyc**) and choose *Properties*. Down to the left you see a *Style*-button. Choose *Load Style* and open **landcoverstyle.qml** and click OK.
+- Right-click on the land cover layer (**landcover_2010_nyc**) and choose *Properties*. At the bottom left of the window there is a *Style*-button. Choose *Load Style* and open **landcoverstyle.qml** and click OK.
 - Make only your land cover class layer visible to examine the spatial variability of the different land cover classes.
 
 The land cover grid has already been classified into the seven different classes used in most UMEP applications (see `Land Cover Reclassifier <http://umep-docs.readthedocs.io/en/latest/pre-processor/Urban%20Land%20Cover%20Land%20Cover%20Reclassifier.html>`__). If you have a land cover dataset that is not UMEP formatted you can use the *Land Cover Reclassifier* found at *UMEP > Pre-processor > Urban Land Cover > Land Cover Reclassifier* in the menu-bar to reclassify your data.
@@ -124,15 +124,15 @@ The land cover grid has already been classified into the seven different classes
 Furthermore, a polygon grid (500 m x 500 m) to define the study area and individual grids is included (Grid_500m.shp). Such a grid can be produced directly from the *Processing Toolbox* in QGIS (*Create Grid*) or an external grid can be used.
 
 - Load the vector layer **Grid_500m.shp** into your QGIS project.
-- In the *Style* tab in layer *Properties*, choose a *Simple fill* with a *No Brush* fill style to be able to see the spatial data within each grid.
-- Also, add the label IDs for the grid to the map canvas in *Properties > Labels* to make it easier to identify the different grid squares later on in this tutorial.
+- In the *Style* tab in layer *Properties*, choose a *Simple fill* and set *Fill style* to *No Brush*, to be able to see the spatial data within each grid.
+- Also, add the label IDs for the grid to the map canvas in *Properties > Labels > Single Labels* to make it easier to identify the different grid squares later on in this tutorial.
 
-As you can see the grid does not cover the whole extent of the raster grids. This is to reduce computation time during the tutorial. One grid cell takes ~20 s to model with SUEWS with meteorological forcing data for a full year.
+As you can see, the grid does not cover the whole extent of the raster grids. This is to reduce computation time during the tutorial. One grid cell takes ~20 s to model with SUEWS with meteorological forcing data for a full year.
 
 Meteorological forcing data
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Meteorological forcing data are mandatory for most of the models within UMEP. The UMEP specific format is given in :numref:`ref_T_Met`. Some of the variables are optional and if not available or needed should be set to -999. The columns can not be empty.  The needed data for this tutorial are discussed below.
+Meteorological forcing data is mandatory for most of the models within UMEP. The UMEP specific format is given in :numref:`ref_T_Met`. Some of the variables are optional and if not available or not needed should be set to -999. The columns can not be empty.  The needed data for this tutorial is discussed below.
 
 .. _ref_T_Met:
 .. list-table:: Variables included in UMEP meteorological input file.
@@ -285,7 +285,7 @@ The meteorological dataset used in this tutorial (**MeteorologicalData_NYC_2010.
 Preparing input data for the SUEWS model
 ----------------------------------------
 
-A key capability of UMEP is to facilitate preparation of input data for the various models. SUEWS requires input information to model the urban energy balance. The plugin *SUEWS Prepare* is for this purpose. This tutorial makes use of high resolution data but `WUDAPT <http://www.wudapt.org/>`__ datasets in-conjuction with the *LCZ Converter* can be used (*UMEP > Pre-Processor > Spatial data > LCZ Converter*).
+A key capability of UMEP is to facilitate preparation of input data for the various models. SUEWS requires input information to model the urban energy balance. The plugin *SUEWS Prepare* serves this purpose. This tutorial makes use of high resolution data but `WUDAPT <http://www.wudapt.org/>`__ datasets, in-conjuction with the *LCZ Converter*, can be used (*UMEP > Pre-Processor > Spatial data > LCZ Converter*).
 
 - Open SUEWS Prepare (*UMEP > Pre-Processor > SUEWS prepare*).
 
@@ -359,14 +359,14 @@ Population density
 Population density will be used to estimate the anthropogenic heat release (Q\ :sub:`F`) in SUEWS. There is a possibility to use both night-time and daytime population densities to make the model more dynamic. You have two different raster grids for night-time (**pop_nighttime_perha**) and daytime (**pop_daytime_perha**), respectively. This time you will make use of QGIS built-in function to to acquire the population density for each grid.
 
 - In the *Processing Toolbox*, search for *Zonal Statistics*. Open the tool.
-- Choose your **pop_daytime_perha** layer as **Raster band** and your **Grid_500m** and polygon layer. Use a *Output column prefix* of **PPday** and chose only to calculate *Mean*. Click OK.
+- Choose your **pop_daytime_perha** layer as *Raster layer* and your **Grid_500m** as the *vector layer*. Use a *Output column prefix* of **PPday** and chose only to calculate *Mean*. Click OK.
 - Run the tool again but this time use the night-time dataset (**PPnight**).
 
 SUEWS Prepare
 ~~~~~~~~~~~~~
 Now you are ready to organise all the input data into the SUEWS input format.
 
-- Open *SUEWS Prepare*
+- Open *UMEP > Pre-Processor > SUEWS Prepare*
 - In the *Polygon grid* frame, choose your polygon grid (**Grid_500m**) and choose **id** as your *ID field*
 - In the *Building morphology* frame, fetch the file called **build_IMPGrid_isotropic.txt**.
 - In the *Land cover fractions* frame, fetch the file called **lc_LCFG_isotropic.txt**.
