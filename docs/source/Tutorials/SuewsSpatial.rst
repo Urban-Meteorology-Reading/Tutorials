@@ -385,9 +385,9 @@ Running the SUEWS model in UMEP
 
 To perform modelling energy fluxes for multiple grids, `SUEWSAdvanced` can be used.
 
-- Open *UMEP > Processor > Urban Energy Balance > SUEWS/BLUEWS, Advanced*. Here you can change some of the run control settings in SUEWS. SUEWS can also be executed outside of UMEP and QGIS (see `SUEWS Manual <http://suews-docs.readthedocs.io>`__. This is recommended when modelling long time series (multiple years) of large model domains (many grid points).
+- Open *UMEP > Processor > Urban Energy Balance > SUEWS/BLUEWS, Advanced*. Here you can change some of the run control settings in SUEWS. SUEWS can also be executed outside of UMEP and QGIS (see `SUEWS Manual <http://suews-docs.readthedocs.io>`__). This is recommended when modelling long time series (multiple years) of large model domains (many grid points).
 - Change the OHM option to [1]. This allows the anthropogenic energy to be partitioned also into the storage energy term.
-- Leave the rest of the combobox settings at the top as default and tick both the *Use snow module* and the *Obtain temporal resolution...* box.
+- Leave the rest of the combobox settings at the top as default and tick both the *Use snow module* and the *Obtain temporal resolution...* boxes.
 - Set the *Temporal resolution of output (minutes) to 60.*
 - Locate the directory where you saved your output from *SUEWSPrepare* earlier and choose an output folder of your choice.
 - Also, Tick the box *Apply spin-up using...*. This will force the model to run twice using the conditions from the first run as initial conditions for the second run.
@@ -398,7 +398,7 @@ Analysing model reults
 
 UMEP has a tool for basic analysis of any modelling performed with the SUEWS model. The `SUEWSAnalyser <http://umep-docs.readthedocs.io/en/latest/post_processor/Urban%20Energy%20Balance%20SUEWS%20Analyser.html>`__ tool is available from the post-processing section in UMEP.
 
-- Open *UMEP > Post-Processor > Urban Energy Balance > SUEWS Analyzer*. There are two main sections in this tool. The *Plot data*-section can be used to make temporal analysis as well as making simple comparisins between two grids or variables. This *Spatial data*-section can be used to make aggregated maps of the output variables from the SUEWS model. This requires that you have loaded the same polygon grid into your QGIS project that was used when you prepared the input data for SUEWS using *SUEWS Prepare* earlier in this tutorial.
+- Open *UMEP > Post-Processor > Urban Energy Balance > SUEWS Analyzer*. There are two main sections in this tool. The *Plot data*-section can be used to make temporal analysis as well as making simple comparisons between two grids or variables. This *Spatial data*-section can be used to make aggregated maps of the output variables from the SUEWS model. This requires that you have loaded the same polygon grid into your QGIS project that was used when you prepared the input data for SUEWS using *SUEWS Prepare* earlier in this tutorial.
 
 .. figure:: /images/SUEWSAnalyzer.png
    :alt:  none
