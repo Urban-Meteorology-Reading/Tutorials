@@ -163,7 +163,7 @@ How to Run SuewsSimple from the UMEP-plugin
    Urban Energy Balance (SUEWS, Simple)*. The `GUI <https://umep-docs.readthedocs.io/en/latest/Abbreviations.html>`__ that opens looks quite
    extensive but it is actually not that complicated to start a basic
    model run (figure below). Some additional information about the plugin is
-   found in the left window. As you can read, a **test dataset** from
+   found in the window on the right had of the GUI. As you can read, a **test dataset** from
    observations for London, UK (`Kotthaus and Grimmond
    2014 <http://www.sciencedirect.com/science/article/pii/S2212095513000503>`__,
    `Ward et al.
