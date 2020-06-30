@@ -74,7 +74,7 @@ Data for this exercise
 ~~~~~~~~~~~~~~~~~~~~~~
 
 The UMEP tutorial datasets can be downloaded from our here repository
-`here <https://github.com/Urban-Meteorology-Reading/Urban-Meteorology-Reading.github.io/tree/master/other%20files/Goteborg_SWEREF99_1200.zip>`__
+`here <https://github.com/Urban-Meteorology-Reading/Urban-Meteorology-Reading.github.io/tree/master/other%20files/Goteborg_SWEREF99_1200.zip>`__.
 
 -  Download, extract and add the raster layers (DSM, CDSM, DEM and land
    cover) from the **Goteborg folder** into a new QGIS session (see
@@ -87,9 +87,9 @@ The UMEP tutorial datasets can be downloaded from our here repository
 
 -  Coordinate system of the grids is Sweref99 1200 (EPSG:3007). If you
    look at the lower right hand side you can see the CRS used in the
-   current QGIS project
+   current QGIS project.
+-  Have a look at `DailyShading` on how you can visulaise DSM and CDSM at the same time.
 -  Examine the different datasets before you move on.
-
 -  To add a legend to the **land cover** raster you can load
    **landcoverstyle.qml** found in the test dataset. Right click on the
    land cover (*Properties -> Style (lower left) -> Load Style*).
@@ -201,8 +201,9 @@ How to Run SOLWEIG from the UMEP-plugin
     .. figure:: /images/SOLWEIG_Interface.png
        :alt:  None
        :width: 100%
+       :align: center
 
-       Dialog for the SOLWEIG model (click on image for larger image)
+       Dialog for the SOLWEIG model (click on figure for larger image)
 
 #. To be able to run the model some additional spatial datasets needs to
    be created.
@@ -221,6 +222,7 @@ How to Run SOLWEIG from the UMEP-plugin
     .. figure:: /images/SOLWEIG_Svf_solweig.png
        :alt:  None
        :width: 487px
+       :align: center
        
        Settings for the SkyViewFactorCalculator.
       
@@ -238,6 +240,7 @@ How to Run SOLWEIG from the UMEP-plugin
     .. figure:: /images/SOLWEIG_wallgeight_solweig.png
        :alt:  None
        :width: 505px
+       :align: center
        
        Settings for the Wall height and aspect plugin.
 
@@ -250,8 +253,9 @@ How to Run SOLWEIG from the UMEP-plugin
     .. figure:: /images/SOLWEIG_Tmrt1_solweig.png
        :alt:  None
        :width: 100%
+       :align: center
        
-       The settings for your first SOLWEIG run (click on image for larger image).
+       The settings for your first SOLWEIG run (click on figure for larger image).
       
 #. Examine the output (Average T\ :sub:`mrt` (°C). What is the main
    driver to the spatial variations in T\ :sub:`mrt`?
@@ -289,6 +293,7 @@ Gothenburg, Sweden. The GUI is also able to derive full model output
     .. figure:: /images/SOLWEIG_Addpoint.png
        :alt:  None
        :width: 411px
+       :align: center
        
        Setting to add points 
    
@@ -300,6 +305,7 @@ Gothenburg, Sweden. The GUI is also able to derive full model output
     .. figure:: /images/SOLWEIG_Pointskr.png
        :alt:  None
        :width: 100%
+       :align: center
        
        Location of the two POIs 
 	   
@@ -328,6 +334,7 @@ the SOLWEIG Analyzer plug-in.
     .. figure:: /images/SOLWEIG_SOLWEIGAnalyzer.png
        :alt:  None
        :width: 100%
+       :align: center
        
        Dialog for the SOLWEIG Analyzer plug-in
 
@@ -382,6 +389,7 @@ balance modelling with SUEWS.
     .. figure:: /images/SOLWEIG_File_TreesKR.png
        :alt:  None
 	   :width: 100%
+       :align: center
        
        Location of the three new vegetation units.
 
@@ -393,6 +401,7 @@ balance modelling with SUEWS.
     .. figure:: /images/SOLWEIG_Treegeneratorsolweig.png
        :alt:  None
        :width: 411px
+       :align: center
        
        The settings for the Tree Generator
 
