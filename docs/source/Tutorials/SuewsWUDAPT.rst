@@ -77,13 +77,13 @@ Population density is required to estimate the anthropogenic heat release (Q\ :s
    *Use canvas extent*
 #. Now click *Get data*.
 #. Save as a geoTiff (.tif) with the name **GPWv4_2010**.
-#. Now you need to calculate population density per grid in units *pp/hectare*. First open the QGIS built-in tool *Zonal statistics* (*Raster > Zonal Statistics*). If the tool is absent you need to activate it by going to *Plugins > Manage and Install Plugins* and add *Zonal statistics plugin*. Open the tool and make the settings as shown below. This will calulate mean population density per grid.
+#. Now you need to calculate population density per grid in units *pp/hectare*. First open the QGIS built-in tool *Zonal statistics* found in the *Processing Toolbox*. Open the tool and make the settings similar as shown below depending on QGIS version. This will calulate mean population density per grid.
 
    .. figure:: /images/SUEWS_WUDAPT_NYC_Zonalstat.jpg
       :alt:  none
       :align: center
    
-      Settings for the Zonal statistics plugin.
+      Settings for the Zonal statistics plugin (older version).
 
 #. Open the attribute table for your **Grid_5000m**-layer (right-click on layer and choose (*Open attribute Table*). 
 #. Click the abacus shaped symbol this is the *Field calculator*.
@@ -112,7 +112,7 @@ Now you will make use of the *LCZ Converter*-plugin to generate input data for t
 #. If you are unsure about the exact fractions for each of the LCZ click
    the tab *Pervious distribution*. Select *Same for all LCZ's*
 
-.. figure:: /images/LCZ_converter.png
+.. figure:: /images/LCZ_converter.jpg
    :alt:  none
    :align: center
 
@@ -137,8 +137,7 @@ each grid cell of the polygon grid.
 SUEWS
 -----
 
-Before running SUEWS, you will need to
-prepare some of the data required to run it.
+Before running SUEWS, you will need to prepare some of the data required to run it.
 
 #. SUEWS prepare requires the grid CRS to be in metres not degrees, therefore we need to reproject the grid. Right-click the vector grid and click *save as..*. Assign a different file name, use CRS *ESPG:26918* and click *OK*.
 #. Open SUEWS prepare at: *UMEP > Pre-Processer > SUEWS prepare*.
@@ -151,14 +150,13 @@ prepare some of the data required to run it.
 #. Select an output folder where the initial data to run SUEWS should be
    saved and press *Generate*.
 #. Open SUEWS at *UMEP > Processer > Urban Energy Balance > Urban Energy
-   Balance (SUEWS/BLUEWS, advanced).* Using this for the first time, the system will ask you to download the latest version of SUEWS, click *OK*.
+   Balance (SUEWS/BLUEWS, advanced)*.
 #. Change the OHM option to [1]. This allows the anthropogenic energy to be partitioned also into the storage energy term.
 #. Leave the rest of the combobox settings at the top as default and tick both the *Use snow module* and the *Obtain temporal resolution…* box.
 #. Set the *Temporal resolution of output (minutes)* to 60.
 #. Locate the directory where you saved your output from SUEWSPrepare earlier and choose an output folder of your choice.
-#. Also, Tick the box *Apply spin-up using…*. This will force the model to run twice using the conditions from the first run as initial conditions for the second run.
-#. Click Run. This computation will take a while so be patient. If it only takes a very short time (a few seconds) the model has probably crashed. Please consult the *problems.txt* file for more information.
-
+#. Also, tick the box *Apply spin-up using…*. This will force the model to run twice using the conditions from the first run as initial conditions for the second run.
+#. Click Run. This computation will take a while so be patient. If it only takes a very short time (a few seconds) the model has probably crashed. Please consult the *SuPy.log* file for more information.
 
 
 Analysing model reults
