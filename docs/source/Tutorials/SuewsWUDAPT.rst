@@ -10,7 +10,7 @@ In this tutorial you will generate input data for the
 `SUEWS <http://suews-docs.readthedocs.io>`__ model and simulate spatial 
 (and temporal) variations of energy exchanges within an area in New York City using local climate zones derived within the `WUDAPT <http://www.wudapt.org/>`__ project. The World Urban Database and Access Portal Tools project is a community-based project to gather a census of cities around the world.
 
-.. note:: This tutorial is currently designed to work with QGIS 2.18 but can be followed using QGIS version 3.x (some QGIS built-in tools have been moved). It is strongly recommended that you goo through the :ref:`SuewsSpatial` tutorial before you go through this tutrial. This tutorial is work in progress.
+.. note:: It is strongly recommended that you goo through the :ref:`SuewsSpatial` tutorial before you go through this tutrial. This tutorial is work in progress.
 
 
 Objectives
@@ -51,19 +51,18 @@ A vector polygon grid is required for specifying the extent and resolution of th
 .. figure:: /images/SUEWS_WUDAPT_NYC_ManhattanZoom.jpg
    :alt:  none
    :width: 100%
+   :align: center
 
    Zoom in the Manhattan island.
 
-#. As WGS84 (EPSG:4326) is in degree coordinates and maybe you want to specify your grid in meters, you need to change the CRS of your current QGIS-project. Click on the globe at the bottom right of your QGIS window and select *ESPG:26918* as your 'on the fly' CRS.
-#. Open vector grid at *Vector > Research Tools > Vector grid*.
+#. As WGS84 (EPSG:4326) is in degree coordinates and maybe you want to specify your grid in meters, you need to change the CRS of your current QGIS-project. Click on the globe at the bottom right of your QGIS window and select *ESPG:26918* as your *Project Coordinate Reference System* CRS.
+#. Open *Create Grid* in the *Processing Toolbox*-panel to the right.
+#. Select *Rectangle (Polygon)* as grid type.
 #. Select the extend of your canvas by clicking the ... next to *Grid
-   extent (xmin, xmax, ymin, ymax)* and select *Use layer/canvas
-   extent*.
-#. Select *Use Canvas Extent*.
+   extent * and select *Use Map Canvas Extent*.
 #. As you can see the units in now in meters and not in degrees. Specify the desired grid spacing to 5000 meters. This will save time later on. Of course you can set it a much smaller number if you have the time to wait when the model performs the calculations later on.
-#. Make sure the output is in polygons, not lines.
 #. Create as temporary layer.
-#. Save your grid by right-click on the new layer in the *Layers Panel* and choose *Save as...*. Here it is very imporant that you save in the same CRS as you other layers (ESPG:4326). Save as a shape file.
+#. Save your grid by right-click on the new layer in the *Layers Panel* and choose *Save as...*. Here it is very important that you save in the same CRS as you other layers (ESPG:4326). Save as a shape file.
 
 
 Population density
@@ -82,6 +81,7 @@ Population density is required to estimate the anthropogenic heat release (Q\ :s
 
    .. figure:: /images/SUEWS_WUDAPT_NYC_Zonalstat.jpg
       :alt:  none
+      :align: center
    
       Settings for the Zonal statistics plugin.
 
@@ -114,6 +114,7 @@ Now you will make use of the *LCZ Converter*-plugin to generate input data for t
 
 .. figure:: /images/LCZ_converter.png
    :alt:  none
+   :align: center
 
    Settings for the LCZ converter plugin.
 
@@ -178,6 +179,7 @@ Feel free to try plotting different variables, first let's try and look at a var
 
 .. figure:: /images/suews_qh.png
    :alt:  none
+   :align: center
 
    Example of the comparison of the heat flux for two grid cell in the vector grid.
 
@@ -190,6 +192,7 @@ Now we will look at the horizontal distribution of the storage flux.
 
 .. figure:: /images/SUEWS_DQS.png
    :alt:  none
+   :align: center
 
    Example of the median, night-time net storage flux.
 
