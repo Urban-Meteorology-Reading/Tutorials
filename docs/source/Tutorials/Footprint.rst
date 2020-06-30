@@ -23,8 +23,9 @@ et al. (2015) requires the boundary layer height.
 .. figure:: /images/Footprint_ReadingSourceArea.png
    :alt:  Example result 
    :width: 100%
+   :align: center
 
-   Example result (click on image for larger image)
+   Example result (example from older version). Click on figure for larger image.
 
 Initial Practical steps
 -----------------------
@@ -35,21 +36,21 @@ Initial Practical steps
 
 -  Start the QGIS software
 -  If not visible on the desktop use the **Start** button to find the
-   software (i.e. Find QGIS under your applications)
--  use QGIS3 
+   software (i.e. Find QGIS under your applications). Use QGIS3. 
 
 When you open it on the top toolbar you will see **UMEP**.
 
 .. figure:: /images/Footprint_UMEP_location.png
    :alt:  none
    :width: 100%
+   :align: center
    
-   Location of footprint plugin (click on image for larger image)
+   Location of footprint plugin (click on figure for larger image)
 
 -  If UMEP is not on your machine, add the UMEP plugin by go to *Plugins>Manage and Install Plugins* in QGIS
    and search for UMEP. Click **Install plugin**. Here you can also see if there is newer versions of your added plugins.
 
--  Preferably, read through the section in the `online manual <SourceArea(Point)>`__
+-  Preferably, read through the section in the `online manual <https://umep-docs.readthedocs.io/en/latest/pre-processor/Urban%20Morphology%20Source%20Area%20(Point).html>`__
    BEFORE using the model, so you are familiar with it’s operation and terminology used.
 
 Data for Tutorial
@@ -76,8 +77,9 @@ Prior to Starting
 .. figure:: /images/Footprint_Add_Raster_Layer.png
    :alt:  none
    :width: 100%
+   :align: center
    
-   Loading a raster layer to QGIS (click on image for larger image)
+   Loading a raster layer to QGIS (click on figure for larger image)
 
 
 -  Have a look at the **layers** (see lower left) - if you untick the
@@ -86,8 +88,9 @@ Prior to Starting
 .. figure:: /images/Footprint_ReadingMap.png
    :alt:  none
    :width: 100%
+   :align: center
 
-   The Reading data loaded into QGIS (click on image for larger image)
+   The Reading data loaded into QGIS (click on figure for larger image)
     
 
 Source Area Modelling
@@ -109,19 +112,20 @@ To access the Source area model or Footprint model, go to *UMEP -> Pre-processor
 
 #. Tick “add the integrated source area to your project”. This will provide visual information of the location of the source area (footprint)
 
-#. Click **Run**. If you get an error/warning message (model is unable to execute your request, as the maximum fetch exceeds the extent of your grid for your point of interest. measure the distance to the limit of your raster maps
+#. Click **Run**. If you get an error/warning message (model is unable to execute your request, as the maximum fetch exceeds the extent of your grid for your point of interest. Measure the distance to the limit of your raster maps
 
 	- To allow the model to work for the dataset with your point of interest you need to adjust the maximum fetch distance.
-	- Locate the Measure tool.
-	- Measure the distance to the point of interest to the boundary of the DSM data set.
-	- Adjust the maximum fetch.
+	- In the QGIS toolbar, locate the Measure tool (Ruler or Ctrl + Shift + M).
+	- Measure the distance to the point of interest to the nearest boundary of the DSM data set.
+	- Adjust the maximum fetch accordingly.
 	- Click Run and wait for the calculations to finish.
 	
 .. figure:: /images/Footprint_SourceAreaModel.png
    :alt:  none
    :width: 100%
+   :align: center
    
-   Snapshot of the Footprint plugin using Reading data (click on image for larger image)
+   Snapshot of the Footprint plugin using Reading data (click on figure for larger image)
 
 The **output is a source area** grid showing the cumulative percentage of source area influencing the flux at the point of interest.
 
@@ -129,8 +133,7 @@ The **output is a source area** grid showing the cumulative percentage of source
 
 - Other output: A text file giving both the input setting variables and the output morphometric parameters calculated based on the source area generated. More information is provided in the manual, row titled: “Output”
 
-It is possible to input a text file to generate a source area based on morphometric parameters (e.g. an hourly dataset). However, for now you can moodify the input variables set in the interface. Format of file is given in the manual.
-
+It is possible to input a text file to generate a source area based on morphometric parameters (e.g. an hourly dataset). However, for now you can moodify the input variables set in the interface. Format of such a file is given in the `manual <https://umep-docs.readthedocs.io/en/latest/pre-processor/Urban%20Morphology%20Source%20Area%20(Point).html>`__.
 
 Iterative process
 -----------------
@@ -150,7 +153,6 @@ To work with a site with no value known *a priori*.
 #. **Isotropic** file - has the **average value** for the area
 #. Use these values to populate the source area model window.
 
-
 Roughness parameters
 ~~~~~~~~~~~~~~~~~~~~
 
@@ -166,8 +168,6 @@ perform well for urban areas.
 With wind profile and eddy covariance anemometric data and the source
 area model, appropriate parameters can be determined and morphometric
 methods assessed (e.g. Kent et al. 2017).
-
-
 
 References
 ----------
