@@ -37,8 +37,8 @@ from Lantmäteriets (Swedish Cadastral and Mapping Authority)
 Fastighetskarta and a laser point cloud derived from the National
 Elevation Model (NH) in Sweden. 
 
-In this exercise you will make use of **Processing
-Toolbox** (right side of Figure 1) where many of the geoprocessing
+In this exercise you will make use of the *Processing
+Toolbox* (right side of Figure 1) where many of the geoprocessing
 algorithms are found, both from the QGIS core and from other open
 source software and libraries such as GDAL, GRASS, SAGA GIS, R, FUSION, UMEP
 etc. If the toolbox is unavailable, go to *Processing* and click on
@@ -57,7 +57,7 @@ to use the FUSION software within QGIS3.
 FUSION is a freeware (Free Software) without restrictions, developed
 especially for using LiDAR technology in forestry, but it can also be
 used in other applications. FUSION can be downloaded from
-http://forsys.cfr.washington.edu/fusion.html. Make sure that FUSION
+http://forsys.sefs.uw.edu/fusion/fusionlatest.html. Make sure that FUSION
 is installed at **C:\\FUSION**. If not, locate the FUSION folder and
 remember its location. Now go to *Plugins > Manage and Install Plugins*,
 search for *FUSION*, click on *FUSION for Processing* and click *Install
@@ -69,9 +69,9 @@ Plugin*. This is a processing plugin porting many of the FUSION tools directly i
 
    Figure 2. The Plugin Manager in QGIS 3.6.
 
-To make use of FUSION inside QGIS you have to make some initial
+To make use of FUSION inside QGIS you have to configure some initial
 settings. In the *Processing Toolbox*, click on the monkey wrench
-(Options) and configure FUSION as shown in Figure 3. Remember to point
+(*Options*) and configure FUSION as shown in Figure 3. Remember to point
 to the directory where FUSION is installed on your system. If
 successful, a FUISON-menu should have appeared in the Processing
 toolbox.
@@ -86,7 +86,7 @@ Get started with FUSION
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 Start by examining the point cloud that you will make use of for the
-rest of this exercise. The data can be downloaded from `here <https://drive.google.com/file/d/0B31bjOSjDDdxME5vd1VMS25IZjg/view>`__ (link also at end of this document). All data are projected in **SWEREF99 TM
+rest of this exercise. The data can be downloaded from `here <https://drive.google.com/file/d/0B31bjOSjDDdxME5vd1VMS25IZjg/view>`__ (link also at end of this document). All data is projected in **SWEREF99 TM
 (EPSG:3006)** so it is very important to specify this when you add your
 data into QGIS. Save the data in a location where you have rights to
 read and write, e.g. the Desktop or a USB-stick. In the *Processing Toolbox*
