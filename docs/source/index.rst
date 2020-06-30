@@ -40,6 +40,16 @@ tool. The tutorials available are found in the table below.
      - `IntroductionToSuews`
      - Energy, water and radiation fluxes for one location
      - London, UK
+   * - Spatial data
+     - Pre-Processor
+     - `DSMGenerator`
+     - Generating DSMs using `Open Street Map <https://www.openstreetmap.org/>`__ data
+     - Gothenburg, Sweden (World)
+   * - Spatial data
+     - Pre-Processor and `FUSION/LDV <http://forsys.cfr.washington.edu/fusion.html.>`__
+     - `LidarProcessing`
+     - Generating UMEP input data from a LiDAR point cloud
+     - Gothenburg, Sweden
    * - Urban energy balance
      - Pre-Processor and Processor
      - `SUEWSAdvanced`
@@ -60,11 +70,6 @@ tool. The tutorials available are found in the table below.
      - `SUEWSWUDAPT`
      - Making use of `WUDAPT <http://www.wudapt.org/>`__ local climate zones in `SUEWS  <http://suews-docs.readthedocs.io>`__
      - New York City, US
-   * - Urban energy balance
-     - Pre-Processor, Processor and Post-processor
-     - `SUEWSWUDAPT_Beijing`
-     - Making use of `WUDAPT <http://www.wudapt.org/>`__ local climate zones as well as `WATCH <http://www.eu-watch.org/>`__ meteorological forcing data in `SUEWS  <http://suews-docs.readthedocs.io>`__
-     - Beijing, China
    * - Outdoor thermal comfort
      - Pre-Processor, Processor and Post-processor
      - `IntroductionToSOLWEIG`
@@ -80,17 +85,13 @@ tool. The tutorials available are found in the table below.
      - `LQF`
      - Anthropogenic heat modelling in London using LQF (uses the LUCY methodology)
      - London, UK
-   * - Spatial data
-     - Pre-Processor
-     - `DSMGenerator`
-     - Generating DSMs using `Open Street Map <https://www.openstreetmap.org/>`__ data
-     - Gothenburg, Sweden (World)
-   * - Spatial data
-     - Pre-Processor and `FUSION/LDV <http://forsys.cfr.washington.edu/fusion.html.>`__
-     - `LidarProcessing`
-     - Generating UMEP input data from a LiDAR point cloud
-     - Gothenburg, Sweden
 
+
+..   * - Urban energy balance
+..     - Pre-Processor, Processor and Post-processor
+..     - `SUEWSWUDAPT_Beijing`
+..     - Making use of `WUDAPT <http://www.wudapt.org/>`__ local climate zones as well as `WATCH <http://www.eu-watch.org/>`__ meteorological forcing data in `SUEWS  <http://suews-docs.readthedocs.io>`__
+..     - Beijing, China
 
 
 .. toctree::
@@ -105,10 +106,11 @@ tool. The tutorials available are found in the table below.
    Tutorials/Footprint
    Tutorials/SuewsSpatial
    Tutorials/SuewsWUDAPT
-   Tutorials/SUEWSWUDAPT_Beijing
    Tutorials/IntroductionToSolweig
    Tutorials/LQF
    Tutorials/GQF
    Tutorials/DSMGenerator
    Tutorials/LidarProcessing
+   
+.. Tutorials/SUEWSWUDAPT_Beijing
 
