@@ -398,7 +398,7 @@ Analysing model reults
 
 UMEP has a tool for basic analysis of any modelling performed with the SUEWS model. The `SUEWSAnalyser <http://umep-docs.readthedocs.io/en/latest/post_processor/Urban%20Energy%20Balance%20SUEWS%20Analyser.html>`__ tool is available from the post-processing section in UMEP.
 
-- Open *UMEP > Post-Processor > Urban Energy Balance > SUEWS Analyzer*. There are two main sections in this tool. The *Plot data*-section can be used to make temporal analysis as well as making simple comparisons between two grids or variables. This *Spatial data*-section can be used to make aggregated maps of the output variables from the SUEWS model. This requires that you have loaded the same polygon grid into your QGIS project that was used when you prepared the input data for SUEWS using *SUEWS Prepare* earlier in this tutorial.
+- Open *UMEP > Post-Processor > Urban Energy Balance > SUEWS Analyzer*. There are two main sections to this tool. The *Plot data*-section can be used to do temporal analysis as well as making simple comparisons between two grids or variables. The *Spatial data*-section can be used to make aggregated maps of the output variables from the SUEWS model. This requires that you have loaded the same polygon grid into your QGIS project that was used when you prepared the input data for SUEWS using *SUEWS Prepare* earlier in this tutorial.
 
 .. figure:: /images/SUEWSAnalyzer.png
    :alt:  none
@@ -410,9 +410,9 @@ To access the output data from the a model run, the **RunControl.nml** file for 
 
 - In the top panel of *SUEWS Analyzer*, load the **RunControl.nml** located in the output folder.
 
-You will start by plotting basic data for grid 3242 which is one of the most dense urban area in the World.
+You will start by plotting basic data for grid 3242 which is one of the most dense urban areas in the World.
 
-- In the left panel, choose grid *3242* and year *2010*. Tick *plot basic data* and click *Plot*. This will display some of the most essential variables such as radiation balance and budget etc. You can use the tools such as the zoom to examine a shorter time period more in detail.
+- In the left panel, choose grid *3242* and year *2010*. Tick *plot basic data* and click *Plot*. This will display some of the most essential variables such as radiation balance, energy budget etc. You can use the tools such as the zoom to examine a shorter time period more in detail.
 
 .. figure:: /images/SUEWSSpatial_basicplot_grid3242.png
    :alt:  none
@@ -424,9 +424,9 @@ Notice e.g. the high Q\ :sub:`F` values during winter as well as the low Q\ :sub
 
 - Close the plot and make the same kind of plot for grid 3054 which is a grid mainly within Central Park. Consider the differences between the plot generated for grid 3242. Close the plot when you are done.
 
-In the left panel, there is also possibilities to examine two different variables in time, either from the same grid or between two different grid points. There is also possible to examine different parameters through scatterplots.
+From the left panel, it is also possibile to examine two different variables in time, either from the same grid or between two different grid points. It is also possible to examine different parameters through scatterplots.
 
-The right panel in SUEWS Analyzer can be used to perform basic spatial analysis on your model results by producing aggragated maps etc. using different variables and time spans. Sensible heat (Q\ :sub:`H`) is one variable to visualise warm areas as it is a variable that show the amount of the available energy that will be partitioned into heat.
+The right panel in SUEWS Analyzer can be used to perform basic spatial analysis on your model results by producing aggregated maps etc, using different variables and time spans. Sensible heat (Q\ :sub:`H`) is one variable to visualise warm areas as it is a variable that shows the amount of the available energy that will be partitioned into heat.
 
 - Make the settings as shown in the figure below but change the location where you will save your data on your own system.
 
@@ -444,7 +444,7 @@ Note that the warmest areas are located in the most dense urban environments and
 The influence of mitigation measures on the urban energy balance (optional)
 ---------------------------------------------------------------------------
 
-There are different ways of manipulating the data using UMEP as well directly changing the input data in SUEWS to examine the influence of mitigation measures on the UEB. The most detailed way would be to directly changing the surface data by e.g. increasing the number of street trees. This can be done by e.g. using the `TreeGenerator <http://umep-docs.readthedocs.io/en/latest/pre-processor/Spatial%20Data%20Tree%20Generator.html>`__-plugin in UMEP. This method would require that you go through the workflow of this tutorial again before you do your new model run. Another way is to directly manipulate input data to SUEWS at grid point level. This can done by e.g. changing the land cover fractions in **SUEWS_SiteSelect.txt**, the file that includes all grid-specific information used in SUEWS.
+There are different ways of manipulating the data using UMEP, as well as directly changing the input data in SUEWS, to examine the influence of mitigation measures on the urban energy balance (UEB). The most detailed way would be to directly change the surface data by, for example, increasing the number of street trees. This can be done by using the `TreeGenerator <http://umep-docs.readthedocs.io/en/latest/pre-processor/Spatial%20Data%20Tree%20Generator.html>`__-plugin in UMEP, fpr example. This method would require that you go through the workflow of this tutorial again before you do your new model run. Another way is to directly manipulate input data to SUEWS at grid point level. This can done by e.g. changing the land cover fractions in **SUEWS_SiteSelect.txt**, the file that includes all grid-specific information used in SUEWS.
 
 - Make a copy of your whole input folder created from SUEWSPRepare earlier and rename it to e.g. *Input_mitigation*.
 - In that folder remove all the files beginning with *InitialConditions* **except** the one called **InitialConditionsnyc_2010.nml**.
@@ -454,6 +454,6 @@ There are different ways of manipulating the data using UMEP as well directly ch
 - Create an empty folder called *Output_mitigation*
 - Open `SuewsAdvanced <http://umep-docs.readthedocs.io/en/latest/processor/Urban%20Energy%20Balance%20Urban%20Energy%20Balance%20(SUEWS.BLUEWS,%20advanced).html>`__ and make the same settings as before but change the input and output folders.
 - Run the model.
-- When finished, create a similar average air temperature map for the heat event and compare the two maps. You can do a difference map by using the Raster Calculator in QGIS (*Raster>Raster Calculator...*).
+- When finished, create a similar average air temperature map for the heat event and compare the two maps. You can create a difference map by using the Raster Calculator in QGIS (*Raster>Raster Calculator...*).
 
 Tutorial finished.
