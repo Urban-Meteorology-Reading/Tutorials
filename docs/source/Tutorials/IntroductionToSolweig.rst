@@ -393,9 +393,9 @@ balance modelling with SUEWS.
        
        Location of the three new vegetation units.
 
-#. Add your created trunk zone dsm (tdsm.tif) that was created
+#. Add your created trunk zone dsm (**tdsm.tif**) that was created
    previously (located in your output directory).
-#. Open the TreeGenerator (UMEP -> PreProcessor -> TreeGenerator) and
+#. Open the TreeGenerator (*UMEP > PreProcessor > Spatial Data > TreeGenerator*) and
    use the settings as shown in figure below. 
 
     .. figure:: /images/SOLWEIG_Treegeneratorsolweig.png
