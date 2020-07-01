@@ -66,11 +66,11 @@ Use the appropriate data:
 Prior to Starting
 ~~~~~~~~~~~~~~~~~
 
-#. Download the **Data needed for the Tutorial**. You can use either Reading of the London dataset. 
+#. Download the **Data needed for the Tutorial**. You can use either the Reading or the London dataset. 
 
 #. Load the Raster data (`DEM, DSM,
    CDSM <http://umep-docs.readthedocs.io/en/latest/Abbreviations.html>`__) 
-   *files – DOES A CDSM EXIST? Yes for London, No for Reading*
+   *Note: a CDSM exists for London but not for Reading*
 
    -  Go to: *Layer > Add layer > Add Raster Layer*. Locate downloaded files add add them to your QGIS project.
 
@@ -96,7 +96,7 @@ Prior to Starting
 Source Area Modelling
 ---------------------
 
-To access the Source area model or Footprint model, go to *UMEP -> Pre-processor > Urban Morphology > Source Area Model (Point)*.
+To access the Source area (Footprint) model, go to *UMEP -> Pre-processor > Urban Morphology > Source Area Model (Point)*.
 
 #. Click on Select Point on Canvas – then select a point (e.g. where an Eddy Covariance (EC) tower site is located)
 
