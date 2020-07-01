@@ -92,20 +92,20 @@ data into QGIS. Save the data in a location where you have rights to
 read and write, e.g. the Desktop or a USB-stick. In the *Processing Toolbox*
 go to *FUSION > Visualisation > Open viewer* and open **gvc.las**.
 Examine your point cloud. Make use of the **help (?)** button to find
-out which classes that is available in this particular point cloud. As you will discover, this is a very basic point cloud including only two classes (ground and unclassified).
+out which classes are within this particular point cloud. As you will discover, this is a very basic point cloud including only two classes (ground and unclassified).
 
 Expand FUSION in the Processing Toolbox. Here you will find a number of
-FUSION algorithms, divided up into different categories. This is far from all. The full manual of FUISON is available from:
+FUSION algorithms, divided up into different categories. This is far from all that FUSION can do. The full manual of FUSION is available from:
 http://forsys.cfr.washington.edu/Software/FUSION/FUSION_manual.pdf. In
 this document you can find specification on all the algorithms available
-in FUSION. We will also look at how to use the algorithms which are not
+in FUSION. We will also look at how to use the algorithms that are not
 available from within the graphical interface of QGIS.
 
 As the ground points were already classified in the point cloud, you can
 now generate a digital elevation model. If the point cloud would have been
 unclassified, you could have exploited the **Ground Filter** to filter out
 ground points. Open *FUSION >
-Surface > Grid Surface Create* and make the following settings (Figure 4), before clicking *Run*. Remember to save your data at an location
+Surface > Grid Surface Create* and configure the following settings (Figure 4), before clicking *Run*. Remember to save your data at an location
 where you have read and write access on your system.
 
 .. figure:: /images/Lidar4.jpg
@@ -117,7 +117,7 @@ where you have read and write access on your system.
 
 For all the elevation models that we create in connection with this
 exercise, we will use the 2-meter resolution as this is what the point
-cloud is originally designed for. **Grid Create Surface** can only
+cloud is originally designed for. *Grid Create Surface* can only
 save so-called **.dtm**-files, which is a in-house file format in FUISON.
 This file cannot be opened in QGIS but we can study our soil model using
 FUSION LAS viewer (Figure 5).
@@ -130,22 +130,22 @@ FUSION LAS viewer (Figure 5).
 
    Figure 5. Ground.dtm.
 
-As you can see there are a variety of settings to make in **Grid
+As you can see there are a variety of settings to configure in **Grid
 Surface Create**. To see what they all do, you can study FUSION Manual.
 To create a geoTIFF grid from your **.dtm** file we will use a FUSION
-algorithm outside of QGIS. This method is important to be familiarized
-with when you later on want to use FUSION for other purposes such as
-creating automated scripts etc. Therefore, it is very useful to learn
+algorithm outside of QGIS. This method is important to be familiar
+with when you want to use FUSION for other purposes, such as
+creating automated scripts etc, later on. Therefore, it is very useful to learn
 how to make use of the FUSION algorithms from the Windows Command
 Prompt.
 
-Go to the Start menu in Windows and open the **command prompt** (you can
-search for **cmd** if you cannot find it). For those of you who are
+Go to the Start menu in Windows and open the *Command Prompt* (you can
+search for *cmd* if you cannot find it). For those of you who are
 beginners in dos syntax you only need one command for this exercise
-(**cd**). This command allows you to move between folders. Typing
-**cd..** you can move backwards in the folder structure. When you are at
-the system root, type **cd C:\\FUSION**. To see what's in the folder,
-you can write the **dir** (Figure 6).
+(*cd*). This command allows you to move between folders. Typing
+*cd..* you can move backwards in the folder structure. When you are at
+the system root, type *cd C:\\FUSION*. To see what's in the folder,
+you can write the *dir* (Figure 6).
 
 .. figure:: /images/Lidar6.jpg
    :alt:  none
@@ -154,7 +154,7 @@ you can write the **dir** (Figure 6).
 
    Figure 6. The Windows Command Prompt
 
-Now use the **cd**-command to locate the folder where you saved
+Now use the *cd*-command to locate the folder where you saved
 **ground.dtm**. You must also make the command prompt "aware" of where
 the FUSION algorithms are located. Type the command as shown in Figure 7
 (path %PATH%;C:\\FUSION).
@@ -164,12 +164,11 @@ the FUSION algorithms are located. Type the command as shown in Figure 7
    :width: 100%
    :align: center
 
-   Figure 7. Adding a environment path in the command prompt.
+   Figure 7. Adding an environment path in the command prompt.
 
 Now you can use all the executable algorithms that are available in the
-**C:\\FUSION\\**. Try by typing **gridsurfacecreate**. Now you see
-the documentation available for this specific algorithm. As you should
-convert our **.dtm** file you will make use of **DTM2ASCII**. Type the
+**C:\\FUSION\\**. Try by typing **gridsurfacecreate**. Now you will see
+the documentation available for this specific algorithm. As you want to convert your **.dtm** file you will make use of **DTM2ASCII**. Type the
 following command:
 
     **dtm2ascii /raster ground.dtm**
@@ -185,10 +184,10 @@ Create Digital Surface Models using QGIS/FUSION
 
 A Digital Surface Model (DSM) is an elevation model that contains the
 heights of objects (such as building heights). Usually, ground elevation
-is also included. A model containing only ground level elevation usually
+is also included. A model containing only ground level elevation is usually
 defined as a Digital Elevation Model (DEM). There are several ways to
 create a DSM. First, you should make use of an additional algorithm from
-the command prompt, ***PolyClipData***. The algorithm is used to
+the command prompt, **PolyClipData**. The algorithm is used to
 separate out certain points from the point cloud. Remove **by\_get.shp**
 from your QGIS project if the layer is loaded. Locate yourself in the
 **LaserData** folder and enter the following command in one line:
@@ -197,22 +196,21 @@ from your QGIS project if the layer is loaded. Locate yourself in the
     “c:\\temp\\LidarQGISFUSION\\Fastighetskartan\\by\_get.shp”
     “c:\\temp\\LidarQGISFUSION\\Output\\veg.las” “gvc.las”**
 
-Sometimes the folder paths are malfunctioning. If you get an error
+Sometimes the folder paths malfunction. If you get an error
 message, try copying the **by\_get.shp** in the same folder as
-**gvc.las** and then remove the path from the command. Remember that a shape file consists of many files, i.e. you need to copy all files starting with the name **by_get** What you did with
-the above command was that we took all the points classified as
-unclassified by the switch **/class:1** and cut them based on our
+**gvc.las** and then remove the path from the command. Remember that a shape file consists of many files, i.e. you need to copy all files starting with the name **by_get**. What you did with
+the above command was take all the points classified as
+*unclassified*, with the switch **/class:1**, and cut them based on the
 building footprints with the switch **/outside**. Examine the results
-of FUSION LAS viewer.
+in the FUSION LAS viewer.
 
 Run the same algorithm, but just cut the points that are within the
-building footprints.
+building footprints. Name the output **buildings.las**.
 
-Finally, cut out all the ground points. If you are not able to write the
-correct syntax, see the solutions at the end of this exercise.
+Finally, cut out all the ground points. Name the output **ground.las**. If you are not able to write the correct syntax, see the solutions at the end of this exercise.
 
 Now let us create a DSM that includes both land and building heights. We
-do this, use *Processing Toolbox > Surface > Canopy Model* as shown in
+do this, use *Processing Toolbox > FUSION > Surface > Canopy Model* as shown in
 Figure 8. In this algorithm we can use the switch **/ascii** and
 thereby avoid creating an ESRI ASCII grid afterwards. Instead, an ascii
 grid with the same name as your **.dtm** file is now created. Note that
@@ -230,10 +228,10 @@ If you are successful, **DSM.dtm** should look like Figure 9.
 
 An asci file has also been created (**DSM.asc**). This is a very simple
 raster file format and cannot be e.g. embedded with coordinate system
-information. There we need to convert it into an e.g. geoTIFF. Open
-**DSM.asc** in QGIS and make geotiff copy by right-clicking and choosing
-*Export > Save as...* Create a GeoTIFF in the Output folder and name it
-**DSMtif.tif**. Keep all other settings.
+information. Therefore we need to convert it into another format, e.g. geoTIFF. Open
+**DSM.asc** in QGIS and create a geotiff copy by right-clicking and choosing
+*Export > Save as...*. Save the GeoTIFF in the Output folder and name it
+**DSMtif.tif**. Keep all other settings as standard.
 
 .. figure:: /images/Lidar9.jpg
    :alt:  none
@@ -247,17 +245,16 @@ and shrubs). This requires some additional steps and to achieve the best
 possible results, one needs to undergo a number of filtering processes.
 You can study this further in Lindberg and Grimmond (2011). To create a
 decent vegetation model, we will use two types of filters. First, we
-want to filter out lower points that can be for example people, cars
-etc. To do this, we use **ClipData**. Unfortunately there is a bug in
-the algorithm of running it from the **Processing Toolbox** so we need
+want to filter out lower points that can be, for example, people or cars. To do this, we use *ClipData*. Unfortunately there is a bug in
+the algorithm of running it from the *Processing Toolbox* so we need
 to run it from the command prompt. Locate your folder *Output* and enter
 the following:
 
     **clipdata /ground:ground.dtm /zmin:2.5 veg.las veg\_filt.las 318864.0
     319364.0 6397926.0 6398400.0**
 
-This was done to exclude all the points that are closer than 2.5 meters
-from our ground model (**/zmin:2.5**). The coordinates in the end is
+This was done to exclude all the points that are lower than 2.5 meters
+from our ground model (**/zmin:2.5**). The coordinates at the end are
 taken from the extents parameters in **DSM.asc**.
 
 Now you can run the **Canopy Model** again with settings according to
@@ -270,21 +267,20 @@ Figure 10.
 
    Figure 10. Settings in Canopy Model in order to create a vegetation DSM.
 
-By adding **ground.dtm** as **Input Ground DTM layer** normalizes all
+Adding **ground.dtm** as **Input Ground DTM layer** normalizes all
 values ​​to be meters above ground level instead of meters above the sea
 level. Open **cdsm.asc** in QGIS. As you can see, you need to perform
-some additional steps before you can be satisfied. The trees includes a
-lot of "holes", there are also occasional lamp posts, etc. that can be
-identified, plus the buildings in the model are visible. This depends on
+some additional steps before you can be satisfied. The trees have a
+lot of "holes", there are also occasional lamp posts, etc. Plus the buildings in the model are visible. This depends on
 how the **CanopyModel** algorithm works. You can read more about this
 in the manual if you are interested. Let's start by removing buildings.
 To do this, create a new polygon layer by buffering the building
-footprint layer (**by\_get.shp**) by 2 meters (*Vector > Geoprocessing Tools > Buffer*). Name your new shapefile
-**by\_buff.shp** and save it in the folder Fastighetskartan. We must
+footprint layer (**by\_get.shp**) by 2 meters (*Vector > Geoprocessing Tools > Buffer*). Set *End cap style* to *Flat* and *Join style* to *Miter*. Name your new shapefile
+**by\_buff.shp** and save it in the folder **Fastighetskartan**. We must
 also create an additional attribute for **by\_buff.shp** with the value
-0. Open the attribute table and then the **Field Calculator**
-(abacus). Make the following settings (Figure 11) and click OK. Then
-save and close the editor mode (buttons at the left of the attribute
+0. Open the *attribute table* and then the *Field Calculator*
+(abacus). Configure the following settings (Figure 11) and click OK. Then
+save and close the editor mode (buttons to the top left of the attribute
 table).
 
 .. figure:: /images/Lidar11.jpg
@@ -292,9 +288,9 @@ table).
    :width: 100%
    :align: center 
 
-   Figure 11. How to add a new attribute column containing only ones.
+   Figure 11. How to add a new attribute column containing only zeros.
 
-Now go to the *Raster -> Conversion -> Rasterize* and make the following
+Now go to the *Raster -> Conversion -> Rasterize* and configure the following
 settings as in Figure 12. The Output extent is taken from the
 **dsmtif.tif** layer.
 
@@ -305,18 +301,18 @@ settings as in Figure 12. The Output extent is taken from the
 
    Figure 12. Rasterize in QGIS.
 
-Open the Raster Calculator and multiply **buff\_bolean** with **cdsm**.
-Call the new layer **cdsm\_filt.tif**. This operation have now removed
-vegetation pixels that was present within the buffered buildings.
+Open the *Raster Calculator* and multiply **buff\_bolean** with **cdsm**.
+Call the new layer **cdsm\_filt.tif**. This operation has now removed
+vegetation pixels that were present within the buffered buildings.
 
-Unfortunately, the Canopy Model algorithm in FUSION/QGIS is producing
+Unfortunately, the Canopy Model algorithm in FUSION/QGIS is produces
 very small elevations when it is normalized against the **ground.dtm**.
 Therefore, we need to remove these values from the vegetation raster.
-This can be done in the Raster Calculator in QGIS. Open Raster
-Calculator and choose write the following expression in the *Raster
+This can be done in the *Raster Calculator* in QGIS. Open *Raster
+Calculator* and choose write the following expression in the *Raster
 Calculator Expression* Window:
 
-    **(CDSM\_veg\_filt@1 > 0.5) \* CDSM\_veg\_filt@1**
+    **(cdsm\_filt@1 > 0.5) \* cdsm\_filt@1**
 
 Call the output file **cdsm\_filt2.tif** and save as a geoTIFF.
 
@@ -327,9 +323,9 @@ for example, a positive pole height value is surrounded by ground pixels
 (zeros). This replaces the pixel value to the value that occurs most in
 the filter window (usually 3x3), i.e. zero. Search for **Majority
 filter** from *SAGA GIS* in the *Processing Toolbox*. Run the filter
-algorithm using default settings. Make sure not to remove too much vegetation pixels. This is set by the *Threshold* parameter. Use a temporary output and then export
+algorithm using default settings. Make sure not to remove too many vegetation pixels. This is set by the *Threshold* parameter. Use a temporary output and then export
 the layer as a geoTIFF with the name **cdsm\_final**. There are also
-other filters that you could make us of. For example, filters to fill gaps in the vegetation or remove linear features (see Linberg and Grimmond 2011). If you feel you have much time left, consider how to fill gaps in vegetation using filtering techniques.
+other filters that you could make use of. For example, filters to fill gaps in the vegetation or remove linear features (see Linberg and Grimmond 2011). If you feel you have much time left, consider how to fill gaps in vegetation using filtering techniques.
 
 .. figure:: /images/Lidar13.jpg
    :alt:  none
@@ -341,11 +337,11 @@ other filters that you could make us of. For example, filters to fill gaps in th
 PART 2 - Land Cover data
 ------------------------
 
-The land cover in UMEP consists of seven classes (buildings, paved, deciduous trees, conifer trees, bare soil and water). This part of the exersice you will make use of the data produced in Part 1. You will try to drive as many classes as possible. 
+The land cover in UMEP consists of seven classes (buildings, paved, deciduous trees, conifer trees, bare soil and water). This part of the exersice you will make use of the data produced in Part 1. You will try to derive as many classes as possible. 
 
 Buildings and paved
 ~~~~~~~~~~~~~~~~~~~
-First you need to create a new bolean raster using your building polygon layer. Create a new attribut called ceros in **by_get** and re-run Rasterize as in figure 12 but now yse **by_get** as input layer and **build_bolean.tif** as output (*Rasterized*).
+First you need to create a new boolean raster using your building polygon layer. Create a new attribute called zeros in **by_get** and re-run *Rasterize* as in figure 12 but now use **by_get** as the input layer and **build_bolean.tif** as output (*Rasterized*).
 
 Deciduous trees
 ~~~~~~~~~~~~~~~
@@ -353,7 +349,7 @@ Now create a boolean raster where vegetation = 1 and ground = 0 in the *Raster C
 
 Grass
 ~~~~~
-Now open **ground.las** in the FUSION viewer and color point using intensity data (N). As shown in Figure 14, each laser pulse returns to the reciever with an intensity. As the laser pulse usually is within the red spectrum features susch as grass (vegetation) has a high intensity and can therefore be identified (Figure 14). 
+Now open **ground.las** in the FUSION viewer and color point using intensity data (*press the N key*). As shown in Figure 14, each laser pulse returns to the reciever with an intensity. As the laser pulse usually is within the red spectrum, features such as grass (vegetation) has a high intensity and can therefore be identified (Figure 14). 
 
 .. figure:: /images/Lidar14.jpg
    :alt:  none
@@ -362,7 +358,7 @@ Now open **ground.las** in the FUSION viewer and color point using intensity dat
 
    Figure 14. Ground.las visulized based on intensity values.
    
-Open *Intensity Image* in FUSION and use the settings as in Figure 15.
+Open *Point cloud analysis > Intensity Image* in FUSION and configure the settings as in Figure 15.
 
 .. figure:: /images/Lidar15.jpg
    :alt:  none
@@ -371,11 +367,11 @@ Open *Intensity Image* in FUSION and use the settings as in Figure 15.
 
    Figure 15. Settings for the *Intesity Image* tool.
    
-This creates a 3 band raster image. You need to add it to your project (**Intensity.bmp**). One simple way to reduce it to only one is to use the *Raster Calulator* and only save one of the band. Call the output **Intensity1.tif**. Buildings and other NoData-features are here callsified as 255. Reduce these values to zeros using the *Raster Calculator* again (("Intensity1@1"  <  255) * "Intensity1@1"). Call the output layer **Intensity1nodata.tif**. Now try to find a suitable threshold value that can represent the lower value of grass. This can be done by either identifying values using the *Identify tool* (i with a mouse pointer) or you can try to visulize the grass in the *Symbology* tab under *Properties*. This requires some knowledge of the area (i.e. waht is grass and not) or you can make us of e.g. QuickMapServices-plugin and overlay i.e. Google satellite images. When satisfied (I used <125) create a boolean image where grass has the value 1 and other surfaces 0 using the *Raster Calculator*. Call the layer **lc_bolean.tif**.
+This creates a 3 band raster image. You need to add it to your project (**Intensity.bmp**). One simple way to reduce it to only one layer is to use the *Raster Calulator* and only save one of the band. Call the output **Intensity1.tif**. Buildings and other NoData-features are here classified as 255. Reduce these values to zeros using the *Raster Calculator* again (("Intensity1@1"  <  255) * "Intensity1@1"). Call the output layer **Intensity1nodata.tif**. Now try to find a suitable threshold value that can represent the lower value of grass. This can be done by either identifying values using the *Identify tool* (i with a mouse pointer) or you can try to visulize the grass in the *Symbology* tab under *Properties*. This requires some knowledge of the area (i.e. what is grass and what is not) or you can make use of e.g. QuickMapServices-plugin and overlay i.e. Google satellite images. When satisfied (I used >125) create a boolean image where grass has the value 1 and other surfaces 0, using the *Raster Calculator*. Call the layer **lc_bolean.tif**.
 
 Bare soil and water
 ~~~~~~~~~~~~~~~~~~~
-This is about as far as you can come with a point cloud like this. Bare soil is actially not present within this domain and water has usually no returns back and can therefore be hard to classify. There are techniques but not within the scope of this tutorial. One possibility is to use a vector dataset (e.g. Figure 1) and extract e.g. water from that dataset and incorporate into the land cover data. Another would be to exploit the fact that lider returns are almost absent from water bodies (lakes, ponds etc.). You can examine **gvc.las** in the FUSION viewer and spot a small pond in the center of the study area. However, you will also see other areas with no returns from e.g. metal roofs etc. This make deriving water bodies abit of a challange, but not impossible. You cna use e.g. *FillNoData* in the processing toolbox and try to derive water.
+This is about as far as you can come with a point cloud like this. Bare soil is actually not present within this domain and water usually has no returns back and can therefore be hard to classify. There are techniques to do so, but not within the scope of this tutorial. One possibility is to use a vector dataset (e.g. Figure 1) and extract e.g. water from that dataset and incorporate into the land cover data. Another would be to exploit the fact that lidar returns are almost absent from water bodies (lakes, ponds etc.). You can examine **gvc.las** in the FUSION viewer and spot a small pond in the center of the study area. However, you will also see other areas with no returns, e.g. metal roofs etc. This makes deriving water bodies a bit of a challenge, but not impossible. You can use e.g. *FillNoData* in the processing toolbox to try to derive water.
 
 Merging into on land cover grid
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -385,7 +381,7 @@ Make use of the *Raster Calculator* again using the following syntax:
 
 Call the output **landcover_raw.tif**.
 
-Finally, you need to appoint the correct values to the different classes. That can be done using *UMEP > Pre-Processor > Urban Land Cover > Land Cover Reclassifier*.
+Finally, you need to appoint the correct values to the different classes. That can be done using *UMEP > Pre-Processor > Urban Land Cover > Land Cover Reclassifier*. You can qualitatively check your land cover classification against satellite imagery, such as the *Google Satellite* in *QuickMapServices*.   
 
 
 Commands
