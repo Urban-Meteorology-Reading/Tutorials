@@ -104,9 +104,9 @@ To access the Source area (Footprint) model, go to *UMEP -> Pre-processor > Urba
 
 #. Choose the model you wish to run (Kormann and Meixner 2001 or Kljun et al. 2015)
 
-#. Some initial parameters values are given - think about what would be appropriate values for your site and period   of interest. The manual has   more information (e.g. definitions) of the input variables.
+#. Some initial parameter values are given - think about what would be appropriate values for your site and period   of interest. The manual has   more information (e.g. definitions) of the input variables.
 
-	- The values are dependent on the meteorological conditions and the surface surrounding the site. The former   obviously vary on an hour to hour basis (or shorter time periods), whereas the others are dependent on the wind direction and the fetch characteristics.
+	- The values are dependent on the meteorological conditions and the surface surrounding the site. The former obviously vary on an hour to hour basis (or shorter time periods), whereas the others are dependent on the wind direction and the fetch characteristics.
 	
 #. Add a prefix and an output folder.
 
@@ -129,16 +129,14 @@ To access the Source area (Footprint) model, go to *UMEP -> Pre-processor > Urba
 
 The **output is a source area** grid showing the cumulative percentage of source area influencing the flux at the point of interest.
 
-- To display the legend correctly in the layer window: Double-click on the source area grid and then click OK without doing any changes. The source area display is showing up to 98% of the cumulative area.
+- The other output is a text file giving both the input setting variables and the output morphometric parameters calculated based on the source area generated. More information is provided in the manual, row titled: “Output”
 
-- Other output: A text file giving both the input setting variables and the output morphometric parameters calculated based on the source area generated. More information is provided in the manual, row titled: “Output”
-
-It is possible to input a text file to generate a source area based on morphometric parameters (e.g. an hourly dataset). However, for now you can moodify the input variables set in the interface. Format of such a file is given in the `manual <https://umep-docs.readthedocs.io/en/latest/pre-processor/Urban%20Morphology%20Source%20Area%20(Point).html>`__.
+It is possible to input a text file to generate a source area based on morphometric parameters (e.g. an hourly dataset). However, for now you can modify the input variables set in the interface. The format of such a file is given in the `manual <https://umep-docs.readthedocs.io/en/latest/pre-processor/Urban%20Morphology%20Source%20Area%20(Point).html>`__.
 
 Iterative process
 -----------------
 
-To work with a site with no value known *a priori*.
+To work with a site with no morphometric values known *a priori*.
 
 #. Use the `MorphometricCalculator(Point) <http://umep-docs.readthedocs.io/en/latest/pre-processor/Urban%20Morphology%20Morphometric%20Calculator%20(Point).html>`__ tool in the UMEP plugin to select a
    point to get the initial parameter values:
@@ -147,8 +145,7 @@ To work with a site with no value known *a priori*.
       Calculator (Point)
    #. Open the output files
 
-#. **Anisotropic** file – has the values in, e.g., 5 degree **sectors**
-   – i.e. what you selected. This is appropriate if the area is very
+#. **Anisotropic** file – has the values in each sector that you selected. This is appropriate if the area is very
    inhomogeneous.
 #. **Isotropic** file - has the **average value** for the area
 #. Use these values to populate the source area model window.
