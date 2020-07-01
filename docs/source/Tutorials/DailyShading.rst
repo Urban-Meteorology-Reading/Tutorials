@@ -142,3 +142,5 @@ Go to *UMEP -> Post-Processor -> Outdoor Thermal Comfort -> SOLWEIG Analyzer*. W
 - Click on *Show Animation*
 
 Now you will see a short animation of the shadow patterns at 30 minute intervals for the data that you generated with the **Daily Shadow Pattern**-tool.
+
+Tutorial finished.

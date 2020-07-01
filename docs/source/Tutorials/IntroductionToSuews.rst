@@ -257,6 +257,7 @@ in the SUEWS Simple. For example, change the land cover fraction by:
     - In the left panel (**Plot data**), Specify grid no. 1 and Year to investigate 2011.
     - Tick *Plot basic data* and click **Plot**.
 
+Tutorial finished.
 
 References
 ----------

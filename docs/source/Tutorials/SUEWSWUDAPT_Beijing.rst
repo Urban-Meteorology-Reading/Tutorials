@@ -402,3 +402,6 @@ could be done as follows:
 #. Go to *Style* and select *Graduated* in the top box. And select the
    QH column. Under *Color ramp* select the colour bar you prefer and
    click *Ok*
+
+
+Tutorial finished.

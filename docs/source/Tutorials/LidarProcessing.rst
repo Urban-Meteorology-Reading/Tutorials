@@ -417,4 +417,4 @@ and mean radiant temperatures in London. `Urban Ecosystems 14:4, 617-634. <https
 
 **Link to data**: https://drive.google.com/file/d/0B31bjOSjDDdxME5vd1VMS25IZjg/view
 
-
+Tutorial finished.

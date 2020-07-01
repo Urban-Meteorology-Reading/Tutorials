@@ -153,6 +153,8 @@ To work with a site with no value known *a priori*.
 #. **Isotropic** file - has the **average value** for the area
 #. Use these values to populate the source area model window.
 
+Tutorial finished.
+
 Roughness parameters
 ~~~~~~~~~~~~~~~~~~~~
 

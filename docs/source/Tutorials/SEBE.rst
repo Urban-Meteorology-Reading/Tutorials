@@ -511,3 +511,5 @@ You can change the *shading etc*. on different layers.
 -  Numerous things can be modified from this point.
 
 `UMEP repository <https://github.com/UMEP-dev/UMEP>`__.
+
+Tutorial finished.

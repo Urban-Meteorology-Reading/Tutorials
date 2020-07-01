@@ -521,3 +521,5 @@ metabolism emissions remains the same as before.
    :align: center
 
    Output from LQF for seven days in London
+   
+Tutorial finished.

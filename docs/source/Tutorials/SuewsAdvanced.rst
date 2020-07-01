@@ -184,6 +184,8 @@ run the model. Try to choose an area where the fraction of buildings and
 paved surfaces are low. Consider lowering the *Population density* to get
 more realistic model outputs. Compare the results for the different areas.
 
+Tutorial finished.
+
 References
 ----------
 

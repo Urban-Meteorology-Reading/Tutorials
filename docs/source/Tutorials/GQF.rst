@@ -581,3 +581,4 @@ latent heat is a relatively small contribution. Consuming electricity
 emits no latent heat, unlike gas, while metabolism now represents a
 larger fraction of the total.
 
+Tutorial finished.
