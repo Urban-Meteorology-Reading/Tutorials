@@ -27,7 +27,7 @@ radiation (K\ :sub:`down`), air temperature (T\ :sub:`a`), relative humidity (RH
 urban geometry (DSMs), and geographic information (latitude, longitude
 and elevation). To determine T\ :sub:`mrt`, continuous maps of sky view
 factors are required. Both vegetation and ground cover information can
-be added to increase the accuracy of the model output. Below 
+be added to increase the accuracy of the model output. Below, 
 a schematic flowchart of SOLWEIG in shown. The `full
 manual <http://umep-docs.readthedocs.io/en/latest/OtherManuals/SOLWEIG.html>`__ provides more
 detail.
@@ -49,8 +49,8 @@ Help with Abbreviations can be found `here <http://umep-docs.readthedocs.io/en/l
 Steps
 ~~~~~
 
-#. Generation of the different kinds of input data that are needed to
-   run the model
+#. Different kinds of input data, that are needed to
+   run the model, will be generated.
 #. How to run the model
 #. How to examine the model output
 #. Add additional information (vegetation and ground cover) to improve
@@ -101,11 +101,11 @@ Details of the model inputs and outputs are provided in the `SOLWEIG
 manual <http://umep-docs.readthedocs.io/en/latest/OtherManuals/SOLWEIG.html>`__. As this tutorial is
 concerned with a **simple application** only the most critical
 parameters are used. Many other parameters can be modified to more
-appropriate values if applicable. The table below provides an overview
+appropriate values, if applicable. The table below provides an overview
 of the parameters that can be modified in the Simple application of
 SOLWEIG.
 
-Data requreiments:
+Data use and type abbreviations:
 R: required, O: Optional, N : not needed, 
 S: Spatial, M: Meteorological, 
 
@@ -176,15 +176,15 @@ S: Spatial, M: Meteorological,
 
 Meterological input data should be in UMEP format. You can use the
 `Meterological Preprocessor <http://umep-docs.readthedocs.io/en/latest/pre-processor/Meteorological%20Data%20MetPreprocessor.html>`__
-to prepare your input data. There is also a possibility to use a single point in time in the plugin. 
+to prepare your input data. It is also possible use the plugin for a single point in time. 
 
-Requred meteorological data is: 
+Required meteorological data is: 
 
 #. Air temperature (°C)
 #. Relative humidity (%)
 #. Incoming shortwave radiation (W m\ :sup:`2`)
 
-The model performance will increase if also diffure and direct beam solar radiation is 
+The model performance will increase if diffuse and direct beam solar radiation is 
 available but the mdoel can also calculate these variables. 
 
 
@@ -205,7 +205,7 @@ How to Run SOLWEIG from the UMEP-plugin
 
        Dialog for the SOLWEIG model (click on figure for larger image)
 
-#. To be able to run the model some additional spatial datasets needs to
+#. To be able to run the model, some additional spatial datasets needs to
    be created.
 
    -  Close the SOLWEIG plugin and open *UMEP -> Pre-Processor -> Urban
@@ -226,16 +226,16 @@ How to Run SOLWEIG from the UMEP-plugin
        
        Settings for the SkyViewFactorCalculator.
       
-   -  When the calculation is done, map will appear in the map canvas.
+   -  When the calculation is done, a map will appear in the map canvas.
       This is the 'total' SVF i.e., including both buildings and
       vegetation. Examine the dataset.
    -  Where are the highest and lowest values found?
-   -  Look in your output folder and find a zip-file containing all the
+   -  If you look in your output folder you will find a zip-file containing all the
       necessary SVF maps needed to run the SOLWEIG-model.
 
-#. Another preprocessing plugin needed is to create the building wall
+#. Another preprocessing plugin is needed to create the building wall
    heights and aspect. Open *UMEP -> Pre-Processor -> Urban geometry ->
-   Wall height and aspect* and use the settings as shown below. QGIS scales loaded rasters by a *cumulative count out* approach (98%). As the height and aspect layers are filled with zeros where no wall are present it might appear as there is no walls identified. Rescale your results to see the wall identified (*Layer Properties > Style*).
+   Wall height and aspect* and use the settings as shown below. QGIS scales loaded rasters by a *cumulative count out* approach (98%). As the height and aspect layers are filled with zeros where no wall are present it might appear as if there is no walls identified. Rescale your results to see the walls identified (*Layer Properties > Style*).
    
     .. figure:: /images/SOLWEIG_wallgeight_solweig.png
        :alt:  None
@@ -247,7 +247,7 @@ How to Run SOLWEIG from the UMEP-plugin
 #. Re-open the SOLWEIG plugin and use the settings shown below. You will
    use the GUI to set one point in time (i.e. a summer hour in
    Gothenburg, Sweden) hence, no input meteorological file is needed for
-   now. No information on vegetation and ground cover is added for this
+   now. No information on vegetation or ground cover is added for this
    first try. Click **Run**. 
    
     .. figure:: /images/SOLWEIG_Tmrt1_solweig.png
@@ -259,18 +259,18 @@ How to Run SOLWEIG from the UMEP-plugin
       
 #. Examine the output (Average T\ :sub:`mrt` (°C). What is the main
    driver to the spatial variations in T\ :sub:`mrt`?
-#. Add 3D vegetation information by ticking in *Use vegetation scheme
+#. Add 3D vegetation information by ticking *Use vegetation scheme
    (Lindberg, Grimmond 2011)* and add **CDSM_Krbig** as the *Vegetation
-   Canopy DSM*. As no TDSM exists we estimate the it by using 25% of the
-   canopy height. Leave the tranmissivity as 3%. Tick in *Save generated
+   Canopy DSM*. As no TDSM exists we estimate it by using 25% of the
+   canopy height. Leave the tranmissivity as 3%. Tick *Save generated
    Trunk Zone DSM* (a tif file, **TDSM.tif**, will be generated in the
    specified output folder and used in a later section: **Climate
-   sensitive planning**). Also tick in *Save generated building grid* as
-   this will be needed later in this tutorial. Leave the other setting
-   as before (Step 4) except for changing your output directory
-   Otherwise, results from your first run will be overwritten. Run the
+   sensitive planning**). Also tick *Save generated building grid* as
+   this will be needed later in this tutorial. Leave the other settings
+   as before (Step 4) except for changing your output directory,
+   otherwise results from your first run will be overwritten. Run the
    model again and compare the result with your first run.
-#. Add your last spatial dataset, the **land cover** grid by ticking in
+#. Add your last spatial dataset, the **land cover** grid by ticking
    *Use land cover scheme (Lindberg et al. 2016)*. Run and compare the
    result again with the previous runs.
 
@@ -283,19 +283,19 @@ Gothenburg, Sweden. The GUI is also able to derive full model output
 (all calculated variables) from certain points of interest (POIs).
 
 #. First you need to create a point vector layer to store the POIs. Go
-   to *Layer -> Create Layer -> New Shape file*. Choose *Point* as
+   to *Layer > Create Layer > New Shape file*. Choose *Point* as
    *Type* and add a new text field called **name**. Name the new layer
    **POI_Kr.shp**. Specify the coordinate system as SWEREF99 12 00
    (EPSG: 3007).
 #. Now you should add two points within the study area. To add points to
-   the layer it has to be editable and Add Feature should be activated.
+   the layer it has to be editable and *Add Feature* should be activated.
 
     .. figure:: /images/SOLWEIG_Addpoint.png
        :alt:  None
        :width: 411px
        :align: center
        
-       Setting to add points 
+       Settings to add points 
    
    Two points should be added and the attributes should be id=\ **1** and
    name=\ **courtyard** for the right point and id=\ **2** and
@@ -311,13 +311,13 @@ Gothenburg, Sweden. The GUI is also able to derive full model output
 	   
    When you are
    finished, save layer edits (box in-between the two marked boxes in
-   Figure 6). Close the editing by pressing Toggle editing (the pencil).
+   Figure 6). Close the editing by pressing *Toggle editing* (the pencil).
 #. Now open the SOLWEIG plugin. Use both the vegetation and land cover
    schemes as before. This time, tick in *Include POI(s)*, select your
    point layer and use the ID attribute as *ID field*.
 #. Tick in *Use continuous meteorological dataset* and choose
    **gbg19970606_2015a.txt** as *Input meteorological file*. Also, tick
-   in to save T\ :sub:`mrt` as *Output maps*. Run the model again.
+   in to save T\ :sub:`mrt` (in the *Output maps* section of the dialogue box). Run the model again.
 
 Examine your output with SOLWEIG Analyzer
 -----------------------------------------
@@ -340,26 +340,26 @@ the SOLWEIG Analyzer plug-in.
 
 #. Firstly you will compare differences in T\ :sub:`mrt` for the two
    locations (courtyard and park). This can done using the left frame
-   (*Point of Interest data*). Specify *courtyard* as *POI* and *Mean
-   Radiant Temperature* in the two top scroll down lists. Then tick in
-   *Include another POI/variable* and chose *park* and *Mean Radiant
+   (*Point of Interest data*). Specify *courtyard* (1) as the *POI* and *Mean
+   Radiant Temperature* as the *variable* in the two top scroll down lists. Then tick in
+   *Include another POI/variable* and chose *park* (2) and *Mean Radiant
    Temperature* below. Click *Plot*. What explains the differences?
-#. Now lets us move on to analyse the output maps generated from our
+#. Now lets move on to analyse the output maps generated from our
    last model run. In the right frame, specify *Mean Radiant
    Temperature* as *Variable to visualize*. Start by clicking *Show
    Animation*. Now the output maps of T\ :sub:`mrt` generated before are
    displayed in a sequence.
-#. Next step is to generate some statistical maps from the last model
+#. The next step is to generate some statistical maps from the last model
    run. Specify *Mean Radiant Temperature* as *Variable to visualize*
-   and tick in to *Exclude building pixels*. Choose the building grid
+   and tick *Exclude building pixels*. Choose the building grid
    that you saved earlier in this tutorial. If it is not in the
    drop-down list you need to add this layer (**buildings**) to your
    project. Tick in *T*\ :sub:`mrt` *Percent of time above threshold
-   (degC)* and specify 55.0 as threshold. Specify an output folder and
-   tick also in *Add analysis to map canvas* before you generate the
+   (degC)* and specify **55.0** as threshold. Specify an output folder and also
+   tick *Add analysis to map canvas* before you generate the
    result. The resulting map show the time that a pixel has been above
    55 degC based on the whole analysis time i.e. 24 hours. This type of
-   maps can be used to identify areas prone to e.g. heat stress
+   map can be used to identify areas prone to heat stress, for example.
 
 Climate sensitive planning
 --------------------------
@@ -368,19 +368,19 @@ Vegetation is one effective measure to reduce areas prone to heat
 related health issues. In this section you make use of the Tree
 Generator plugin to see the effect of adding more vegetation into our
 study area. The municipality in Gothenburg have identified a "hot spot"
-south of the german church and they want to see the effect of planting
+south of the German church and they want to see the effect of planting
 three new trees in that area.
 
 The Tree Generator
 ~~~~~~~~~~~~~~~~~~
 
-The Tree Generator plugin make use of a point vector file including the
+The Tree Generator plugin makes use of a point vector file including the
 necessary attributes to generate/add/remove vegetation suitable for
 either mean radiant temperature modelling with SOLWEIG or urban energy
 balance modelling with SUEWS.
 
-#. Create a point vector shape file named (**TreesKR.shp**) as described
-   in the previous section adding five attributes (*id, ttype, trunk,
+#. Create a point vector shape file named (**TreesKR.shp**), as described
+   in the previous section, adding five attributes (*id, ttype, trunk,
    totheight, diameter*). The attributes should all be decimal (float)
    numbers (see table below). The location of the three new trees are
    shown in figure below. The values for all three vegetation units should
@@ -393,7 +393,7 @@ balance modelling with SUEWS.
        
        Location of the three new vegetation units.
 
-#. Add your created trunk zone dsm (TDSM.tif) that was created
+#. Add your created trunk zone dsm (tdsm.tif) that was created
    previously (located in your output directory).
 #. Open the TreeGenerator (UMEP -> PreProcessor -> TreeGenerator) and
    use the settings as shown in figure below. 
@@ -405,9 +405,9 @@ balance modelling with SUEWS.
        
        The settings for the Tree Generator
 
-#. As the vegetation DSMs have been changed, the SVFs has to be
+#. As the vegetation DSMs have been changed, the SVFs have to be
    recalculated. This time use the two generated vegetation DSMs.
-#. Now re-run SOLWEIG using the same settings as before but now use the
+#. Re-run SOLWEIG using the same settings as before but now use the
    new vegetation surface models as well as the new SVFs generated in
    the previous step.
 #. Generate a new, updated threshold map based on the new results and
