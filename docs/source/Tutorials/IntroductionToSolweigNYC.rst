@@ -218,9 +218,7 @@ How to Run SOLWEIG from the UMEP-plugin
 #. Open SOLWEIG from *UMEP -> Processor -> Outdoor Thermal Comfort ->
    Mean radiant temperature (SOLWEIG)*.
 
-   -  Some additional information about the plugin is found in the lower
-      left window. You will make use of a test dataset from observations
-      for Gothenburg, Sweden.
+   -  You will make use of the NYC dataset.
 
     .. figure:: /images/SOLWEIG_Interface.png
        :alt:  None
@@ -259,7 +257,7 @@ How to Run SOLWEIG from the UMEP-plugin
 
 #. Another preprocessing plugin needed is to create the building wall
    heights and aspect. Open *UMEP -> Pre-Processor -> Urban geometry ->
-   Wall height and aspect* and use the settings as shown below. QGIS scales loaded rasters by a *cumulative count out* approach (98%). As the height and aspect layers are filled with zeros where no wall are present it might appear as there is no walls identified. Rescale your results to see the wall identified (*Layer Properties > Style*).
+   Wall height and aspect* and use the settings as shown below. QGIS scales loaded rasters by a *cumulative count out* approach (98%). As the height and aspect layers are filled with zeros where no wall are present it might appear as there is no walls identified. Rescale your results to see the wall identified (*Layer Properties > Symbology*).
    
     .. figure:: /images/SOLWEIG_wallgeight_solweig.png
        :alt:  None
