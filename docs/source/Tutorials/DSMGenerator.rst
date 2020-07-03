@@ -84,7 +84,7 @@ Data on ground elevation at various spatial resolutions is found in various plac
 
 Regarding global coverage, `gisgeography <https://gisgeography.com/free-global-dem-data-sources/>`__ provides a nice list of available data sources. Some of the links are outdated but you still get a good overview of available data. Also, `OpenDEM <https://opendem.info/>`__ is a good access point to get hold of elevation data. Usually, national datasets are availble at much higher spatial resolution e.g. `<https://digimap.edina.ac.uk/>`__ for the UK. These national databases are usually not fully open and are sometimes password protected. 
 
-- (Optional) Now try to generate a DSM for your home neighboor hood where you grew up. Use the SRTM 1 arc resolution dataset found here: `<https://opendem.info/link_open.html>`__. Remember not to produce too large an area as downloading from OSM can be slow and restricted in size. This will take you either NASA or USGS for download. You need an account but it is free to sign up.
+- (Optional) Now try to generate a DSM for your home neighboor hood where you grew up. Use the SRTM 1 arc resolution dataset. This can be downloaded from   `here <https://earthexplorer.usgs.gov/>`__. You need an account but it is free to sign up. Get your desired location using one of the methods in the *Search criteria* tab. Remember not to produce too large an area as downloading from OSM can be slow and restricted in size. In the *Datasets* tab find the **SRTM 1 Arc Second-Global** dataset. From the *Results* tab you can download your output area as a *geotif*. Note you will need to change the CRS of the raster (*Raster > Projections > Warp*). 
 
 Other datasets for UMEP
 -----------------------
