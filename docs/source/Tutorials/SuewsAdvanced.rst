@@ -169,13 +169,14 @@ Generating data from the geodatasets
 
       Settings for Image Morphometric Parameters for vegetation
 
-#. A warning appears that your vegetation fractions between the
-   morphology dataset and land cover dataset are large. You can ignore
+#. If you see a warning that appears that your vegetation fractions between the
+   morphology dataset and land cover dataset are large, you can ignore
    this for now since the land cover dataset also will change.
 #. Repeat the same procedure for land cover as you did for buildings and vegetation but instead using the Land Cover
    Fraction (Point) plugin. Use **lc** as the *File prefix*
-#. Enter the meteorological file, Year etc. This should be the same as the first run you made.
+#. Enter the meteorological file (For Windows users: C:/Users/**your_user_name**/AppData/Roaming/QGIS/QGIS3/ profiles/default/python/plugins/UMEP/suewsmodel/Input/Kc_2011_data_60.txt), Year etc. This should be the same as the first run you made.
 #. Now you are ready to run the model. Click *Run*.
+#. Save your plots. Preferable you can zoom in on a couple of days for easier analysis later on.
 
 
 You are now familiar with the full capabilities of the Suews Simple plugin. Your next task is to
@@ -183,6 +184,7 @@ choose another location within the geodataset domain, generate data and
 run the model. Try to choose an area where the fraction of buildings and
 paved surfaces are low. Consider lowering the *Population density* to get
 more realistic model outputs. Compare the results for the different areas.
+When you are done, compare the fluxes beteen the two runs and try to identify and find explanations for the differences.
 
 Tutorial finished.
 

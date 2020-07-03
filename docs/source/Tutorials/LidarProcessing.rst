@@ -383,6 +383,15 @@ Call the output **landcover_raw.tif**.
 
 Finally, you need to appoint the correct values to the different classes. That can be done using *UMEP > Pre-Processor > Urban Land Cover > Land Cover Reclassifier*. You can qualitatively check your land cover classification against satellite imagery, such as the *Google Satellite* in *QuickMapServices*.   
 
+.. figure:: /images/Lidar16.jpg
+   :alt:  none
+   :width: 100%
+   :align: center 
+
+   Figure 16. The land cover maps produced from the lidar point cloud.
+
+
+Tutorial finished.
 
 Commands
 --------
@@ -413,4 +422,4 @@ and mean radiant temperatures in London. `Urban Ecosystems 14:4, 617-634. <https
 
 **Link to data**: https://drive.google.com/file/d/0B31bjOSjDDdxME5vd1VMS25IZjg/view
 
-Tutorial finished.
+
