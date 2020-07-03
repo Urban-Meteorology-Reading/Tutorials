@@ -12,7 +12,7 @@ tools available in QGIS concerning processing of data obtained by the
 airborne LiDAR technology. 
 
 You will get acquainted with FUSION/LDV,
-a so-called free software (not to be confused with Freeware or open
+a so-called free software (not to be confused with open
 source) developed to process point clouds. The exercise focuses on the
 city and how to make use of LiDAR data in urban environments.
 
