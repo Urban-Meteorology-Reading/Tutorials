@@ -85,7 +85,11 @@ tool. The tutorials available are found in the table below.
      - `LQF`
      - Anthropogenic heat modelling in London using LQF (uses the LUCY methodology)
      - London, UK
-
+   * - UMEP for Processing
+     - Pre-Processor, Processor
+     - `ProcessingSEBE`
+     - Create UMEP workflows using the Processing Toolbox in QGIS
+     - Gothenburg, Sweden
 
 ..   * - Urban energy balance
 ..     - Pre-Processor, Processor and Post-processor
@@ -111,6 +115,7 @@ tool. The tutorials available are found in the table below.
    Tutorials/GQF
    Tutorials/DSMGenerator
    Tutorials/LidarProcessing
+   Tutorials/IntrodutionToProcessingSEBE
    
 .. Tutorials/SUEWSWUDAPT_Beijing
 
