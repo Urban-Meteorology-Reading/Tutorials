@@ -3,14 +3,14 @@
 Introduction to UMEP and the QGIS Processing framework
 ======================================================
 
-.. note:: Preferable, the tutorial :ref:`SEBE` should be completed first. 
+.. note:: It's preferable that the tutorial: :ref:`SEBE` is completed before this. 
 
 Introduction
 ------------
 
-**UMEP for Processing** ports many of the UMEP tools to the `QGIS processing framework <https://docs.qgis.org/3.10/en/docs/user_manual/processing/intro.html>`__, which is a geoprocessing environment that can be used to call native and third-party algorithms from QGIS, making your spatial analysis tasks more productive and easy to accomplish. You can for example call the UMEP tools directly as functions in a Python script or include them in the `Graphical Modeler <https://docs.qgis.org/3.10/en/docs/user_manual/processing/modeler.html?highlight=graphical>`__ in QIS.
+**UMEP for Processing** ports many of the UMEP tools to the `QGIS processing framework <https://docs.qgis.org/3.10/en/docs/user_manual/processing/intro.html>`__, which is a geoprocessing environment that can be used to call native and third-party algorithms from QGIS, making your spatial analysis tasks more productive and easy to accomplish. You can, for example, call the UMEP tools directly as functions in a Python script or include them in the `Graphical Modeler <https://docs.qgis.org/3.10/en/docs/user_manual/processing/modeler.html?highlight=graphical>`__ in QGIS.
 
-Many of the analysis made in UMEP has to be set up as workflow where one or many tools has to be executed in sequence in order to reach a final result. In this tuorial we will make use of the eaxample of the model *Solar Energy on Building Envelopes* (SEBE) which can be used to estimate incoming solar radiation on roofs, walls and ground in urban environments. The figure below shows the workflow that needs to be considered to reach the final result.
+Many of the analysis carried out in UMEP has to be set up as a workflow where one or many tools has to be executed in sequence in order to reach a final result. In this tuorial we will make use of the example of the model *Solar Energy on Building Envelopes* (SEBE) which can be used to estimate incoming solar radiation on roofs, walls and ground in urban environments. The figure below shows the workflow that needs to be considered to reach the final result.
 
 .. figure:: /images/SEBE_flowchart.jpg
    :width: 100%
@@ -32,7 +32,7 @@ Steps
 Installing UMEP for Processing
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Installing a processing plugin is made in same way as any other plugin in QGIS:
+Installing a processing plugin is done in same way as any other plugin in QGIS:
 
 * UMEP for processing (Experimental and not complete) is available from *Plugins -> Manage and Install Plugins...* in the menu bar in QGIS. Remember to tick in **show also experimental plugins** under the **Settings**-tab. 
 * Under the *All*-tab, search for **UMEP for processing**, click on it and then **Install Plugin**. 
@@ -43,17 +43,17 @@ If installed succesfully, You will now see **UMEP** in the *Processing Toolbox*-
 Data for this Tutorial
 ~~~~~~~~~~~~~~~~~~~~~~
 
-You will make use of the same dataset used in the tutorial :ref:`SEBE`. Geodata covers a small area in central **Gothenburg, Sweden**. Data are projected in SWEREF99 1200 (EPSG:3007) which is in the Swedish national coordinate system.
+You will make use of the same dataset used in the tutorial :ref:`SEBE`. The geodata covers a small area in central **Gothenburg, Sweden**. Data are projected in SWEREF99 1200 (EPSG:3007) which is the Swedish national coordinate system.
 
 :download:`Datasets for Gothenburg, Sweden </data/Goteborg_SWEREF99_1200.zip>`
 
 UMEP for processing: First example 
 ----------------------------------
 
-The tools in **UMEP for prcessing** is the same as in **UMEP** found in the menubar. However, it is not as complete as some tools is not suitable to be used within the processing framework in QGIS. As a first exmple you will explore the Wall Height and Aspect tool.
+The tools in **UMEP for processing** are the same as in **UMEP** found in the menubar. However, it is not as complete, as some tools are not suitable to be used within the processing framework in QGIS. As a first example you will explore the *Wall Height* and *Aspect tool*.
 
 * Add **DSM_KRbig.tif** to your project.
-* In the Processing Toolbox, Open *UMEP -> Pre-Processor -> Urban Geometry: Wall Height and Aspect.
+* In the *Processing Toolbox*, Open *UMEP -> Pre-Processor -> Urban Geometry: Wall Height and Aspect*.
 
   .. figure:: /images/ProcessingWallHeight.jpg
     :width: 100%
@@ -62,7 +62,7 @@ The tools in **UMEP for prcessing** is the same as in **UMEP** found in the menu
 
     The Wall Height and Aspect tool opened from the QGIS Processing Toolbox.
 
-If you also open the same tool but from the menubar you will see that is is the same tool but with a different graphical user interface design (buttons, windows etc. are not looking the same). One feature with the tools in the Processing toolbox is that their apperance is almost the same. Technically, they also work in a similar way by being designed as tools that can be executed in a similar way. That will come in handy later on when you want to make use of tools in an automated Python script. 
+If you also open the same tool but from the menubar you will see that is is the same tool but with a different graphical user interface design (buttons, windows etc don't look the same). One feature of the tools in the *Processing toolbox* is that their apperance is almost the same. Technically, they also work in a similar way by being designed as tools that can be executed in a similar way. That will come in handy later on when you want to make use of tools in an automated Python script. 
 
 * Now, without making and changes, just click *Run* in the Wall Height and Aspect tool opened from the Processing toolbox and see the results appearing in the Map canvas and the Layer-panel to the left.
 
@@ -75,18 +75,18 @@ Before closing the tool, take a look in the log-window. Here you see some useful
   'OUTPUT_ASPECT' : 'TEMPORARY_OUTPUT', 
   'OUTPUT_HEIGHT' : 'TEMPORARY_OUTPUT' } 
 
-* Now close the Wall Height and Aspect tool and remove the height and aspect rasters from your QGIS project.
+* Now close the *Wall Height and Aspect tool* and remove the height and aspect rasters from your QGIS project.
 
 Creating a SEBE workflow using the Graphical Modeler
 ----------------------------------------------------
 
-A very common feature in GIS software systems is a graphical modeler where processies in many steps can be set up in a non-programming fashion. QGIS also has a tool like this and you will now make use of it to preform basic solar radiation modelling using the SEBE model.
+A very common feature in GIS software systems is a graphical modeler where processes in many steps can be set up in a non-programming fashion. QGIS also has a tool like this and you will now make use of it to preform basic solar radiation modelling using the **SEBE** model.
 
 * Open the Graphical Modeler, either from the menubar (*Processing > Graphical Modeler...*) or through the button with three gears at the top of the *Processing Toolbox*-panel (*Create New Model...*).
 
 Take a look at the first figure in this tutorial to see the steps needed. We will keep it simple and leave out vegetation for now. First you need to create rasters for wall height and aspect before you can execute the main model.
 
-* In the *Algorithms*-tab in the upper left panel, locate **UMEP** and open **Wall Height and Aspect** from the *Pre-Processor*. Make the settings as shown below and then click *OK*:
+* In the *Algorithms*-tab in the lower left panel, locate **UMEP** and open **Wall Height and Aspect** from the *Pre-Processor*. Configure the settings as shown below and then click *OK*:
 
   .. figure:: /images/ModelerWallHeight.jpg
     :align: center
@@ -98,7 +98,8 @@ Now you can see the tool visible in the main modeler window.
 
 * In the *Algorithms*-tab, locate and open **Solar Energy on Building Envelopes** from the *Processor*. Leave all settings as default but change the following:
 
-    - *Wall height raster* should be an *Algorithm Output*. This is changed by clicking the button left to to *Wall height raster*. Choose the height raster from the *Wall Height and Aspect*-tool added before.
+    - Set the *Input building and ground DSM* to **DSM_KRbig.tif**
+    - *Wall height raster* should be an *Algorithm Output*. This can be selected from the *Wall height raster* drop down menu. Choose the height raster from the *Wall Height and Aspect*-tool added before.
     - Do the same for the *Wall aspect raster* but now choose the aspect raster from *Wall Height and Aspect*-tool.
     - Change UTC to 1.
     - Add an *Input Meteorological File* (**GBG_TMY_1977.txt** found in the input data for this tuorial).
@@ -108,7 +109,7 @@ Now you can see the tool visible in the main modeler window.
 Now two steps (boxes) are shown in the main Modeler window.
 
 * Under *Model Properties*, Change *Name* to **SEBEProcessing** and *Group* to **My UMEP Models**
-* Save model as **SEBEProcessing.model3** and locate it in the folder recommend by QGIS (C:\Users\**your_user_name**)\AppData\Roaming\QGIS\QGIS3\profiles\default\processing\models). Then you will easily be able to locate the model from the *Processing Toolbox* later.
+* Save model as **SEBEProcessing.model3** and locate it in the folder recommend by QGIS (C:\Users\**your_user_name**\AppData\Roaming\QGIS\QGIS3\profiles\default\processing\models). Then you will easily be able to locate the model from the *Processing Toolbox* later.
 
   .. figure:: /images/ModelerSEBE1.jpg
     :width: 100%
@@ -118,7 +119,7 @@ Now two steps (boxes) are shown in the main Modeler window.
     The SEBEProcessing model in the Graphical Modeler in QGIS.
 
 * Now click the Green arrow (*Run  Model*) in the Modeler tool.
-* Click *Run* and the process begins. You can foolow its progress in the log window.
+* Click *Run* and the process begins. You can follow its progress in the log window.
 * When finished, examine the outputs in your output folder. Three files should be present (**Energyyearwall.txt**, **Energyyearroof.tif** and **dsm.tif**)
 
 Imagine that you now want to change input information for this model workflow. This is done by exposing input and output parameters for the user to alter (i.e. you or others). Lets now expose *Input DSM*, *Input Meterological data*, *UTC*, *Albedo* and *Output folder*.
