@@ -60,7 +60,7 @@ Data for Tutorial
    :width: 356px
 
    Central Gothenburg study area (red square).
-   The `QuickMapServices <http://plugins.qgis.org/plugins/quick_map_services/-plugin>`__ in QGIS was used to generate this snapshot.
+   The `QuickMapServices <https://plugins.qgis.org/plugins/quick_map_services/>`__-plugin in QGIS was used to generate this snapshot.
 
 Geodata and meteorological data for **Gothenburg, Sweden**.
 

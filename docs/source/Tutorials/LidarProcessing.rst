@@ -3,7 +3,7 @@
 Spatial data - Generating UMEP input data from a LiDAR point cloud
 ==================================================================
 
-.. note:: This tutorial is making use of `FUSION/LDV <http://forsys.cfr.washington.edu/fusion.html.>`__ which makes it restricted to Windows OS only.
+.. note:: This tutorial is making use of `FUSION/LDV <http://forsys.cfr.washington.edu/FUSION/fusion_overview.html>`__ which makes it restricted to Windows OS only.
 
 
 The purpose of this tutorial is to create spatial input data for UMEP 

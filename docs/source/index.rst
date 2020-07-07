@@ -46,7 +46,7 @@ tool. The tutorials available are found in the table below.
      - Generating DSMs using `Open Street Map <https://www.openstreetmap.org/>`__ data
      - Gothenburg, Sweden (World)
    * - Spatial data
-     - Pre-Processor and `FUSION/LDV <http://forsys.cfr.washington.edu/fusion.html.>`__
+     - Pre-Processor and `FUSION/LDV <http://forsys.cfr.washington.edu/FUSION/fusion_overview.html>`__
      - `LidarProcessing`
      - Generating UMEP input data from a LiDAR point cloud
      - Gothenburg, Sweden

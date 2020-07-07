@@ -41,7 +41,7 @@ As a test you will initially make use of the Gothenburg dataset used in other UM
 
 With the settings as above, the DSM Generator downloads the OSM building data for the specified area and extracts all buildings that have height information of any kind included. In our case the result is not very good since only 8 out of 47 polygons included useful height information. You can compare with the very high quality DSM, **DSM_KRbig.tif**, included in the datasets for this tutorial. 
 
-Ususally height information in the OSM dataset is not very common but for some larger cities the information can be very close to full coverage. You can contribute to the open street map project by adding information on building heights e.g. for your home town. Visit `<www.openstreetmap.org>`__ for more information.
+Ususally height information in the OSM dataset is not very common but for some larger cities the information can be very close to full coverage. You can contribute to the open street map project by adding information on building heights e.g. for your home town. Visit `<https://www.openstreetmap.org/>`__ for more information.
 
 Even though the result is disappointing you now have a good starting point to producing a higher quality DSM. 
 
