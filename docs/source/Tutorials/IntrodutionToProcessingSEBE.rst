@@ -86,7 +86,7 @@ A very common feature in GIS software systems is a graphical modeler where proce
 
 Take a look at the first figure in this tutorial to see the steps needed. We will keep it simple and leave out vegetation for now. First you need to create rasters for wall height and aspect before you can execute the main model.
 
-* In the *Algorithms*-tab in the lower left panel, locate **UMEP** and open **Wall Height and Aspect** from the *Pre-Processor*. Configure the settings as shown below and then click *OK*:
+* In the *Algorithms*-tab in the upper left panel, locate **UMEP** and open **Wall Height and Aspect** from the *Pre-Processor*. Configure the settings as shown below and then click *OK*:
 
   .. figure:: /images/ModelerWallHeight.jpg
     :align: center
@@ -99,7 +99,7 @@ Now you can see the tool visible in the main modeler window.
 * In the *Algorithms*-tab, locate and open **Solar Energy on Building Envelopes** from the *Processor*. Leave all settings as default but change the following:
 
     - Set the *Input building and ground DSM* to **DSM_KRbig.tif**
-    - *Wall height raster* should be an *Algorithm Output*. This can be selected from the *Wall height raster* drop down menu. Choose the height raster from the *Wall Height and Aspect*-tool added before.
+    - *Wall height raster* should be an *Algorithm Output*. This is changed by clicking the button to the left of the *Wall height raster* selection bar. Choose the height raster from the *Wall Height and Aspect*-tool added before.
     - Do the same for the *Wall aspect raster* but now choose the aspect raster from *Wall Height and Aspect*-tool.
     - Change UTC to 1.
     - Add an *Input Meteorological File* (**GBG_TMY_1977.txt** found in the input data for this tuorial).
@@ -121,16 +121,23 @@ Now two steps (boxes) are shown in the main Modeler window.
 * Now click the Green arrow (*Run  Model*) in the Modeler tool.
 * Click *Run* and the process begins. You can follow its progress in the log window.
 * When finished, examine the outputs in your output folder. Three files should be present (**Energyyearwall.txt**, **Energyyearroof.tif** and **dsm.tif**)
-
+* If you encounter the following error: 
+  ::
+    Traceback (most recent call last):
+    File "C:/Users/user_name/AppData/Roaming/QGIS/QGIS3\profiles\default/python/plugins\processing_umep\processor\sebe_algorithm.py", line 157, in processAlgorithm
+    provider = dsmlayer.dataProvider()
+    AttributeError: 'NoneType' object has no attribute 'dataProvider'
+  Try simply running the model again and it should work.  
+    
 Imagine that you now want to change input information for this model workflow. This is done by exposing input and output parameters for the user to alter (i.e. you or others). Lets now expose *Input DSM*, *Input Meterological data*, *UTC*, *Albedo* and *Output folder*.
 
-* In the *Inputs*-tab in the upper left panel in the Model Designer, add a *Raster Layer*. Describe it as a *DSM*. Tick in *Mandatory*. Click *OK*
+* In the *Inputs*-tab in the upper left panel in the *Model Designer*, add a *Raster Layer*. Describe it as a *DSM*. Tick in *Mandatory*. Click *OK*
 
-Now a Yellow box called *DSM* is visible in your Main design window.
+Now a Yellow box called *DSM* is visible in your main design window.
 
-* Double-click on the Wall Height and Aspect tool and change the *Input building and ground DSM* to a Model Input and choose your DSM in the scroll-down list. 
+* Double-click on the *Wall Height and Aspect tool* and change the *Input building and ground DSM* to a *Model Input* and choose your DSM in the scroll-down list. 
 
-Now you see that your DSM is connected to  the Wall Height and Aspect tool and if you Run the model (Green Arrow) you see that the your now has an option to change the input raster layer.
+Now you see that your DSM is connected to the Wall Height and Aspect tool and if you *Run* the model (Green Arrow) you see that you have an option to change the input raster layer.
 
 * Now add the other parameters (**Input Meterological data**, **UTC**, **Albedo** and **Output folder**) the same way. **Input Meterological data** should be *File/Folder* (text-file) and **Albedo** (float: 0-1, default: 0.15) and **UTC** (integer: -12 - 12, default: 0) should be *Number*.. All inputs should be marked as *Mandatory*.
 * Also remember to set the DSM input for the SEBE model. Use the same as for the input to the *Wall Height and Aspect* tool.
@@ -151,24 +158,24 @@ Now you see that your DSM is connected to  the Wall Height and Aspect tool and i
 
     The SEBEProcessing model shown as a processing tool.
 
-As you have given your model a name and a group name as well as saving it in the model-folder you can now find it in the Processing Toolbox (*Model > My UMEP Models > SEBEProcessing*)
+As you have given your model a name and a group name, as well as saving it in the model-folder, you can now find it in the *Processing Toolbox* (*Model > My UMEP Models > SEBEProcessing*)
 
-There are more functionalities available in the Graphical Modeler. See e.g. the `QGIS documentation <https://docs.qgis.org/3.10/en/docs/user_manual/processing/modeler.html#>`__ if you are interested. Using the Graphical Modeler is in a way very close to writing programming scripts. The next section will show how to access processing algorithms from the Python console in QGIS. 
+There are more functionalities available in the *Graphical Modeler*. See e.g. the `QGIS documentation <https://docs.qgis.org/3.10/en/docs/user_manual/processing/modeler.html#>`__ if you are interested. Using the Graphical Modeler is, in a way, very close to writing programming scripts. The next section will show how to access processing algorithms from the Python console in QGIS. 
 
 Accessing algorithms from the Python console 
 --------------------------------------------
 
-As you might have noticed, there are possibilities to export your model to a Python script from the menu bar in the Model Designer. This will only create a script to start up your model as seen in the Processing toolbox which is not so useful. What would be more useful is to be able to run e.g. the Wall Height and Aspect tool or even the model you just created without using a graphical interface, i.e. from command line e.g. a Python console.
+As you might have noticed, there are possibilities to export your model to a Python script from the menu bar in the *Model Designer*. This will only create a script to start up your model as seen in the *Processing Toolbox* which is not particularly useful. What would be more useful is to be able to run e.g. the *Wall Height and Aspect tool*, or even the model you just created, without using a graphical interface, i.e. from command line such as a Python console.
 
-One easy way to do this is to look at the history actions in the Processing Toolbox (The clock at the top of the panel). Here you see the actual commands (syntax) to execute the algorithms/model available.
+One easy way to do this is to look at the history actions in the *Processing Toolbox* (The clock at the top of the panel). Here you see the actual commands (syntax) to execute the algorithms/model available.
 
-#. Locate the first time you ran Wall Height and Aspect in the History. Copy that line. Is should look some thing like this:
+#. Locate the first time you ran *Wall Height and Aspect* in the History. Copy that line. Is should look some thing like this:
 ::
   processing.run("umep:Urban Geometry: Wall Height and Aspect", {'INPUT':'C:/Users/xlinfr/Desktop/Goteborg_SWEREF99_1200/Goteborg_SWEREF99_1200/DSM_KRbig.tif','ASPECT_BOOL':True,'INPUT_LIMIT':3,'OUTPUT_HEIGHT':'TEMPORARY_OUTPUT','OUTPUT_ASPECT':'TEMPORARY_OUTPUT'})
 
 You may notice that the last part in curly brakets starting with 'INPUT': is your input parameters. The text before that is how you access the tool via Python.
 
-#. Open the Python console in QGIS (*Plugins > Python Console*) and paste the line you just copied. Before you press Return, change the output of the height raster to e.g. 'C:/temp/heightraster.tif' and change **ASPECT_BOOL** to *False*. Press return. A new layer (**heightraster.tif**) should have been created.
+#. Open the Python console in QGIS (*Plugins > Python Console*) and paste the line you just copied. Before you press *return*, change the output of the height raster to e.g. 'C:/temp/heightraster.tif' and change **ASPECT_BOOL** to *False*. Press *return*. A new layer (**heightraster.tif**) should have been created.
 
 This was of cource a very brief introduction on how to use Python in QGIS. In future tutorials you will learn how to create more extensive Python scripts and really make your GIS processing capabilities a powerful tool
 
