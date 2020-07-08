@@ -21,7 +21,7 @@ of SUEWS within Urban Multi-scale Environmental Predictor (`UMEP <http://umep-do
 provides an introduction to the model and the processes simulated, the
 parameters used and the impact on the resulting fluxes. Tools such as this, once appropriately assessed for an area, can be used
 for a broad range of applications. For example, for climate services
-(e.g. `Grimmond et al (2020)<https://doi.org/10.1016/j.uclim.2020.100623>`_). 
+(e.g. `Grimmond et al (2020) <https://doi.org/10.1016/j.uclim.2020.100623>`_). 
 
 SUEWS can be run in a number of different ways:
 
