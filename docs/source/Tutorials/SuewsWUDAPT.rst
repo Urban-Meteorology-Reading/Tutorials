@@ -10,7 +10,7 @@ In this tutorial you will generate input data for the
 `SUEWS <http://suews-docs.readthedocs.io>`__ model and simulate spatial 
 (and temporal) variations of energy exchanges within an area in New York City using local climate zones derived within the `WUDAPT <http://www.wudapt.org/>`__ project. The World Urban Database and Access Portal Tools project is a community-based project to gather a census of cities around the world.
 
-.. note:: It is strongly recommended that you goo through the :ref:`SuewsSpatial` tutorial before you go through this tutrial. This tutorial is work in progress.
+.. note:: It is strongly recommended that you go through the :ref:`SuewsSpatial` tutorial before you go through this tutrial. This tutorial is work in progress.
 
 
 Objectives
