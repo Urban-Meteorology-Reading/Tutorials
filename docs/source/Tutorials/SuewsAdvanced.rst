@@ -32,7 +32,7 @@ How to run SUEWS Advanced from the UMEP-plugin
    most of the general settings (e.g. activate the snow module etc.)
    which are related to
    `RunControl.nml <http://suews-docs.readthedocs.io/en/latest/input_files/RunControl/RunControl.html>`__.
-#. Use the Input folder: *C:/Users/your_user_name/AppData/Roaming/QGIS/QGIS3/ profiles/default/python/plugins/UMEP/suewsmodel/Input/*
+#. Use the Input folder: *C:/Users/your_user_name/AppData/Roaming/QGIS/QGIS3/ profiles/default/python/plugins/UMEP/suewsmodel/Input/*. The AppData folder might be hidden on your system. Then you need change the settings in your File explorer to also show hidden files and folders. On an iOS system this folder is located at: */Library/Applications/QGIS/QGIS3/profiles/default/ python/plugins/UMEP/suewsmodel/Input/*
 
 #. Create or enter an **Output directory** of your choice.
 #. From the **Input folder** - confirm the data are in there.
