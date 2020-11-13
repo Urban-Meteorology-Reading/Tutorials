@@ -175,7 +175,27 @@ One easy way to do this is to look at the history actions in the *Processing Too
 
 You may notice that the last part in curly brakets starting with 'INPUT': is your input parameters. The text before that is how you access the tool via Python.
 
-#. Open the Python console in QGIS (*Plugins > Python Console*) and paste the line you just copied. Before you press *return*, change the output of the height raster to e.g. 'C:/temp/heightraster.tif' and change **ASPECT_BOOL** to *False*. Press *return*. A new layer (**heightraster.tif**) should have been created.
+#. Open the Python console in QGIS (*Plugins > Python Console*) and paste the line you just copied. Before you press *return*, change the output of the height raster to e.g. *'C:/temp/heightraster.tif'* and change **ASPECT_BOOL** to *False*. Press *return*. A new layer (**heightraster.tif**) should have been created.
+
+Accessing algorithms in a stand-alone Python script 
+---------------------------------------------------
+
+To access third party processing plugins (such as UMEP) in a stand-alone Python script, use the following lines of code (example for Windows users):
+::
+  from qgis.core import QgsApplication
+  import sys
+
+  # Initiating a QGIS application
+  qgishome = 'C:/OSGeo4W64/apps/qgis/'
+  QgsApplication.setPrefixPath(qgishome, True)
+  app = QgsApplication([], False)
+  app.initQgis()
+
+  # import third party processing plugins
+  sys.path.append(r'C:\Users\ **your_username** \AppData\Roaming\QGIS\QGIS3\profiles\default\python\plugins')
+  from processing_umep.processing_umep_provider import ProcessingUMEPProvider
+  umep_provider = ProcessingUMEPProvider()
+  QgsApplication.processingRegistry().addProvider(umep_provider)
 
 This was of cource a very brief introduction on how to use Python in QGIS. In future tutorials you will learn how to create more extensive Python scripts and really make your GIS processing capabilities a powerful tool
 
