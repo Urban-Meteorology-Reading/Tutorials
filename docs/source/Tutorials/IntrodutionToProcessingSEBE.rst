@@ -10,7 +10,7 @@ Introduction
 
 **UMEP for Processing** ports many of the UMEP tools to the `QGIS processing framework <https://docs.qgis.org/3.10/en/docs/user_manual/processing/intro.html>`__, which is a geoprocessing environment that can be used to call native and third-party algorithms from QGIS, making your spatial analysis tasks more productive and easy to accomplish. You can, for example, call the UMEP tools directly as functions in a Python script or include them in the `Graphical Modeler <https://docs.qgis.org/3.10/en/docs/user_manual/processing/modeler.html?highlight=graphical>`__ in QGIS.
 
-Many of the analysis carried out in UMEP has to be set up as a workflow where one or many tools has to be executed in sequence in order to reach a final result. In this tuorial we will make use of the example of the model *Solar Energy on Building Envelopes* (SEBE) which can be used to estimate incoming solar radiation on roofs, walls and ground in urban environments. The figure below shows the workflow that needs to be considered to reach the final result.
+Many of the analysis carried out in UMEP has to be set up as a workflow where one or many tools has to be executed in sequence in order to reach a final result. In this tutorial we will make use of the example of the model *Solar Energy on Building Envelopes* (SEBE) which can be used to estimate incoming solar radiation on roofs, walls and ground in urban environments. The figure below shows the workflow that needs to be considered to reach the final result.
 
 .. figure:: /images/SEBE_flowchart.jpg
    :width: 100%
